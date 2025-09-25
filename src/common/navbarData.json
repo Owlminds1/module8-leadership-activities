@@ -1,0 +1,126 @@
+{
+    "L1": {
+        "C60": {
+            "Warm Up": {
+                "link": "/L1/C60/Warm-Up",
+                "name": "Complete it"
+            },
+            "Activity 1a": {
+                "link": "/L1/C60/Activity-1a",
+                "name": "Price Builder I"
+            },
+            "Activity 1b": {
+                "link": "/L1/C60/Activity-1b",
+                "name": "Price Builder II"
+            },
+            "Activity 2": {
+                "link": "/L1/C60/Activity-2",
+                "name": "Compete & Compare!"
+            },
+            "Activity 3": {
+                "link": "/L1/C60/Activity-3",
+                "name": "Start-up Money"
+            },
+            "Activity 4a": {
+                "link": "/L1/C60/Activity-4a",
+                "name": "One-Time Pay vs Subscription I"
+            },
+            "Activity 4b": {
+                "link": "/L1/C60/Activity-4b",
+                "name": "One-Time Pay vs Subscription II"
+            },
+            "Activity 5": {
+                "link": "/L1/C60/Activity-5",
+                "name": "Customer Loyalty"
+            },
+            "Additional Activity": {
+                "link": "/L1/C60/Additional-Activity",
+                "name": "Mini Business"
+            }
+        }
+    },
+    "L2": {
+        "C60": {
+            "Warm Up": {
+                "link": "/L2/C60/Warm-Up",
+                "name": "Price Guessing Game"
+            },
+            "Activity 1a": {
+                "link": "/L2/C60/Activity-1a",
+                "name": "Price Builder I"
+            },
+            "Activity 1b": {
+                "link": "/L2/C60/Activity-1b",
+                "name": "Price Builder II"
+            },
+            "Activity 2": {
+                "link": "/L2/C60/Activity-2",
+                "name": "Compete & Compare!"
+            },
+            "Activity 3": {
+                "link": "/L2/C60/Activity-3",
+                "name": "Pricing Strategy"
+            },
+            "Activity 4": {
+                "link": "/L2/C60/Activity-4",
+                "name": "One-Time Pay vs Subscription"
+            },
+            "Activity 5a": {
+                "link": "/L2/C60/Activity-5a",
+                "name": "One-Time Pay vs Subscription Exercise I"
+            },
+            "Activity 5b": {
+                "link": "/L2/C60/Activity-5b",
+                "name": "One-Time Pay vs Subscription Exercise II"
+            },
+            "Additional Activity": {
+                "link": "/L2/C60/Additional-Activity",
+                "name": "Pricing Strategy Detective"
+            },
+            "Post Class Activity": {
+                "link": "/L2/C60/PCA",
+                "name": "Family Subscription Survey"
+            }
+        }
+    },
+    "L3": {
+        "C60": {
+            "Warm Up": {
+                "link": "/L3/C60/Warm-Up",
+                "name": "Price Detective"
+            },
+            "Activity 1a": {
+                "link": "/L3/C60/Activity-1a",
+                "name": "Price Builder I"
+            },
+            "Activity 1b": {
+                "link": "/L3/C60/Activity-1b",
+                "name": "Price Builder II"
+            },
+            "Activity 2": {
+                "link": "/L3/C60/Activity-2",
+                "name": "Price Tag Pressure"
+            },
+            "Activity 3a": {
+                "link": "/L3/C60/Activity-3a",
+                "name": "Pricing Strategy I"
+            },
+            "Activity 3b": {
+                "link": "/L3/C60/Activity-3b",
+                "name": "Pricing Strategy II"
+            },
+            "Activity 4": {
+                "link": "/L3/C60/Activity-4",
+                "name": "Price Negotiation"
+            },
+            "Additional Activity": {
+                "link": "/L3/C60/Additional-Activity",
+                "name": "Create Your Own Pricing Strategy"
+            },
+            "Post Class Activity": {
+                "link": "/L3/C60/PCA",
+                "name": "Subscription Sleuth"
+            }
+        }
+    }
+}
