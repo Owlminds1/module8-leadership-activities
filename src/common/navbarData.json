@@ -121,6 +121,40 @@
                 "link": "/L3/C60/PCA",
                 "name": "Subscription Sleuth"
             }
+        },
+        "C61": {
+            "Activity 1": {
+                "link": "/L3/C61/Activity-1",
+                "name": "Sport Shop Adventure"
+            },
+            "Activity 2a": {
+                "link": "/L3/C61/Activity-2a",
+                "name": "Business Model Sorting I"
+            },
+            "Activity 2b": {
+                "link": "/L3/C61/Activity-2b",
+                "name": "Business Model Sorting II"
+            },
+            "Activity 3a": {
+                "link": "/L3/C61/Activity-3a",
+                "name": "Sports Store Case Study I"
+            },
+            "Activity 3b": {
+                "link": "/L3/C61/Activity-3b",
+                "name": "Sports Store Case Study II"
+            },
+            "Activity 4": {
+                "link": "/L3/C61/Activity-4",
+                "name": "Business Model Evolution"
+            },
+            "Additional Activity": {
+                "link": "/L3/C61/Additional-Activity",
+                "name": "Choosing the Right Business Model"
+            },
+            "Post Class Activity": {
+                "link": "/L3/C61/PCA",
+                "name": "Business Model Journal"
+            }
         }
     }
 }
