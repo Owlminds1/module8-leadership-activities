@@ -7,7 +7,7 @@ const contentData = {
   screens: [
     {
       id: 0,
-      title: "Sam&apos;s Sports Business Journey",
+      title: "Sam's Sports Business Journey",
       content: "Sam loves sports and started a small business making eco-friendly water bottles and sports gear. But he didn&apos;t know the best way to sell them. Should he sell to schools and gyms, open his own store, sell online, or create a platform for other sellers too?",
       image: S1
     },
