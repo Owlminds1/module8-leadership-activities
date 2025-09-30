@@ -4,7 +4,7 @@ import { useState } from "react";
 const screenData = [
   {
     id: 0,
-    title: "Meet Zara. She loves designing colorful water bottles and wants to sell them. But she's confused about which business model to choose. Let's help her decide!",
+    title: "Meet Zara. She loves designing colorful water bottles and wants to sell them. But she&apos;s confused about which business model to choose. Let&apos;s help her decide!",
     model: "B2B – Business to Business",
     description: "Zara sells water bottles to shops, gyms, or other businesses.",
     howItWorks: "How it works:",
@@ -21,7 +21,7 @@ const screenData = [
       "Fewer customers: Manage a small number of businesses instead of many individual buyers."
     ],
     cons: [
-      "It's hard to find business contacts as a beginner.",
+      "It&apos;s hard to find business contacts as a beginner.",
       "Businesses want large orders, which might be too much for Zara at the start."
     ]
   },
@@ -72,7 +72,7 @@ const screenData = [
   },
   {
     id: 9,
-    question: "Now, thinking about Zara's resources and goals, which model do you think she should start with? Why?"
+    question: "Now, thinking about Zara&apos;s resources and goals, which model do you think she should start with? Why?"
   }
 ];
 
@@ -94,7 +94,7 @@ export default function Com() {
         <div className="bg-white shadow-2xl rounded-3xl p-8">
           <div className="flex items-center justify-center mb-8">
             <h1 className="text-3xl font-bold text-purple-800 text-center">
-              Zara's Business Model Journey
+              Zara&apos;s Business Model Journey
             </h1>
           </div>
 

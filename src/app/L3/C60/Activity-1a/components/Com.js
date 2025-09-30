@@ -9,7 +9,7 @@ const contentData = {
       id: 0,
       type: "intro",
       title: "Meet Rohan!",
-      description: "Meet Rohan! He's super creative and designs beautiful, customized mugs. Everyone loves his work, and now he wants to open a small shop to sell them. But there's a challenge, Rohan is amazing at designing, but not so good at calculating money. He needs someone to help him figure out the right price so he can sell fairly and still make some profit.",
+      description: "Meet Rohan! He&apos;s super creative and designs beautiful, customized mugs. Everyone loves his work, and now he wants to open a small shop to sell them. But there&apos;s a challenge, Rohan is amazing at designing, but not so good at calculating money. He needs someone to help him figure out the right price so he can sell fairly and still make some profit.",
       image: s1
     },
     {
@@ -21,7 +21,7 @@ const contentData = {
       id: 2,
       type: "progressive",
       title: "Step 1: Cost of Making a Mug",
-      content: "Let's first figure out how much it costs Rohan to make one mug.",
+      content: "Let&apos;s first figure out how much it costs Rohan to make one mug.",
       additionalContent: {
         title: "",
         items: ["Plain mug (base item): $3", "Painting design: $2", "Packaging (box + wrapping): $1.50"]
@@ -56,7 +56,7 @@ const contentData = {
       id: 5,
       type: "progressive",
       title: "Step 3: Buying Materials in Bulk",
-      content: "Now here's an interesting business trick, buying in bulk. If Rohan buys just 1 plain mug, it costs $3 each. But if he buys 50 mugs together, the supplier gives a discount and the mugs would cost $2 each.",
+      content: "Now here&apos;s an interesting business trick, buying in bulk. If Rohan buys just 1 plain mug, it costs $3 each. But if he buys 50 mugs together, the supplier gives a discount and the mugs would cost $2 each.",
       additionalContent: {
         title: "",
         items: ["So bulk saves money!"]
@@ -73,7 +73,7 @@ const contentData = {
       content: "What if Rohan doesn’t sell all the mugs? What will happen? ",
       additionalContent: {
         title: "",
-        items: ["If Rohan buys too many mugs but doesn't sell them, the extra mugs just sit around. That means his money is stuck in unsold items, and he loses money instead of earning it."]
+        items: ["If Rohan buys too many mugs but doesn&apos;t sell them, the extra mugs just sit around. That means his money is stuck in unsold items, and he loses money instead of earning it."]
       }
     },
     {
@@ -101,7 +101,7 @@ const contentData = {
       content: "Does he need more money upfront?",
       additionalContent: {
         title: "",
-        items: ["Yes, bulk buying is less expensive in the long run, but Rohan needs upfront cash at the beginning to pay for all the mugs at once. If he doesn't have that money saved, it could be a problem."]
+        items: ["Yes, bulk buying is less expensive in the long run, but Rohan needs upfront cash at the beginning to pay for all the mugs at once. If he doesn&apos;t have that money saved, it could be a problem."]
       }
     }
   ]

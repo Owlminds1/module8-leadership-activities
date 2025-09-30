@@ -7,12 +7,12 @@ const businessModelData = [
     title: "B2B (Business to Business)",
     advantages: [
       "Large orders bring steady and predictable revenue.",
-      "Less focus on marketing since you're selling to organizations.",
+      "Less focus on marketing since you&apos;re selling to organizations.",
       "Can build long-term contracts with clients like schools and gyms."
     ],
     disadvantages: [
       "Heavy dependence on fewer clients: if one stops buying, revenue drops significantly.",
-      "Limited chance to build a brand identity with end customers, since the gym/school's name may get more recognition than Sam's.",
+      "Limited chance to build a brand identity with end customers, since the gym/school&apos;s name may get more recognition than Sam&apos;s.",
       "Businesses often negotiate for lower prices, reducing profit."
     ]
   },
@@ -26,7 +26,7 @@ const businessModelData = [
     ],
     disadvantages: [
       "Requires constant marketing and promotions to attract individual buyers.",
-      "Customers' buying habits can change quickly like : seasonal demand for cricket bats vs. footballs.",
+      "Customers&apos; buying habits can change quickly like : seasonal demand for cricket bats vs. footballs.",
       "Managing customer service, inventory, and sales staff adds extra responsibilities."
     ]
   },
@@ -53,7 +53,7 @@ const businessModelData = [
       "Fast growth, since sellers add their own products and stock."
     ],
     disadvantages: [
-      "Reputation depends on other sellers, poor quality or delayed delivery can harm the platform's image.",
+      "Reputation depends on other sellers, poor quality or delayed delivery can harm the platform&apos;s image.",
       "Requires strong technology to manage multiple sellers, payments, and logistics.",
       "High cost of marketing to stand out against giants like Amazon, Flipkart, or Decathlon."
     ]

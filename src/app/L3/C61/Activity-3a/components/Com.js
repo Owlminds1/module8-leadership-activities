@@ -6,8 +6,8 @@ import S1 from "../assets/s1.png";
 const screenData = [
   {
     id: 0,
-    title: "Case Study: Sam's Sports Store",
-    content: "Here's a table showing how much it costs Sam to make, pack, and deliver each sports bottle, along with his fixed monthly costs and selling price.",
+    title: "Case Study: Sam&apos;s Sports Store",
+    content: "Here&apos;s a table showing how much it costs Sam to make, pack, and deliver each sports bottle, along with his fixed monthly costs and selling price.",
     showTable: true,
     tableData: [
       { item: "Making the bottle", cost: "2", notes: "Materials, production" },
@@ -36,7 +36,7 @@ const screenData = [
   },
   {
     id: 4,
-    title: "Sales data of Sam's shop",
+    title: "Sales data of Sam&apos;s shop",
     showImage: true
   },
   {

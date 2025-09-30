@@ -8,9 +8,9 @@ const contentData = {
     {
       id: 0,
       type: "intro",
-      title: "Mia's Pricing Dilemma",
+      title: "Mia&apos;s Pricing Dilemma",
       image: s1,
-      content: "Mia's lunchboxes are doing well! But now she's wondering \"Should I always keep the same price? Or should I change my price depending on the situation?\""
+      content: "Mia&apos;s lunchboxes are doing well! But now she&apos;s wondering \"Should I always keep the same price? Or should I change my price depending on the situation?\""
     },
     {
       id: 1,
@@ -49,14 +49,14 @@ const contentData = {
       id: 6,
       type: "strategy",
       title: "Strategy 3: Competitive Pricing",
-      content: "If many stalls already sell similar lunch boxes as Mia and she doesn't have anything extra or special to offer then what should she do? She could do it by applying a competitive pricing strategy."
+      content: "If many stalls already sell similar lunch boxes as Mia and she doesn&apos;t have anything extra or special to offer then what should she do? She could do it by applying a competitive pricing strategy."
     },
     {
       id: 7,
       type: "strategy-details",
       title: "Strategy 3: Competitive Pricing",
-      content: "If many stalls already sell similar lunch boxes as Mia and she doesn't have anything extra or special to offer then what should she do? She could do it by applying a competitive pricing strategy.",
-      definition: "Competitive pricing means setting your price close to other sellers so you don't lose customers.",
+      content: "If many stalls already sell similar lunch boxes as Mia and she doesn&apos;t have anything extra or special to offer then what should she do? She could do it by applying a competitive pricing strategy.",
+      definition: "Competitive pricing means setting your price close to other sellers so you don&apos;t lose customers.",
       example: "Example: If two nearby stores sell the same chocolate bar, one charges $10 while the other charges $8, all the kids will go with the option which is less expensive."
     },
     {

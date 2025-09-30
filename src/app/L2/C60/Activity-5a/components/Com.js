@@ -36,7 +36,7 @@ const items = [
 
 const subscriptionOptions = [
   "Can be sold in subscription",
-  "Can't be sold in subscription"
+  "Can&apos;t be sold in subscription"
 ];
 
 const answerKey = {

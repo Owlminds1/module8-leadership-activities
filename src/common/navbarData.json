@@ -81,6 +81,16 @@
                 "link": "/L2/C60/PCA",
                 "name": "Family Subscription Survey"
             }
+        },
+        "C61": {
+            "Additional-Activity": {
+                "link": "/L2/C61/Additional-Activity",
+                "name": "Business Model Bingo"
+            },
+            "Post Class Activity": {
+                "link": "/L2/C61/PCA",
+                "name": "Business Model Journal"
+            }
         }
     },
     "L3": {

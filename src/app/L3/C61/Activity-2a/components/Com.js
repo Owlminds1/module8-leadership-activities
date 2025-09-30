@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const businesses = [
   "Local bakery shop",
-  "Domino's Pizza",
+  "Domino&apos;s Pizza",
   "Toy store",
   "Ice cream truck",
   "Lego online store",
@@ -25,8 +25,8 @@ const businessModels = [
 ];
 
 const correctAnswers = {
-  "b2c": ["Local bakery shop", "Toy store", "Ice cream truck", "Domino's Pizza"],
-  "b2c-online": ["Lego online store", "Netflix", "Domino's Pizza"],
+  "b2c": ["Local bakery shop", "Toy store", "Ice cream truck", "Domino&apos;s Pizza"],
+  "b2c-online": ["Lego online store", "Netflix", "Domino&apos;s Pizza"],
   "aggregator": ["Amazon marketplace", "Food app like: Swiggy / Zomato", "Cap app like: Uber / Ola"],
   "b2b": ["Stationery factory", "Farmers selling to a grocery store", "Toy manufacturer selling to big stores"]
 };

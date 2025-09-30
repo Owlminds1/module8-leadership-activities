@@ -16,21 +16,21 @@ export default function Com() {
         return (
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-6">Max is not the only one selling burgers in town. There are other shops too!</h1>
-            <p className="text-lg mb-6">Let's check their prices:</p>
+            <p className="text-lg mb-6">Let&apos;s check their prices:</p>
             <div className="flex justify-center space-x-8">
               <div className="text-center">
                   <Image src={s1} alt="s1" width={300} height={300} />
-                <p className="font-semibold mt-2 text-lg">Sunny's Snack Shack</p>
+                <p className="font-semibold mt-2 text-lg">Sunny&apos;s Snack Shack</p>
                 <p className="text-green-600 font-bold">$8</p>
               </div>
               <div className="text-center">
                   <Image src={s2} alt="s2" width={300} height={300} />
-                <p className="font-semibold mt-2 text-lg">Penny's Patty Place</p>
+                <p className="font-semibold mt-2 text-lg">Penny&apos;s Patty Place</p>
                 <p className="text-green-600 font-bold">$4</p>
               </div>
               <div className="text-center">
                   <Image src={s3} alt="s3" width={300} height={300} />
-                <p className="font-semibold mt-2 text-lg">Bobby's Burger Barn</p>
+                <p className="font-semibold mt-2 text-lg">Bobby&apos;s Burger Barn</p>
                 <p className="text-green-600 font-bold">$7</p>
               </div>
             </div>
@@ -52,7 +52,7 @@ export default function Com() {
               <div className="flex justify-center mb-4">
                 <Image src={s2} alt="s2" width={300} height={300} />
               </div>
-              <p className="text-lg font-semibold text-green-800">Penny's Patty Place ($4): because it's the cheapest.</p>
+              <p className="text-lg font-semibold text-green-800">Penny&apos;s Patty Place ($4): because it&apos;s the cheapest.</p>
             </div>
           </div>
         );
@@ -72,7 +72,7 @@ export default function Com() {
               <div className="flex justify-center mb-4">
                 <Image src={s1} alt="s1" width={300} height={300} />
               </div>
-              <p className="text-lg font-semibold text-green-800">Sunny's Snack Shack ($8): makes the highest profit $3 per burger</p>
+              <p className="text-lg font-semibold text-green-800">Sunny&apos;s Snack Shack ($8): makes the highest profit $3 per burger</p>
             </div>
           </div>
         );

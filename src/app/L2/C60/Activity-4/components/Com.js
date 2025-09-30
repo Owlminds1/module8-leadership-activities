@@ -10,24 +10,24 @@ const contentData = {
       type: "intro",
       title: "",
       image: s1,
-      content: "Mia's lunchbox stall is getting popular at school. Students love her food! At first, everyone just bought a lunchbox when they wanted one and paid once. But Mia is thinking: \"Is there another way I could sell my lunchboxes so I don't have to worry every single day about who will buy?\""
+      content: "Mia&apos;s lunchbox stall is getting popular at school. Students love her food! At first, everyone just bought a lunchbox when they wanted one and paid once. But Mia is thinking: \"Is there another way I could sell my lunchboxes so I don&apos;t have to worry every single day about who will buy?\""
     },
     {
       id: 1,
       type: "question",
-      content: "Can you think of a solution for Mia's problem?"
+      content: "Can you think of a solution for Mia&apos;s problem?"
     },
     {
       id: 2,
       type: "answer",
-      question: "Can you think of a solution for Mia's problem?",
+      question: "Can you think of a solution for Mia&apos;s problem?",
       answer: "Mia can shift the way she sells lunchboxes from one-time payment to subscription model."
     },
     {
       id: 3,
       type: "concept",
       title: "One-Time Pay",
-      definition: "One-time pay means you pay only when you buy the product, and that's it.",
+      definition: "One-time pay means you pay only when you buy the product, and that&apos;s it.",
       examples: [
         "Buying a sandwich at the canteen.",
         "Buying a new backpack at the start of the school year."
@@ -57,17 +57,17 @@ const contentData = {
       id: 7,
       type: "solution",
       question: "How could Mia use the subscription idea for her lunchboxes?",
-      answer: "She can tell her classmates, \"You can either buy a lunchbox whenever you want for $5, OR, you can pay $20 at the start of the month, and I'll bring you one lunchbox every Friday.\""
+      answer: "She can tell her classmates, \"You can either buy a lunchbox whenever you want for $5, OR, you can pay $20 at the start of the month, and I&apos;ll bring you one lunchbox every Friday.\""
     },
     {
       id: 8,
       type: "comparison",
-      content: "One-time pay: Students pay $5 when they want. Subscription: Students pay $20 once, and get 4 lunchboxes across the month. Which one is better for Mia's business one-time pay or subscription?"
+      content: "One-time pay: Students pay $5 when they want. Subscription: Students pay $20 once, and get 4 lunchboxes across the month. Which one is better for Mia&apos;s business one-time pay or subscription?"
     },
     {
       id: 9,
       type: "conclusion",
-      question: "One-time pay: Students pay $5 when they want. Subscription: Students pay $20 once, and get 4 lunchboxes across the month. Which one is better for Mia's business one-time pay or subscription?",
+      question: "One-time pay: Students pay $5 when they want. Subscription: Students pay $20 once, and get 4 lunchboxes across the month. Which one is better for Mia&apos;s business one-time pay or subscription?",
       answer: "Subscription is better. As Mia gets money upfront and regularly, which helps her plan how many lunchboxes and ingredients to prepare. She reduces the risk of having unsold lunchboxes. Even if she offers a small discount, she earns steady income."
     }
   ]

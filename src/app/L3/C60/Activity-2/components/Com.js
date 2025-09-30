@@ -43,7 +43,7 @@ const contentData = {
       additionalContent: {
         title: "",
         items: [
-          "The price goes up because many people want the same item, but there aren't enough for everyone. To decide who gets it, sellers charge more since people are willing to pay extra.",
+          "The price goes up because many people want the same item, but there aren&apos;t enough for everyone. To decide who gets it, sellers charge more since people are willing to pay extra.",
           "Example: When a new PlayStation or iPhone launches, supply is limited but demand is huge. The price often goes higher than the original tag because everyone wants it."
         ]
       }
@@ -61,19 +61,19 @@ const contentData = {
         title: "",
         items: [
           "The app increases the price because many people are ordering at the same time, but fewer drivers are available. This is called surge pricing.",
-          "Example: Cab prices jump up when it's raining, late at night, or during traffic peaks. Food delivery fees go up during heavy rain or festivals."
+          "Example: Cab prices jump up when it&apos;s raining, late at night, or during traffic peaks. Food delivery fees go up during heavy rain or festivals."
         ]
       }
     },
     {
       id: 8,
       type: "question",
-      content: "Case 3: What if a shop has too much stock of something, but people don't really want it?"
+      content: "Case 3: What if a shop has too much stock of something, but people don&apos;t really want it?"
     },
     {
       id: 9,
       type: "progressive",
-      content: "Case 3: What if a shop has too much stock of something, but people don't really want it?",
+      content: "Case 3: What if a shop has too much stock of something, but people don&apos;t really want it?",
       additionalContent: {
         title: "",
         items: ["The price goes down because shops have too much stock and not enough buyers. To avoid waste and clear space, they lower prices so more people will buy."]
@@ -104,7 +104,7 @@ const contentData = {
       content: "If he has made 200 mugs but very few buyers show up",
       additionalContent: {
         title: "",
-        items: ["The price can drop because he has too many mugs and doesn't want them to go unsold, so lowering the price attracts more buyers."]
+        items: ["The price can drop because he has too many mugs and doesn&apos;t want them to go unsold, so lowering the price attracts more buyers."]
       }
     }
   ]

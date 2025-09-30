@@ -83,7 +83,7 @@ export default function Com() {
         <div className="bg-white shadow-2xl rounded-3xl p-8">
           <div className="flex items-center justify-center gap-6 mb-8">
             <h1 className="text-4xl font-bold text-blue-800 text-center">
-              Business Detective!
+            Business Model Journal
             </h1>
           </div>
 
@@ -163,9 +163,8 @@ export default function Com() {
           </div>
 
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Business Analysis Table</h2>
             <p className="text-lg text-gray-700 mb-6">
-              Complete the following table with your findings:
+              Sample:
             </p>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
