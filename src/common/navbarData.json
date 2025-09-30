@@ -83,6 +83,30 @@
             }
         },
         "C61": {
+            "Activity 1": {
+                "link": "/L2/C61/Activity-1",
+                "name": "Sweet Shop Adventure"
+            },
+            "Activity 2a": {
+                "link": "/L2/C61/Activity-2a",
+                "name": "Business Model Sorting I"
+            },
+            "Activity 2b": {
+                "link": "/L2/C61/Activity-2b",
+                "name": "Business Model Sorting II"
+            },
+            "Activity 3a": {
+                "link": "/L2/C61/Activity-3a",
+                "name": "Sweet Shop Case Study I"
+            },
+            "Activity 3b": {
+                "link": "/L2/C61/Activity-3b",
+                "name": "Sweet Shop Case Study II"
+            },
+            "Activity 4": {
+                "link": "/L2/C61/Activity-4",
+                "name": "Choosing the Right Business Model"
+            },
             "Additional-Activity": {
                 "link": "/L2/C61/Additional-Activity",
                 "name": "Business Model Bingo"
