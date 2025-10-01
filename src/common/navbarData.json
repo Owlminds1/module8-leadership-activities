@@ -37,6 +37,40 @@
                 "link": "/L1/C60/Additional-Activity",
                 "name": "Mini Business"
             }
+        },
+        "C61": {
+            "Warm Up": {
+                "link": "/L1/C61/Warm-Up",
+                "name": "Which Costs More?"
+            },
+            "Activity 1a": {
+                "link": "/L1/C61/Activity-1a",
+                "name": "Fruit Shop Finder I"
+            },
+            "Activity 1b": {
+                "link": "/L1/C61/Activity-1b",
+                "name": "Fruit Shop Finder II"
+            },
+            "Activity 2": {
+                "link": "/L1/C61/Activity-2",
+                "name": "Profit or Loss Quiz"
+            },
+            "Activity 3": {
+                "link": "/L1/C61/Activity-3",
+                "name": "Ice Cream Shop"
+            },
+            "Activity 4": {
+                "link": "/L1/C61/Activity-4",
+                "name": "The Customer Detective"
+            },
+            "Additional Activity": {
+                "link": "/L1/C61/Additional-Activity",
+                "name": "Smart Seller"
+            },
+            "Post Class Activity": {
+                "link": "/L1/C61/PCA",
+                "name": "Price Detective"
+            }
         }
     },
     "L2": {
