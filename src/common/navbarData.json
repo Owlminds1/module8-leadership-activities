@@ -71,6 +71,32 @@
                 "link": "/L1/C61/PCA",
                 "name": "Price Detective"
             }
+        },
+        "C63":{
+            "Warm Up Activity": {
+                "link": "/L1/C63/Warm-up-activity",
+                "name": "Mystery Bag of Ideas"
+            },
+            "Activity 1c": {
+                "link": "/L1/C63/Activity-1c",
+                "name": "Miko Benefits"
+            },
+            "Activity 2a": {
+                "link": "/L1/C63/Activity-2a",
+                "name": "Mini Business Plan"
+            },
+            "Activity 3a": {
+                "link": "/L1/C63/Activity-3a",
+                "name": "Growth Forecast"
+            },
+            "Activity 4": {
+                "link": "/L1/C63/Activity-4",
+                "name": "Elevator Pitch"
+            },
+            "Activity 5a": {
+                "link": "/L1/C63/Activity-5a",
+                "name": "Present Elevator Pitch"
+            }
         }
     },
     "L2": {
