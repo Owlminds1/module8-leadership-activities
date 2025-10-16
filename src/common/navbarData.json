@@ -72,6 +72,32 @@
                 "name": "Price Detective"
             }
         },
+        "C62":{
+            "Activity 1": {
+                "link": "/L1/C62/Activity-1",
+                "name": "The Peanut Butter Sandwich Business"
+            },
+            "Activity 2": {
+                "link": "/L1/C62/Activity-2",
+                "name": "Money Math"
+            },
+            "Activity 3": {
+                "link": "/L1/C62/Activity-3",
+                "name": "Sandwich Crunch Chaos!"
+            },
+            "Activity 4": {
+                "link": "/L1/C62/Activity-4",
+                "name": "Sandwich Competition!"
+            },
+            "Additional Activity": {
+                "link": "/L1/C62/Additional-Activity",
+                "name": "Pick & Sell!"
+            },
+            "Post Class Activity": {
+                "link": "/L1/C62/PCA",
+                "name": "My Mini Business Idea!"
+            }
+        },
         "C63":{
             "Warm Up Activity": {
                 "link": "/L1/C63/Warm-up-activity",
@@ -176,6 +202,40 @@
                 "name": "Business Model Journal"
             }
         },
+        "C62":{
+            "Activity 1": {
+                "link": "/L2/C62/Activity-1",
+                "name": "The Craft Business Adventure"
+            },
+            "Activity 2a": {
+                "link": "/L2/C62/Activity-2a",
+                "name": "Business Math I"
+            },
+            "Activity 2b": {
+                "link": "/L2/C62/Activity-2b",
+                "name": "Business Math II"
+            },
+            "Activity 2c": {
+                "link": "/L2/C62/Activity-2c",
+                "name": "Business Math III"
+            },
+            "Activity 3": {
+                "link": "/L2/C62/Activity-3",
+                "name": "Business Results Reflection"
+            },
+            "Activity 4": {
+                "link": "/L2/C62/Activity-4",
+                "name": "Handling High Demand"
+            },
+            "Activity 5": {
+                "link": "/L2/C62/Activity-5",
+                "name": "Scale Up"
+            },
+            "Additional Activity": {
+                "link": "/L2/C62/Additional-Activity",
+                "name": "Pick & Sell!"
+            }
+        },
         "C63":{
             "Activity 1": {
                 "link": "/L2/C63/Activity-1",
@@ -278,6 +338,56 @@
             "Post Class Activity": {
                 "link": "/L3/C61/PCA",
                 "name": "Business Model Journal"
+            }
+        },
+        "C62":{
+            "Warm Up": {
+                "link": "/L3/C62/Warm-Up",
+                "name": "Where Should I Sell It?"
+            },
+            "Activity 1a": {
+                "link": "/L3/C62/Activity-1a",
+                "name": "Market Size Calculator I"
+            },
+            "Activity 1b": {
+                "link": "/L3/C62/Activity-1b",
+                "name": "Market Size Calculator II"
+            },
+            "Activity 2a": {
+                "link": "/L3/C62/Activity-2a",
+                "name": "The Comeback of Netflix I"
+            },
+            "Activity 2b": {
+                "link": "/L3/C62/Activity-2b",
+                "name": "The Comeback of Netflix Notes"
+            },
+            "Activity 3a": {
+                "link": "/L3/C62/Activity-3a",
+                "name": "Festival Stall Planning I"
+            },
+            "Activity 3b": {
+                "link": "/L3/C62/Activity-3b",
+                "name": "Festival Stall Planning II"
+            },
+            "Activity 4a": {
+                "link": "/L3/C62/Activity-4a",
+                "name": "CRM Explorer I"
+            },
+            "Activity 4b": {
+                "link": "/L3/C62/Activity-4b",
+                "name": "CRM Explorer II"
+            },
+            "Activity 4c": {
+                "link": "/L3/C62/Activity-4c",
+                "name": "Mini CRM Tool"
+            },
+            "Additional Activity": {
+                "link": "/L3/C62/Additional-Activity",
+                "name": "Customer Persona Creation"
+            },
+            "Post Class Activity": {
+                "link": "/L3/C62/PCA",
+                "name": "Case Study Search"
             }
         },
         "C63":{

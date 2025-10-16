@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini CRM Explorer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    .dashboard {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 12px 18px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      background: #3498db;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #2980b9;
+      transform: translateY(-2px);
+    }
+    .crm-container {
+      display: flex;
+      gap: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+    }
+    th {
+      background: #34495e;
+      color: #fff;
+    }
+    tr:hover {
+      background: #f9f9f9;
+    }
+    .date-filter {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      flex-wrap: nowrap;
+    }
+    .filter-controls {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .filter-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .date-filter label {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    .date-input {
+      padding: 8px 12px;
+      border: 2px solid #bdc3c7;
+      border-radius: 6px;
+      font-size: 14px;
+      background: white;
+      transition: border-color 0.3s;
+    }
+    .date-input:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+    .rating-select {
+      padding: 8px 12px;
+      border: 2px solid #bdc3c7;
+      border-radius: 6px;
+      font-size: 14px;
+      background: white;
+      transition: border-color 0.3s;
+      min-width: 120px;
+    }
+    .rating-select:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mini CRM Explorer</h1>
+
+  <div class="dashboard">
+    <div class="date-filter">
+      <div class="filter-controls">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" class="date-input">
+        
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" class="date-input">
+        
+        <label for="ratingFilter">Rating Filter:</label>
+        <select id="ratingFilter" class="rating-select">
+          <option value="">All Ratings</option>
+          <option value="1">1 Star</option>
+          <option value="2">2 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="5">5 Stars</option>
+        </select>
+      </div>
+      
+      <div class="filter-buttons">
+        <button class="btn" onclick="filterByDateRange()">Apply Filters</button>
+        <button class="btn" onclick="clearDateFilter()">Clear Filters</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="crm-container">
+    <!-- Customer Table -->
+    <table id="crmTable">
+      <thead>
+        <tr>
+          <th>Products</th>
+          <th>Order Date</th>
+          <th>Total Orders</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+  </div>
+
+  <script>
+    const customers = [
+      { name: "Alice", order: "Graphic T-shirt", orderDate: "2025-09-20", totalOrders: 12, rating: 4 },
+      { name: "Bob", order: "Hoodie", orderDate: "2025-09-19", totalOrders: 3, rating: 5 },
+      { name: "Charlie", order: "Denim Jacket", orderDate: "2025-09-15", totalOrders: 15, rating: 2 },
+      { name: "Daisy", order: "Party Frock", orderDate: "2025-09-18", totalOrders: 8, rating: 5 },
+      { name: "Ethan", order: "Shorts with Pockets", orderDate: "2025-09-22", totalOrders: 11, rating: 4 },
+      { name: "Fiona", order: "Cap", orderDate: "2025-09-10", totalOrders: 2, rating: 3 },
+      { name: "George", order: "Character Backpack", orderDate: "2025-09-21", totalOrders: 10, rating: 4 },
+      { name: "Hannah", order: "Joggers", orderDate: "2025-09-17", totalOrders: 6, rating: 5 },
+      { name: "Ian", order: "Track Pants", orderDate: "2025-09-16", totalOrders: 1, rating: 2 },
+      { name: "Jade", order: "Polo T-shirt", orderDate: "2025-09-22", totalOrders: 14, rating: 5 },
+      { name: "Kevin", order: "Sweatshirt", orderDate: "2025-09-20", totalOrders: 9, rating: 4 },
+      { name: "Lily", order: "Sling Bag", orderDate: "2025-09-13", totalOrders: 12, rating: 3 }
+    ];
+
+    function renderTable(data) {
+      const tbody = document.querySelector("#crmTable tbody");
+      tbody.innerHTML = "";
+      data.forEach(c => {
+        let row = `<tr>
+          <td>${c.order}</td>
+          <td>${c.orderDate}</td>
+          <td>${c.totalOrders}</td>
+          <td>${c.rating}</td>
+        </tr>`;
+        tbody.innerHTML += row;
+      });
+    }
+
+    function resetTable() {
+      renderTable(customers);
+    }
+
+    function applyFilters() {
+      const startDate = document.getElementById("startDate").value;
+      const endDate = document.getElementById("endDate").value;
+      const ratingFilter = document.getElementById("ratingFilter").value;
+      
+      let filtered = customers;
+      
+      // Apply date filter if both dates are selected
+      if (startDate && endDate) {
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+        
+        if (start > end) {
+          alert("Start date must be before end date");
+          return;
+        }
+        
+        filtered = filtered.filter(c => {
+          const orderDate = new Date(c.orderDate);
+          const orderDateOnly = new Date(orderDate.getFullYear(), orderDate.getMonth(), orderDate.getDate());
+          const startDateOnly = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+          const endDateOnly = new Date(end.getFullYear(), end.getMonth(), end.getDate());
+          
+          return orderDateOnly >= startDateOnly && orderDateOnly <= endDateOnly;
+        });
+      }
+      
+      // Apply rating filter if selected
+      if (ratingFilter) {
+        filtered = filtered.filter(c => c.rating == ratingFilter);
+      }
+      
+      console.log("Applied filters - Date:", startDate, "to", endDate, "Rating:", ratingFilter);
+      console.log("Filtered results:", filtered);
+      renderTable(filtered);
+    }
+
+    function filterByDateRange() {
+      const startDate = document.getElementById("startDate").value;
+      const endDate = document.getElementById("endDate").value;
+      
+      if (!startDate || !endDate) {
+        alert("Please select both start and end dates");
+        return;
+      }
+      
+      applyFilters();
+    }
+
+    function clearDateFilter() {
+      document.getElementById("startDate").value = "";
+      document.getElementById("endDate").value = "";
+      document.getElementById("ratingFilter").value = "";
+      resetTable();
+    }
+
+
+
+    // Initial load
+    resetTable();
+  </script>
+</body>
+</html>

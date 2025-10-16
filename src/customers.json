@@ -1,0 +1,14 @@
+[
+  { "name": "Alice", "order": "Graphic T-shirt", "orderDate": "2025-09-20", "totalOrders": 12, "rating": 4 },
+  { "name": "Bob", "order": "Hoodie", "orderDate": "2025-09-19", "totalOrders": 3, "rating": 5 },
+  { "name": "Charlie", "order": "Denim Jacket", "orderDate": "2025-09-15", "totalOrders": 15, "rating": 2 },
+  { "name": "Daisy", "order": "Party Frock", "orderDate": "2025-09-18", "totalOrders": 8, "rating": 5 },
+  { "name": "Ethan", "order": "Shorts with Pockets", "orderDate": "2025-09-22", "totalOrders": 11, "rating": 4 },
+  { "name": "Fiona", "order": "Cap", "orderDate": "2025-09-10", "totalOrders": 2, "rating": 3 },
+  { "name": "George", "order": "Character Backpack", "orderDate": "2025-09-21", "totalOrders": 10, "rating": 4 },
+  { "name": "Hannah", "order": "Joggers", "orderDate": "2025-09-17", "totalOrders": 6, "rating": 5 },
+  { "name": "Ian", "order": "Track Pants", "orderDate": "2025-09-16", "totalOrders": 1, "rating": 2 },
+  { "name": "Jade", "order": "Polo T-shirt", "orderDate": "2025-09-22", "totalOrders": 14, "rating": 5 },
+  { "name": "Kevin", "order": "Sweatshirt", "orderDate": "2025-09-20", "totalOrders": 9, "rating": 4 },
+  { "name": "Lily", "order": "Sling Bag", "orderDate": "2025-09-13", "totalOrders": 12, "rating": 3 }
+]
