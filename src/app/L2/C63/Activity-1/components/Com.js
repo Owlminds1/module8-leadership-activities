@@ -147,7 +147,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <p className="text-2xl text-gray-700 leading-relaxed">
-              By the end of the day, Nina is thrilled! She didn't just sell slime. She also made new friends, found customers, learned smart selling tips, and discovered new chances to grow her little business.
+              By the end of the day, Nina is thrilled! She didn&apos;t just sell slime. She also made new friends, found customers, learned smart selling tips, and discovered new chances to grow her little business.
             </p>
           </div>
         );
@@ -156,7 +156,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-blue-800 mb-8">
-              Who became Nina's first customer at the Magic Market?
+              Who became Nina&apos;s first customer at the Magic Market?
             </h2>
           </div>
         );
@@ -165,7 +165,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-blue-800 mb-8">
-              Who became Nina's first customer at the Magic Market?
+              Who became Nina&apos;s first customer at the Magic Market?
             </h2>
             <div className="bg-green-100 p-8 rounded-2xl shadow-lg">
               <p className="text-2xl text-green-800 font-semibold">

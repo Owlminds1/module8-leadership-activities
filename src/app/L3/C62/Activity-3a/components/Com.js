@@ -30,7 +30,7 @@ const Com = () => {
                   <div className="space-y-2 text-gray-700">
                     <p>1. If Maya makes too few T-shirts, she might lose customers.</p>
                     <p>2. If she makes too many T-shirts, she might make a loss and lose money.</p>
-                    <p>3. She doesn't want to guess; she wants to use data and business logic again!</p>
+                    <p>3. She doesn&apos;t want to guess; she wants to use data and business logic again!</p>
                   </div>
                 </div>
                 
@@ -268,7 +268,7 @@ const Com = () => {
                 
                 <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded">
                   <p className="text-lg text-gray-700">
-                    No, that might be risky. If she doesn't sell everything, she might lose her money. She should start small and safe, maybe by making half of the maximum demand to reduce losses. So, we can say that Maya should make 110 T-shirts to be safe.
+                    No, that might be risky. If she doesn&apos;t sell everything, she might lose her money. She should start small and safe, maybe by making half of the maximum demand to reduce losses. So, we can say that Maya should make 110 T-shirts to be safe.
                   </p>
                 </div>
                 

@@ -15,7 +15,7 @@ export default function Com() {
               Benefits & Use Cases
             </h1>
             <p className="text-xl text-gray-700 mb-12 leading-relaxed">
-              So, Miko is not just for fun, it helps kids learn too! Let's see how.
+              So, Miko is not just for fun, it helps kids learn too! Let&apos;s see how.
             </p>
             
             <div className="space-y-6 text-left">

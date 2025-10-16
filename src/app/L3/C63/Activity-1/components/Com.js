@@ -147,7 +147,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <p className="text-2xl text-gray-700 leading-relaxed">
-              By the end of the day, Aarav is thrilled! He didn't just sell his cars, he:
+              By the end of the day, Aarav is thrilled! He didn&apos;t just sell his cars, he:
             </p>
             <div className="mt-8 bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-2xl shadow-lg text-left">
               <ul className="space-y-4 text-lg text-gray-700">
@@ -164,7 +164,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-blue-800 mb-8">
-              Who became Aarav's first customer at the Creative Market?
+              Who became Aarav&apos;s first customer at the Creative Market?
             </h2>
           </div>
         );
@@ -173,7 +173,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-blue-800 mb-8">
-              Who became Aarav's first customer at the Creative Market?
+              Who became Aarav&apos;s first customer at the Creative Market?
             </h2>
             <div className="bg-green-100 p-8 rounded-2xl shadow-lg">
               <p className="text-2xl text-green-800 font-semibold">
@@ -295,7 +295,7 @@ export default function Com() {
               <ul className="space-y-4 text-lg text-gray-700">
                 <li>• We can find customers who want what we offer.</li>
                 <li>• We can get advice from people who know more.</li>
-                <li>• We can discover new opportunities we didn't know before, like partnerships, collaborations, or communities.</li>
+                <li>• We can discover new opportunities we didn&apos;t know before, like partnerships, collaborations, or communities.</li>
               </ul>
               <div className="mt-6">
                 <h4 className="text-xl font-bold text-purple-800 mb-4">Examples:</h4>

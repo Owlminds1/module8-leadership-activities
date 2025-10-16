@@ -63,7 +63,7 @@ export default function Com() {
             </p>
             <div className="bg-orange-100 p-6 rounded-lg">
               <p className="text-lg text-orange-800 font-semibold mb-2">
-                Example: "Buy 3 cupcakes on Monday, get 1 free."
+                Example: &quot;Buy 3 cupcakes on Monday, get 1 free.&quot;
               </p>
               <p className="text-lg text-orange-800">
                 This increases total sales and overall profit.

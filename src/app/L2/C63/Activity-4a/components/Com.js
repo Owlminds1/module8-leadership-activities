@@ -86,7 +86,7 @@ export default function Com() {
                 <div className="flex items-center space-x-6">
                   <div className="text-left">
                     <h3 className="text-2xl font-bold text-red-800 mb-2">Catchy Line / Slogan</h3>
-                    <p className="text-xl text-gray-700">(a fun phrase that makes people remember you, like "Baking Happiness!")</p>
+                    <p className="text-xl text-gray-700">(a fun phrase that makes people remember you, like &quot;Baking Happiness!&quot;)</p>
                   </div>
                 </div>
               </div>

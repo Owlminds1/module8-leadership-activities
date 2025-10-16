@@ -25,7 +25,7 @@ export default function Com() {
             </h1>
             <div className="bg-green-100 p-8 rounded-2xl shadow-lg">
               <p className="text-2xl text-green-800 font-semibold leading-relaxed">
-                Because it helps us see if our idea is something lots of people will enjoy! If many people want to use it, we'll know our feature is exciting and worth growing.
+                Because it helps us see if our idea is something lots of people will enjoy! If many people want to use it, we&apos;ll know our feature is exciting and worth growing.
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-5xl mx-auto">
             <h1 className="text-4xl font-bold text-indigo-800 mb-12">
-              Now let's explore how we can make a growth forecast:
+              Now let&apos;s explore how we can make a growth forecast:
             </h1>
             
             <div className="space-y-8">
@@ -89,7 +89,7 @@ export default function Com() {
                 <span className="bg-purple-600 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center text-2xl flex-shrink-0">4</span>
                 <div className="text-left">
                   <h3 className="text-2xl font-bold text-purple-800 mb-2">Draw a bar graph:</h3>
-                  <p className="text-xl text-gray-700">Use fun colors to make bars for each month's users and profit!</p>
+                  <p className="text-xl text-gray-700">Use fun colors to make bars for each month&apos;s users and profit!</p>
                 </div>
               </div>
             </div>

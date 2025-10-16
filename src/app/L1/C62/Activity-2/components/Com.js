@@ -162,7 +162,7 @@ const renderStep = (stepData) => {
         <div className="text-center">
           <div className="text-xl leading-relaxed space-y-4">
             <p>Rohan also needs money to advertise so he can make posters to tell people about his sandwiches.</p>
-            <p>Let's say the total cost for making 100 posters is <span className="font-bold text-green-600">$50</span></p>
+            <p>Let&apos;s say the total cost for making 100 posters is <span className="font-bold text-green-600">$50</span></p>
             <p>So this money will be added to the total amount i.e. <span className="font-bold text-blue-600">$126 + $50 = $176</span></p>
           </div>
         </div>

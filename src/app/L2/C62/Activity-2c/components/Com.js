@@ -13,7 +13,7 @@ export default function Com() {
           <div className="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-400">
             <ol className="list-decimal list-inside space-y-4">
               <li className="text-xl leading-relaxed">
-                Let's say the total cost for making 100 posters is <span className="font-bold text-green-600">$30</span>
+                Let&apos;s say the total cost for making 100 posters is <span className="font-bold text-green-600">$30</span>
               </li>
               <li className="text-xl leading-relaxed">
                 So this money will be added to the total amount i.e. <span className="font-bold text-blue-600">$120 + $30 = $150</span>

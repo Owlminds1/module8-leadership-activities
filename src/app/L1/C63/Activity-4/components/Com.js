@@ -27,7 +27,7 @@ export default function Com() {
             </h1>
             <div className="bg-green-100 p-8 rounded-2xl shadow-lg">
               <p className="text-2xl text-green-800 font-semibold leading-relaxed">
-                An elevator pitch is a quick and exciting way to share your idea, in the same amount of time it takes to ride an elevator, about 30 seconds! It's like giving someone a tiny story about your idea that makes them want to know more.
+                An elevator pitch is a quick and exciting way to share your idea, in the same amount of time it takes to ride an elevator, about 30 seconds! It&apos;s like giving someone a tiny story about your idea that makes them want to know more.
               </p>
             </div>
           </div>
@@ -37,14 +37,14 @@ export default function Com() {
         return (
           <div className="text-center max-w-5xl mx-auto">
             <h1 className="text-4xl font-bold text-purple-800 mb-12">
-              Imagine you're in an elevator with the person who created Miko!
+              Imagine you&apos;re in an elevator with the person who created Miko!
             </h1>
             
             <div className="bg-gradient-to-r from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-lg mb-8">
               <p className="text-2xl text-gray-700 mb-6">You smile and say,</p>
               <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
                 <p className="text-xl text-gray-800 italic leading-relaxed">
-                  "Hi! I've made a new Miko feature that helps kids learn dance moves with music and fun lights. It makes learning active and joyful!"
+                  &quot;Hi! I&apos;ve made a new Miko feature that helps kids learn dance moves with music and fun lights. It makes learning active and joyful!&quot;
                 </p>
               </div>
             </div>
@@ -53,7 +53,7 @@ export default function Com() {
               <p className="text-2xl text-gray-700 mb-6">By the time the elevator doors open, the creator of Miko is impressed and says,</p>
               <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-500">
                 <p className="text-xl text-gray-800 italic leading-relaxed">
-                  "Wow, that sounds amazing! Tell me more about it!"
+                  &quot;Wow, that sounds amazing! Tell me more about it!&quot;
                 </p>
               </div>
             </div>

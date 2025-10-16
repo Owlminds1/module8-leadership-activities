@@ -84,9 +84,9 @@ export default function Com() {
             </>
           ) : (
             <div className="space-y-6 text-2xl text-gray-700 leading-relaxed">
-              <p>Networking doesn't just happen in one spot. It's everywhere, you just have to explore it.</p>
-              <p>So let's become Networking Explorers.</p>
-              <p>We'll explore different places where we can meet new people and learn or sell our things.</p>
+              <p>Networking doesn&apos;t just happen in one spot. It&apos;s everywhere, you just have to explore it.</p>
+              <p>So let&apos;s become Networking Explorers.</p>
+              <p>We&apos;ll explore different places where we can meet new people and learn or sell our things.</p>
             </div>
           )}
         </div>

@@ -89,7 +89,7 @@ export default function Com() {
              Quiz Complete!
           </h1>
           <p className="text-2xl text-gray-700 mb-8">
-            Great job! You've finished all the networking questions.
+            Great job! You&apos;ve finished all the networking questions.
           </p>
         </div>
       );

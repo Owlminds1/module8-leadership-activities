@@ -26,7 +26,7 @@ export default function Com() {
           <div className="text-center max-w-4xl mx-auto">
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <h1 className="text-3xl font-bold text-blue-800 mb-8">
-                Here's the secret of how businesses grow:
+                Here&apos;s the secret of how businesses grow:
               </h1>
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl shadow-lg">
                 <p className="text-xl font-semibold text-gray-800">
@@ -47,7 +47,7 @@ export default function Com() {
           <div className="text-center max-w-4xl mx-auto">
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <h1 className="text-3xl font-bold text-blue-800 mb-8">
-                Here's the secret of how businesses grow:
+                Here&apos;s the secret of how businesses grow:
               </h1>
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl shadow-lg">
                 <p className="text-xl font-semibold text-gray-800">
@@ -60,12 +60,12 @@ export default function Com() {
                 </h2>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-2xl shadow-lg">
                   <p className="text-xl text-gray-800 mb-6">
-                    They're the basic building blocks to make something.
+                    They&apos;re the basic building blocks to make something.
                   </p>
                   <div className="text-left">
                     <h3 className="text-lg font-bold text-green-800 mb-4">Example:</h3>
                     <p className="text-gray-700 leading-relaxed">
-                      One business sells flour, sugar, and eggs, these become the raw materials for another business that makes cupcakes. And those cupcakes aren't just tasty treats, they become an important input for a party planner's event
+                      One business sells flour, sugar, and eggs, these become the raw materials for another business that makes cupcakes. And those cupcakes aren&apos;t just tasty treats, they become an important input for a party planner&apos;s event
                     </p>
                   </div>
                 </div>
@@ -79,7 +79,7 @@ export default function Com() {
           <div className="text-center max-w-4xl mx-auto">
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <h1 className="text-3xl font-bold text-blue-800 mb-8">
-                Here's the secret of how businesses grow:
+                Here&apos;s the secret of how businesses grow:
               </h1>
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl shadow-lg">
                 <p className="text-xl font-semibold text-gray-800">
@@ -92,12 +92,12 @@ export default function Com() {
                 </h2>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-2xl shadow-lg">
                   <p className="text-xl text-gray-800 mb-6">
-                    They're the basic building blocks to make something.
+                    They&apos;re the basic building blocks to make something.
                   </p>
                   <div className="text-left">
                     <h3 className="text-lg font-bold text-green-800 mb-4">Example:</h3>
                     <p className="text-gray-700 leading-relaxed">
-                      One business sells flour, sugar, and eggs, these become the raw materials for another business that makes cupcakes. And those cupcakes aren't just tasty treats, they become an important input for a party planner's event
+                      One business sells flour, sugar, and eggs, these become the raw materials for another business that makes cupcakes. And those cupcakes aren&apos;t just tasty treats, they become an important input for a party planner&apos;s event
                     </p>
                   </div>
                 </div>

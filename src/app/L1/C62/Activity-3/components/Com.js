@@ -141,7 +141,7 @@ const renderStep = (stepData) => {
             <p className="mb-4 font-semibold text-blue-600">Rohan wondered:</p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>Why did this happen?</li>
-              <li>How can I make sure it doesn't happen again?</li>
+              <li>How can I make sure it doesn&apos;t happen again?</li>
             </ul>
           </div>
           <div className="flex justify-start mb-6">

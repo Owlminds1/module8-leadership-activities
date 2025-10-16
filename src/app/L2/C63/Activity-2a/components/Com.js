@@ -12,7 +12,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-5xl mx-auto">
             <h1 className="text-4xl font-bold text-indigo-800 mb-12">
-              Let's explore some important aspects of networking!
+              Let&apos;s explore some important aspects of networking!
             </h1>
             
             <div className="space-y-8">
@@ -37,8 +37,8 @@ export default function Com() {
         return (
           <div className="text-center max-w-5xl mx-auto">
             <div className="space-y-6 text-2xl text-gray-700 leading-relaxed">
-              <p>And here's the exciting part: when helpers and businesses connect, something magical happens, businesses start sharing things between each other.</p>
-              <p>One business's product becomes the raw material, support, or boost for another business. That's how both grow together!</p>
+              <p>And here&apos;s the exciting part: when helpers and businesses connect, something magical happens, businesses start sharing things between each other.</p>
+              <p>One business&apos;s product becomes the raw material, support, or boost for another business. That&apos;s how both grow together!</p>
             </div>
             
           </div>
@@ -62,7 +62,7 @@ export default function Com() {
             
             <div className="bg-gradient-to-r from-yellow-50 to-orange-100 p-8 rounded-2xl shadow-lg text-left">
               <p className="text-2xl text-gray-800 mb-8 leading-relaxed">
-                Raw material is the basic thing you need to make something. It's like the starting ingredient.
+                Raw material is the basic thing you need to make something. It&apos;s like the starting ingredient.
               </p>
               
               <h3 className="text-2xl font-bold text-orange-800 mb-6">Examples:</h3>

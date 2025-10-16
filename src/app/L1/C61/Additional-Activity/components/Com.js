@@ -101,7 +101,7 @@ export default function Com() {
 
             <div className={`p-6 rounded-lg max-w-2xl mx-auto ${isAnswerCorrect(selectedAnswer) ? 'bg-green-100' : 'bg-red-100'}`}>
               <p className={`text-lg mb-2 ${isAnswerCorrect(selectedAnswer) ? 'text-green-800' : 'text-red-800'}`}>
-                It's a {currentScenario.correctAnswer}
+                It&apos;s a {currentScenario.correctAnswer}
               </p>
               <p className={`text-lg ${isAnswerCorrect(selectedAnswer) ? 'text-green-800' : 'text-red-800'}`}>
                 {currentScenario.explanation}

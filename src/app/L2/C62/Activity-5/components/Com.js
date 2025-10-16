@@ -102,7 +102,7 @@ export default function Com() {
         {rightActions.length === 7 && (
           <div className="mt-6 p-6 bg-green-100 rounded-xl border-2 border-green-300 text-center">
             <h3 className="text-2xl font-bold text-green-800 mb-2">Congratulations!</h3>
-            <p className="text-xl text-green-700">You've identified all the right things to scale the business!</p>
+            <p className="text-xl text-green-700">You&apos;ve identified all the right things to scale the business!</p>
           </div>
         )}
       </div>

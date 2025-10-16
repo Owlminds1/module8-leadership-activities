@@ -118,7 +118,7 @@ export default function Com() {
                 className="w-full p-4 border-2 border-green-300 rounded-xl text-lg focus:border-green-500 focus:outline-none"
                 placeholder="Your answer here..."
               />
-              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: "Hello, my name is ______. I've created a new Miko feature called ______."</p>
+              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;Hello, my name is ______. I&apos;ve created a new Miko feature called ______.&quot;</p>
 
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function Com() {
                   className="w-full p-4 border-2 border-orange-300 rounded-xl text-lg focus:border-orange-500 focus:outline-none"
                   placeholder="Your answer here..."
                 />
-                <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: "It's a feature that helps kids learn bedtime stories in fun voices."</p>
+                <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;It&apos;s a feature that helps kids learn bedtime stories in fun voices.&quot;</p>
               </div>
 
               <div>
@@ -147,7 +147,7 @@ export default function Com() {
                   className="w-full p-4 border-2 border-orange-300 rounded-xl text-lg focus:border-orange-500 focus:outline-none"
                   placeholder="Your answer here..."
                 />
-                <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: "It's special because Miko can tell funny stories and make kids laugh before bed."</p>
+                <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;It&apos;s special because Miko can tell funny stories and make kids laugh before bed.&quot;</p>
 
               </div>
 
@@ -160,7 +160,7 @@ export default function Com() {
                   className="w-full p-4 border-2 border-orange-300 rounded-xl text-lg focus:border-orange-500 focus:outline-none"
                   placeholder="Your answer here..."
                 />
-                <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: "I'd love for kids everywhere to try it and share their favorite stories with Miko!"</p>
+                <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;I&apos;d love for kids everywhere to try it and share their favorite stories with Miko!&quot;</p>
 
               </div>
             </div>
@@ -176,7 +176,7 @@ export default function Com() {
                 className="w-full p-4 border-2 border-yellow-300 rounded-xl text-lg focus:border-yellow-500 focus:outline-none"
                 placeholder="Your answer here..."
               />
-              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: "It makes learning fun and helps kids relax!"</p>
+              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;It makes learning fun and helps kids relax!&quot;</p>
 
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function Com() {
                 className="w-full p-4 border-2 border-blue-300 rounded-xl text-lg focus:border-blue-500 focus:outline-none"
                 placeholder="Your answer here..."
               />
-              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: "I'll smile and look straight at my audience."</p>
+              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;I&apos;ll smile and look straight at my audience.&quot;</p>
 
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function Com() {
                 className="w-full p-4 border-2 border-purple-300 rounded-xl text-lg focus:border-purple-500 focus:outline-none"
                 placeholder="Your answer here..."
               />
-              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: "I'll pretend I'm telling my idea to a friend."</p>
+              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;I&apos;ll pretend I&apos;m telling my idea to a friend.&quot;</p>
 
             </div>
           </div>
@@ -222,7 +222,7 @@ export default function Com() {
                 className="w-full p-4 border-2 border-red-300 rounded-xl text-lg focus:border-red-500 focus:outline-none"
                 placeholder="Your answer here..."
               />
-              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: "Thank you for listening! Would you like to hear one of Miko's stories?"</p>
+              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;Thank you for listening! Would you like to hear one of Miko&apos;s stories?&quot;</p>
 
             </div>
           </div>

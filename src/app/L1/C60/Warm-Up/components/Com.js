@@ -39,7 +39,7 @@ export default function Com() {
       <div className="max-w-4xl bg-white rounded-2xl shadow-lg p-8">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-800 mb-8">
-            When a shop has a sign that says 'sale!', it means things are ____
+            When a shop has a sign that says &apos;sale!&apos;, it means things are ____
           </h1>
         </div>
       </div>
@@ -51,7 +51,7 @@ export default function Com() {
       <div className="max-w-4xl bg-white rounded-2xl shadow-lg p-8">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-800 mb-8">
-            When you see a big poster for a new movie, that's an example of an ____
+            When you see a big poster for a new movie, that&apos;s an example of an ____
           </h1>
         </div>
       </div>
