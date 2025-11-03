@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import s1 from "../assets/s1.png";
 import s2 from "../assets/s2.png";
+import s3 from "../assets/s3.png";
 
 // Content data structure
 const contentData = {
@@ -11,7 +12,7 @@ const contentData = {
       id: 0,
       type: "intro",
       title: "",
-      description: "Maya is a young girl who designs custom T-shirts with names and cartoon prints. She began by making printed & hand-designed T-shirts for her friends at school. Her friends loved the t-shirts and the design. Encouraged by the positive response, Maya feels uplifted and thinks, \"I should test my product by setting up a stall at one of the city's upcoming festivals.\"",
+      description: "Maya designs custom T-shirts with names and cartoon prints.  She began by making printed & hand-designed T-shirts for her friends at school. Her friends loved the t-shirts and the design. Encouraged by the positive response, Maya thinks, “I should test my product by setting up a stall at one of the city’s upcoming festivals.”",
       image: s1,
       festivals: ["SparkFest", "City Carnival"]
     },
@@ -19,43 +20,61 @@ const contentData = {
       id: 1,
       type: "question",
       title: "Festival Choice",
-      description: "These are one-day festivals held monthly. However, Maya only has $1000. She is unsure about where to sell her product. Which festival would be the best place to do so?",
-      note: "Maya wants to make a smart decision. She doesn't want to guess; she wants to use business logic and data to choose the best place."
+      description: "These are one-day festivals held monthly. She has a limited budget, so she can’t have a stall at both the festivals!  She is unsure about where to sell her product. Which festival would be the best place to do so?",
+      note: "Maya wants to make a smart decision using business logic and data to choose the best place."
     },
     {
       id: 2,
       type: "cousin_advice",
       title: "Emma's Advice",
-      description: "So she calls her cousin Emma, who runs a sneaker shop business.",
-      advice: "Emma suggests using business concepts such as TAM: Total Addressable Market and SAM: Serviceable Available Market. Applying this strategy would help make a decision about where to open the shop.",
+      description: "Maya calls her cousin Emma, who runs a sneaker shop business.",
+      advice: "Emma suggests checking the Total Addressable Market (TAM)  and Serviceable Available Market (SAM).",
       image: s2
     },
     {
       id: 3,
       type: "concept",
       title: "Total Addressable Market (TAM)",
-      definition: "The total number of people who would buy your product if everyone knew about it.",
-      example: "Leo sells cool printed T-shirts. If he were to sell his T-shirts to everyone in the country who likes printed shirts, that would be his TAM. If 10 million people in the country wear printed T-shirts, then TAM = 10 million potential customers i.e the number of customers you can actually reach based on your location, price, and capacity."
+      definition: "TAM as the biggest possible group of people who might want your product or service. It includes everyone who could possibly buy your product. It’s the total opportunity — if your product could reach everyone, everywhere.",
+      example: "So if there are 1 billion teens in the world who use T-shirts,  TAM = 1 billion teens."
     },
     {
       id: 4,
       type: "concept",
       title: "Serviceable Available Market (SAM)",
-      definition: "This is the smaller group of people you can actually reach right now, based on where you sell and how big your business is.",
-      example: "Since Leo sells T-shirts only in his city at a specified location, he won't reach the whole country just yet. He would only reach people near him. If 200,000 people in his city buy printed T-shirts, then SAM = 200,000 potential customers he can actually sell to."
+      definition: "This is the smaller group of people you can actually actually access, based on country or region. SAM is the part of the TAM that you can actually reach or serve right now.",
+      example: "Mia could sell T-shirts all over the country or her city. If there are 2 million teens in his city, then SAM = 2 million teens."
     },
     {
       id: 5,
+      type: "concept",
+      title: "Serviceable Obtainable Market (SOM)",
+      definition: "Is part of your SAM that you can realistically win or sell to in the beginning. They are the first customers to win and are mostly in your immediate reach.",
+      example: "If there are 20,000 teens in his neighbourhood, the SOM = 20000."
+    },
+    {
+      id: 6,
+      type:"sumUpConcepts",
+      heading: "Here is a visual representation of TAM, SAM and SOM.",
+      bulletPoints: [
+        "Big circle (TAM): Everyone who could buy.",
+        "Middle circle (SAM): People you can reach.",
+        "Small circle (SOM): People you’ll actually win first.",
+      ],
+      image: s3
+    },
+    {
+      id: 7,
       type: "calculation_methods",
-      title: "How to Calculate TAM & SAM",
+      title: "How to estimate TAM, SAM and SOM",
       methods: [
         {
           title: "Market reports",
-          description: "These are reports made by companies or research groups that show how big a market is."
+          description: "These are reports made by companies or research groups (like Statista) that show how big a market is. For example, “The global T-shirt market is worth $80 billion.” We can use the global or national figure as TAM. We can narrow down by country, age group, or interests to find SAM and estimate the starting share (for example, 1% of SAM) to get SOM."
         },
         {
           title: "Local population data",
-          description: "This tells you how many people live in or visit an area. If more people lived near the shop, then more people would buy from it."
+          description: "Use population data from your city, neighborhood, or target area. This tells you how many potential customers live nearby. This tells you how many people live in or visit an area. If more people lived near the shop, then more people would buy from it."
         },
         {
           title: "Customer interest or trends",
@@ -81,11 +100,26 @@ const renderStep = (stepData) => {
           <div className="mb-6">
             <h3 className="text-2xl font-semibold mb-4 text-blue-600">Available Festivals:</h3>
             <div className="flex justify-center gap-8 mb-6">
-              {stepData.festivals.map((festival, index) => (
-                <div key={index} className="bg-gradient-to-r from-pink-400 to-purple-500 text-white px-6 py-3 rounded-xl font-semibold text-lg shadow-lg">
-                  {festival}
-                </div>
-              ))}
+              {stepData.festivals.map((festival, index) => {
+                const colorStyles = [
+                  {
+                    card: "text-pink-700"
+                  },
+                  {
+                    card: "text-purple-700"
+                  }
+                ];
+                const style = colorStyles[index % colorStyles.length];
+                return (
+                  <div
+                    key={index}
+                    className={`px-8 py-4 rounded-2xl font-semibold text-lg italic flex items-center justify-center ${style.card}`}
+                    style={{ minWidth: 160 }}
+                  >
+                    {festival}
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="flex justify-center mb-4">
@@ -143,6 +177,23 @@ const renderStep = (stepData) => {
                 <p className="text-lg text-gray-700">{method.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      );
+    case "sumUpConcepts":
+      return (
+        <div>
+          <h2 className="text-3xl font-bold mb-6 text-pink-600">{stepData.heading}</h2>
+          <ul className="mb-6 text-left max-w-xl mx-auto">
+            {stepData.bulletPoints.map((point, idx) => (
+              <li key={idx} className="mb-3 text-lg flex items-center">
+                <span className="inline-block w-3 h-3 rounded-full bg-pink-400 mr-3"></span>
+                <span className="text-gray-700">{point}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="flex justify-center mb-4">
+            <Image src={stepData.image} alt="TAM SAM SOM visual" width={400} height={400} />
           </div>
         </div>
       );

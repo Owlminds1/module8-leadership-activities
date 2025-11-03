@@ -6,69 +6,62 @@ import s1 from "../assets/s1.png";
 const contentData = {
   steps: [
     {
-      id: 0,
-      type: "intro",
-      title: "",
-      image: s1,
-      content: "Mia&apos;s lunchbox stall is getting popular at school. Students love her food! At first, everyone just bought a lunchbox when they wanted one and paid once. But Mia is thinking: \"Is there another way I could sell my lunchboxes so I don&apos;t have to worry every single day about who will buy?\""
-    },
-    {
       id: 1,
-      type: "question",
-      content: "Can you think of a solution for Mia&apos;s problem?"
+      type: "intro",
+      title: "Mia's Business Model Innovation",
+      image: s1,
+      content: "Mia’s lunchbox stall is getting popular at school. But there are days where fewer people come and there is a lot of wastage.\n\nMia wonders: “Buyers come to my stall every day, pay immediately and go away. Is there another way I can sell? I don’t want to worry every single day about whether I will get sales!”"
     },
     {
       id: 2,
-      type: "answer",
-      question: "Can you think of a solution for Mia&apos;s problem?",
-      answer: "Mia can shift the way she sells lunchboxes from one-time payment to subscription model."
+      type: "question",
+      content: "Can you think of a solution for Mia’s problem?"
     },
     {
       id: 3,
-      type: "concept",
-      title: "One-Time Pay",
-      definition: "One-time pay means you pay only when you buy the product, and that&apos;s it.",
-      examples: [
-        "Buying a sandwich at the canteen.",
-        "Buying a new backpack at the start of the school year."
-      ]
+      type: "answer",
+      question: "Can you think of a solution for Mia’s problem?",
+      answer: "Mia can shift the way she sells lunchboxes from a single payment to a subscription model."
     },
     {
       id: 4,
       type: "concept",
-      title: "Subscription",
-      definition: "Subscription means you pay a fixed amount regularly, every week, every month, or even every year, and you keep getting the product or service again and again without paying each time.",
+      title: "Single Payment",
+      definition: "Single payment indicates you pay only when you buy the product.",
       examples: [
-        "Paying for milk delivered every morning.",
-        "Your parents paid your school bus fee in one go at the start of the year. Now you can travel on the bus every day without paying each day."
+        "Pay chess class fees after every session"
       ]
     },
     {
       id: 5,
-      type: "question",
-      content: "Can you think of something your family pays for once, but you get to use it repeatedly without paying every time?"
+      type: "concept",
+      title: "Subscription",
+      definition: "A subscription is when a customer pays a fixed amount regularly to get a product on a regular basis over time.",
+      examples: [
+        "Pay for chess fees upfront and take three sessions every week for 3 months."
+      ]
     },
     {
       id: 6,
       type: "question",
-      content: "How could Mia use the subscription idea for her lunchboxes?"
+      content: "How can Mia change her business model to subscription?"
     },
     {
       id: 7,
       type: "solution",
-      question: "How could Mia use the subscription idea for her lunchboxes?",
-      answer: "She can tell her classmates, \"You can either buy a lunchbox whenever you want for $5, OR, you can pay $20 at the start of the month, and I&apos;ll bring you one lunchbox every Friday.\""
+      question: "How can Mia change her business model to subscription?",
+      answer: "She can tell her buyer, “You can either buy a lunchbox whenever you want for $5, OR, Take a monthly subscription, and I’ll save a lunchbox for you every day.”"
     },
     {
       id: 8,
-      type: "comparison",
-      content: "One-time pay: Students pay $5 when they want. Subscription: Students pay $20 once, and get 4 lunchboxes across the month. Which one is better for Mia&apos;s business one-time pay or subscription?"
+      type: "question",
+      content: "Why does the subscription model work for Mia?"
     },
     {
       id: 9,
-      type: "conclusion",
-      question: "One-time pay: Students pay $5 when they want. Subscription: Students pay $20 once, and get 4 lunchboxes across the month. Which one is better for Mia&apos;s business one-time pay or subscription?",
-      answer: "Subscription is better. As Mia gets money upfront and regularly, which helps her plan how many lunchboxes and ingredients to prepare. She reduces the risk of having unsold lunchboxes. Even if she offers a small discount, she earns steady income."
+      type: "answer",
+      question: "Why does the subscription model work for Mia?",
+      answer: "She never runs out of customers and is assured of steady sales. Her customers are never disappointed as their lunch box is saved. She minimises the risk of having unsold lunchboxes."
     }
   ]
 };
@@ -79,7 +72,9 @@ const renderStep = (stepData) => {
       return (
         <>
           <h1 className="text-4xl font-bold mb-6 text-blue-600">{stepData.title}</h1>
-          <p className="text-xl leading-relaxed mb-4">{stepData.content}</p>
+          {stepData.content.split("\n").map((line, idx) => (
+            <p key={idx} className="text-xl leading-relaxed mb-4">{line}</p>
+          ))}
           <Image src={stepData.image} alt={stepData.title} width={350} height={350} className="rounded-lg mx-auto" />
         </>
       );

@@ -17,26 +17,26 @@ export default function Com() {
   const [draggedItem, setDraggedItem] = useState(null);
 
   const customers = [
-    { id: "lina", name: "Lina", description: "loves reading and enjoys bookmarks", image: s1 },
-    { id: "mia", name: "Mia", description: "loves toys and enjoys playful slime", image: s2 },
-    { id: "arjun", name: "Arjun", description: "supplies groceries like flour, sugar, lemons", image: s3 },
-    { id: "aditi", name: "Aditi", description: "is a parent investor supporting small businesses", image: s4 },
-    { id: "party_planner", name: "Party Planner", description: "organizes big events with cupcakes, lemonade, and activities", image: s5 },
-    { id: "toy_shop", name: "Toy Shop Owner", description: "bundles toys, comics, slime", image: s6 }
+    { id: "riya", name: "Riya", description: "Riya loves art and collects colorful notebooks.", image: s1 },
+    { id: "zoya", name: "Zoya", description: "Zoya runs a café that serves pastries and drinks.", image: s2 },
+    { id: "kabir", name: "Kabir", description: "Kabir supplies fresh fruits, milk, and flour.", image: s3 },
+    { id: "ms_kapoor", name: "Ms. Kapoor", description: "Ms. Kapoor is an investor who supports creative small businesses.", image: s4 },
+    { id: "aarav", name: "Aarav (Event Squad)", description: "Aarav plans birthday parties with snacks, crafts, and games.", image: s5 },
+    { id: "meena", name: "Meena (The Gift Corner)", description: "Meena sells bundles of craft supplies, notebooks, and candles.", image: s6 },
   ];
 
   const businessOwners = [
-    { id: "sofia", name: "Sofia", description: "makes handmade bookmarks", image: s7 },
-    { id: "kiran", name: "Kiran", description: "draws comic books", image: s8 },
-    { id: "ella", name: "Ella", description: "bakes cupcakes", image: s9 },
-    { id: "nina", name: "Nina", description: "sells slime kits", image: s10 }
+    { id: "aanya", name: "Aanya", description: "Aanya makes hand-painted notebooks.", image: s7 },
+    { id: "dev", name: "Dev", description: "Dev creates short comic stories for kids.", image: s8 },
+    { id: "leah", name: "Leah", description: "Leah runs a home bakery making cookies and muffins.", image: s9 },
+    { id: "tara", name: "Tara", description: "Tara sells scented candle sets.", image: s10 },
   ];
 
   const correctConnections = {
-    sofia: ["lina", "party_planner", "toy_shop"],
-    kiran: ["lina", "toy_shop", "aditi"],
-    ella: ["arjun", "party_planner", "aditi"],
-    nina: ["mia", "toy_shop", "party_planner"]
+    aanya: ["riya", "meena", "aarav"],
+    dev: ["riya", "meena", "ms_kapoor"],
+    leah: ["zoya", "kabir", "ms_kapoor"],
+    tara: ["meena", "aarav", "ms_kapoor"],
   };
 
   const handleDragStart = (e, businessOwnerId) => {
@@ -52,37 +52,36 @@ export default function Com() {
   const handleDrop = (e, customerId) => {
     e.preventDefault();
     if (draggedItem) {
-      setConnections(prev => ({
+      setConnections((prev) => ({
         ...prev,
-        [draggedItem]: [...(prev[draggedItem] || []), customerId]
+        [draggedItem]: [...(prev[draggedItem] || []), customerId],
       }));
       setDraggedItem(null);
     }
   };
 
   const removeConnection = (businessOwnerId, customerId) => {
-    setConnections(prev => ({
+    setConnections((prev) => ({
       ...prev,
-      [businessOwnerId]: prev[businessOwnerId]?.filter(id => id !== customerId) || []
+      [businessOwnerId]:
+        prev[businessOwnerId]?.filter((id) => id !== customerId) || [],
     }));
   };
 
   const checkAnswers = () => {
     let correct = 0;
     let total = 0;
-    
-    Object.keys(correctConnections).forEach(businessOwner => {
+
+    Object.keys(correctConnections).forEach((businessOwner) => {
       const correctList = correctConnections[businessOwner];
       const userConnections = connections[businessOwner] || [];
-      
-      correctList.forEach(customerId => {
+      correctList.forEach((customerId) => {
         total++;
         if (userConnections.includes(customerId)) {
           correct++;
         }
       });
     });
-
     return { correct, total };
   };
 
@@ -92,90 +91,117 @@ export default function Com() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 p-0">
       <div className="w-full mx-auto">
-        <div className="bg-white shadow-2xl rounded-3xl p-4">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <h2 className="text-xl font-bold text-purple-800 mb-2">
-                Customers & Business Partners
-              </h2>
-              <div className="grid grid-cols-1 gap-4">
-                {customers.map((customer) => (
-                  <div
-                    key={customer.id}
-                    className="bg-gradient-to-r from-blue-50 to-purple-50 p-2 rounded-2xl shadow-lg border-2 border-dashed border-blue-300 min-h-[100px] flex items-center space-x-4"
-                    onDragOver={handleDragOver}
-                    onDrop={(e) => handleDrop(e, customer.id)}
-                  >
-                    <Image
-                      src={customer.image}
-                      alt={customer.name}
-                      width={80}
-                      height={80}
-                      className="rounded-lg flex-shrink-0"
-                    />
-                    <div>
-                      <h3 className="text-lg font-bold text-blue-800">{customer.name}</h3>
-                      <p className="text-gray-700 text-sm">{customer.description}</p>
-                      <div className="mt-2">
-                        {Object.entries(connections).map(([businessOwnerId, customerIds]) => 
-                          customerIds.includes(customer.id) && (
-                            <span
-                              key={businessOwnerId}
-                              className="inline-block bg-green-200 text-green-800 px-2 py-1 rounded-full text-xs mr-2 mb-1"
-                            >
-                              {businessOwners.find(bo => bo.id === businessOwnerId)?.name}
-                              <button
-                                onClick={() => removeConnection(businessOwnerId, customer.id)}
-                                className="ml-1 text-red-600 hover:text-red-800"
-                              >
-                                ×
-                              </button>
-                            </span>
-                          )
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+        <div className="rounded-3xl p-4">
+          {isComplete ? (
+            <div className="flex flex-col items-center justify-center min-h-[400px] text-center py-16">
+              <h1 className="text-4xl font-extrabold text-green-700 mb-6">
+                Congratulations!
+              </h1>
+              <p className="text-xl text-gray-800 mb-4">
+                You connected all the business owners and customers correctly.
+              </p>
             </div>
-
-            <div className="space-y-6">
-              <h2 className="text-xl font-bold text-green-800 mb-2">
-                Business Owners (Drag to Connect)
-              </h2>
-              <div className="grid grid-cols-2 gap-4">
-                {businessOwners.map((businessOwner) => (
-                  <div
-                    key={businessOwner.id}
-                    className="bg-gradient-to-r from-green-50 to-blue-50 p-2 rounded-2xl shadow-lg border-2 border-green-300 cursor-move"
-                    draggable
-                    onDragStart={(e) => handleDragStart(e, businessOwner.id)}
-                  >
-                    <div className="flex items-center space-x-4">
-                      <Image
-                        src={businessOwner.image}
-                        alt={businessOwner.name}
-                        width={130}
-                        className="rounded-lg flex-shrink-0"
-                      />
-                      <div>
-                        <h3 className="text-lg font-bold text-green-800">{businessOwner.name}</h3>
-                        <p className="text-gray-700 text-md">{businessOwner.description}</p>
-                        <div className="mt-2">
-                          <span className="text-xs text-gray-500">
-                            Connections: {connections[businessOwner.id]?.length || 0}
-                          </span>
+          ) : (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Left: Business Owners */}
+              <div className="space-y-6 text-left">
+                <h2 className="text-xl font-bold text-green-800 mb-2 text-left">
+                  Business Owners (Drag to Connect)
+                </h2>
+                <div className="grid grid-cols-2 gap-4">
+                  {businessOwners.map((businessOwner) => (
+                    <div
+                      key={businessOwner.id}
+                      className="bg-gradient-to-r from-green-50 to-blue-50 p-2 rounded-2xl shadow-lg border-2 border-green-300 cursor-move text-left"
+                      draggable
+                      onDragStart={(e) => handleDragStart(e, businessOwner.id)}
+                    >
+                      <div className="flex items-center space-x-4">
+                        <Image
+                          src={businessOwner.image}
+                          alt={businessOwner.name}
+                          width={130}
+                          className="rounded-lg flex-shrink-0"
+                        />
+                        <div className="text-left">
+                          <h3 className="text-lg font-bold text-green-800 text-left">
+                            {businessOwner.name}
+                          </h3>
+                          <p className="text-gray-700 text-md text-left">
+                            {businessOwner.description}
+                          </p>
+                          <div className="mt-2 text-left">
+                            <span className="text-xs text-gray-500 text-left">
+                              Connections:{" "}
+                              {connections[businessOwner.id]?.length || 0}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* Right: Customers & Partners */}
+              <div className="space-y-6 text-left">
+                <h2 className="text-xl font-bold text-purple-800 mb-2 text-left">
+                  Customers & Business Partners
+                </h2>
+                <div className="grid grid-cols-1 gap-4">
+                  {customers.map((customer) => (
+                    <div
+                      key={customer.id}
+                      className="bg-gradient-to-r from-blue-50 to-purple-50 p-2 rounded-2xl shadow-lg border-2 border-dashed border-blue-300 min-h-[100px] flex items-center space-x-4 text-left"
+                      onDragOver={handleDragOver}
+                      onDrop={(e) => handleDrop(e, customer.id)}
+                    >
+                      <Image
+                        src={customer.image}
+                        alt={customer.name}
+                        width={80}
+                        height={80}
+                        className="rounded-lg flex-shrink-0"
+                      />
+                      <div className="text-left">
+                        <h3 className="text-lg font-bold text-blue-800 text-left">
+                          {customer.name}
+                        </h3>
+                        <p className="text-gray-700 text-sm text-left">
+                          {customer.description}
+                        </p>
+                        <div className="mt-2 text-left">
+                          {Object.entries(connections).map(
+                            ([businessOwnerId, customerIds]) =>
+                              customerIds.includes(customer.id) && (
+                                <span
+                                  key={businessOwnerId}
+                                  className="inline-block bg-green-200 text-green-800 px-2 py-1 rounded-full text-xs mr-2 mb-1 text-left"
+                                >
+                                  {
+                                    businessOwners.find(
+                                      (bo) => bo.id === businessOwnerId
+                                    )?.name
+                                  }
+                                  <button
+                                    onClick={() =>
+                                      removeConnection(businessOwnerId, customer.id)
+                                    }
+                                    className="ml-1 text-red-600 hover:text-red-800"
+                                  >
+                                    ×
+                                  </button>
+                                </span>
+                              )
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-
+          )}
         </div>
       </div>
     </div>

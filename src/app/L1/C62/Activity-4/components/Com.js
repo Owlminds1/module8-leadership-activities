@@ -9,25 +9,25 @@ const contentData = {
       id: 0,
       type: "intro",
       title: "",
-      description: "Rohan was doing well selling sandwiches, but he noticed how fewer people were coming to his shop. He also said a new sandwich shop opened nearby. They were selling sandwiches at a lower price compared to Rohan's shop. Because of this, Rohan sold fewer sandwiches than what he expected.",
+      description: "Ron noticed that fewer people were coming to his shop. He also saw a new sandwich shop open nearby. They were selling sandwiches at a lower price compared to Ron’s shop. Because of this, Ron sold fewer sandwiches than what he expected.",
       image: s1
     },
     {
       id: 1,
       type: "progressive",
-      content: "Why did Rohan sell fewer sandwiches?",
+      content: "Why did Ron sell fewer sandwiches?",
       isBold: true
     },
     {
       id: 2,
       type: "progressive",
-      content: "Why did Rohan sell fewer sandwiches?",
+      content: "Why did Ron sell fewer sandwiches?",
       isBold: true,
       answer: {
         title: "",
         items: [
-          "A new shop started selling sandwiches at a lower price, so some customers decided to buy from that place instead.",
-          "Some customers may have also tried the new sandwiches out of curiosity just to see how they taste."
+          "The new shop was a competitor, selling the same item at a lower price.",
+          "So some customers decided to buy from that place. Some customers may have tried the new place to see how the sandwiches taste."
         ]
       }
     },
@@ -76,19 +76,19 @@ const contentData = {
     {
       id: 7,
       type: "progressive",
-      content: "What would happen if Rohan lowered the price too much?",
+      content: "What would happen if Ron lowered the price too much?",
       isBold: true
     },
     {
       id: 8,
       type: "progressive",
-      content: "What would happen if Rohan lowered the price too much?",
+      content: "What would happen if Ron lowered the price too much?",
       isBold: true,
       answer: {
         title: "",
         items: [
-          "Rohan might not make enough money to pay for his ingredients, which means it would be a loss.",
-          "Also, if he keeps the prices too low, customers may always expect low prices and may not want to pay more later."
+          "Ron might not make enough money to pay for his ingredients, which means it would be a loss.",
+          "Customers may always expect low prices and may not want to pay more later."
         ]
       }
     },
@@ -110,6 +110,11 @@ const contentData = {
           "Rohan might lose customers to other shops that sell sandwiches for a lower price."
         ]
       }
+    },
+    {
+      id: 11,
+      type: "completion",
+      content: "Bravo! You can ace business planning!"
     }
   ]
 };
@@ -134,7 +139,6 @@ const renderStep = (stepData) => {
           </div>
         </>
       );
-    
     case "progressive":
       return (
         <div>
@@ -145,13 +149,11 @@ const renderStep = (stepData) => {
               stepData.content
             )}
           </p>
-          
           {stepData.answer && typeof stepData.answer === "string" && (
             <div className="mt-4 p-6 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
               <p className="text-xl">{stepData.answer}</p>
             </div>
           )}
-          
           {stepData.answer && typeof stepData.answer === "object" && (
             <div className="mt-4 p-6 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
               {stepData.answer.title && (
@@ -169,7 +171,14 @@ const renderStep = (stepData) => {
           )}
         </div>
       );
-    
+    case "completion":
+      return (
+        <div className="flex flex-col items-center justify-center min-h-[300px]">
+          <div className="bg-green-100 border-2 border-green-400 rounded-2xl p-10 shadow-xl">
+            <h2 className="text-3xl font-bold text-green-700 mb-4">{stepData.content}</h2>
+          </div>
+        </div>
+      );
     default:
       return <p className="text-xl">{stepData.content}</p>;
   }

@@ -15,7 +15,7 @@ const contentData = {
       id: 0,
       type: "gallery",
       title: "",
-      description: "Look at these product ideas and pick 1 item",
+      description: "Select any one item and answer questions on planning a business with it.",
       images: [
         { src: s1, alt: "Product idea 1", label: "Bag Tag" },
         { src: s2, alt: "Product idea 2", label: "Glitter pens" },
@@ -40,13 +40,13 @@ const contentData = {
     {
       id: 3,
       type: "question",
-      content: "How can you tell people about your product?",
+      content: "How will you tell people about your product?",
       isBold: true
     },
     {
       id: 4,
       type: "question",
-      content: "Can you give your product a memorable name?",
+      content: "Can you give your product a catchy name?",
       isBold: true
     }
   ]

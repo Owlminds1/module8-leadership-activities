@@ -1,159 +1,172 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import s1 from "../assets/s1.png";
+import s2 from "../assets/s2.png";
 
-const contentData = {
-  steps: [
-    {
-      id: 0,
-      type: "intro",
-      title: "Mia&apos;s Pricing Dilemma",
-      image: s1,
-      content: "Mia&apos;s lunchboxes are doing well! But now she&apos;s wondering \"Should I always keep the same price? Or should I change my price depending on the situation?\""
-    },
-    {
-      id: 1,
-      type: "explanation",
-      content: "Sometimes you want to sell products really fast. Sometimes you want to add some time to the product to make it special. Sometimes you just want to match other competitors. Each situation needs a different pricing strategy."
-    },
-    {
-      id: 2,
-      type: "strategy",
-      title: "Strategy 1: Discount Pricing",
-      content: "If Mia wants to sell all her lunchboxes quickly, maybe sell all the lunchboxes in the first school break, what should she do?"
-    },
-    {
-      id: 3,
-      type: "strategy-details",
-      title: "Strategy 1: Discount Pricing",
-      content: "If Mia wants to sell all her lunchboxes quickly, maybe sell all the lunchboxes in the first school break, what should she do?",
-      definition: "Discount pricing means lowering the price so more people rush to buy.",
-      example: "Example: \"Imagine the school canteen has leftover muffins at the end of the day. If they sell them at discounted prices, students quickly grab them.\""
-    },
-    {
-      id: 4,
-      type: "strategy",
-      title: "Strategy 2: Premium Pricing",
-      content: "What if Mia makes a really special lunchbox, something colorful, with stickers, or glow-in-the-dark, how should she price it? She could do it by applying a premium pricing strategy."
-    },
-    {
-      id: 5,
-      type: "strategy-details",
-      title: "Strategy 2: Premium Pricing",
-      content: "What if Mia makes a really special lunchbox, something colorful, with stickers, or glow-in-the-dark, how should she price it? She could do it by applying a premium pricing strategy.",
-      definition: "Premium pricing means charging more because the product is unique or extra special.",
-      example: "Example: \"A fancy water bottle with built-in cooling feature will cost more than a normal bottle because it has a special feature.\""
-    },
-    {
-      id: 6,
-      type: "strategy",
-      title: "Strategy 3: Competitive Pricing",
-      content: "If many stalls already sell similar lunch boxes as Mia and she doesn&apos;t have anything extra or special to offer then what should she do? She could do it by applying a competitive pricing strategy."
-    },
-    {
-      id: 7,
-      type: "strategy-details",
-      title: "Strategy 3: Competitive Pricing",
-      content: "If many stalls already sell similar lunch boxes as Mia and she doesn&apos;t have anything extra or special to offer then what should she do? She could do it by applying a competitive pricing strategy.",
-      definition: "Competitive pricing means setting your price close to other sellers so you don&apos;t lose customers.",
-      example: "Example: If two nearby stores sell the same chocolate bar, one charges $10 while the other charges $8, all the kids will go with the option which is less expensive."
-    },
-    {
-      id: 8,
-      type: "question",
-      content: "Have you ever seen a shop put a SALE sign? Why do they do it?"
-    },
-    {
-      id: 9,
-      type: "question",
-      content: "Why do some things in the school stationery shop, like glitter pens or fancy pencil boxes, cost more than plain ones?"
-    },
-    {
-      id: 10,
-      type: "question",
-      content: "Why do you and your family sometimes check prices at two shops before buying the same snack or toy?"
-    }
-  ]
-};
-
-const renderStep = (stepData) => {
-  switch (stepData.type) {
-    case "intro":
-      return (
-        <>
-          <h1 className="text-4xl font-bold mb-6 text-blue-600">{stepData.title}</h1>
-          <p className="text-xl leading-relaxed">{stepData.content}</p>
+const screens = [
+  {
+    id: 0,
+    type: "intro",
+    content: (
+      <div>
+        <div className="flex justify-center mb-8">
+          <Image src={s1} alt="Mia" width={350} height={350} className="rounded-xl" />
+        </div>
+        <p className="text-3xl font-bold text-blue-700 mb-4">Mia wonders,</p>
+        <p className="text-2xl mb-4">
+          “Should I always keep the same price? Or
           <br />
-          <Image src={stepData.image} alt={stepData.title} width={350} height={350} className="rounded-lg mx-auto" />
-        </>
-      );
-    
-    case "explanation":
-      return (
-        <div className="text-xl leading-relaxed space-y-4">
-          <p>{stepData.content}</p>
+          Should I change my price based on the situation?”
+        </p>
+      </div>
+    ),
+    stacked: [
+      <p key="s1" className="text-xl mt-8 font-semibold text-purple-700">
+        Is this question important?
+      </p>,
+      <p key="s2" className="text-xl mt-4 text-gray-700">
+        Yes, Businesses don’t always use just a set price. They use different pricing strategies to fit different
+        situations.
+      </p>,
+    ],
+  },
+  {
+    id: 1,
+    type: "strategy-intro",
+    content: (
+      <div>
+        <h2 className="text-3xl font-bold text-blue-700 mb-6">Pricing Strategy</h2>
+        <p className="text-2xl mb-4 font-semibold">Step 1: What is your chief objective?</p>
+        <ul className="list-decimal list-inside ml-6 text-xl">
+          <li>Sell products really fast.</li>
+          <li>Position product as special or exclusive.</li>
+          <li>Match price of other competitors.</li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    id: 2,
+    type: "discount",
+    content: (
+      <div>
+        <p className="text-2xl mb-4 font-semibold">
+          Step 2: Select a pricing strategy that matches your objective
+        </p>
+        <h3 className="text-2xl font-bold text-blue-700 mb-4">Discount Pricing</h3>
+        <ul className="list-disc list-inside ml-6 text-xl mb-4">
+          <li>Sell fast with Discount Pricing</li>
+          <li>Lowering the price so more people hurry to buy.</li>
+        </ul>
+        <p className="italic text-xl text-gray-700">
+          Example: “Mia can offer lunchboxes at discounted prices on the stayback day to boost her sales.”
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: 3,
+    type: "premium",
+    content: (
+      <div>
+        <h3 className="text-2xl font-bold text-purple-700 mb-4">Premium Pricing</h3>
+        <ul className="list-disc list-inside ml-6 text-xl mb-4">
+          <li>Position the product as special or exclusive with Premium Pricing.</li>
+          <li>Increasing the price so that people buy to get unique value.</li>
+        </ul>
+        <div className="flex items-center gap-4 mt-2">
+          <p className="italic text-xl text-gray-700 mb-0">
+            Example: “Mia can turn the lunchbox containers into collectibles like sci-fi gadgets.”
+          </p>
+          <Image src={s2} alt="Premium Pricing Example" width={100} height={100} className="rounded-xl" />
         </div>
-      );
-    
-    case "strategy":
-      return (
-        <div className="text-xl leading-relaxed space-y-4">
-          <h2 className="text-3xl font-bold text-green-600 mb-4">{stepData.title}</h2>
-          <p>{stepData.content}</p>
-        </div>
-      );
-    
-    case "strategy-details":
-      return (
-        <div className="text-xl leading-relaxed space-y-4">
-          <h2 className="text-3xl font-bold text-green-600 mb-4">{stepData.title}</h2>
-          <p className="mb-4">{stepData.content}</p>
-          <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
-            <p className="font-semibold text-blue-800 text-lg">{stepData.definition}</p>
-          </div>
-          <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
-            <p className="text-gray-700 text-lg">{stepData.example}</p>
-          </div>
-        </div>
-      );
-    
-    case "question":
-      return (
-        <div className="text-center">
-          <div className="bg-purple-50 p-6 rounded-xl border-2 border-purple-200">
-            <p className="text-2xl font-semibold text-purple-800">{stepData.content}</p>
-          </div>
-        </div>
-      );
-    
-    default:
-      return <p>{stepData.content}</p>;
-  }
-};
+      </div>
+    ),
+  },
+  {
+    id: 4,
+    type: "competitive",
+    content: (
+      <div>
+        <h3 className="text-2xl font-bold text-green-700 mb-4">Competitive Pricing</h3>
+        <ul className="list-disc list-inside ml-6 text-xl mb-4">
+          <li>Setting prices close to other sellers to ensure that you remain in business.</li>
+        </ul>
+        <p className="italic text-xl text-gray-700">
+          Example: Mia can not charge way more than other stalls to ensure buyers keep coming to her.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: 5,
+    type: "smart-shopper",
+    content: (
+      <div>
+        <h2 className="text-3xl font-bold text-blue-700 mb-4">Smart Shopper</h2>
+        <p className="text-2xl">Why do shops and websites offer SALE?</p>
+      </div>
+    ),
+  },
+  {
+    id: 6,
+    type: "glitter-pens",
+    content: (
+      <div>
+        <h2 className="text-3xl font-bold text-blue-700 mb-4">Smart Shopper</h2>
+        <p className="text-2xl">Why do glitter pens or fancy pencil boxes cost more than plain ones?</p>
+      </div>
+    ),
+  },
+  {
+    id: 7,
+    type: "compare-prices",
+    content: (
+      <div>
+        <h2 className="text-3xl font-bold text-blue-700 mb-4">Smart Shopper</h2>
+        <p className="text-2xl">Why do we check prices at different shops or websites?</p>
+      </div>
+    ),
+  },
+];
 
 export default function Com() {
   const [step, setStep] = useState(0);
+  const [stacked, setStacked] = useState(0);
 
-  const nextStep = () => setStep((prev) => prev + 1);
+  const currentScreen = screens[step];
 
-  const currentStepData = contentData.steps[step];
+  const handleNext = () => {
+    if (step === 0 && stacked < (currentScreen.stacked?.length ?? 0)) {
+      setStacked((prev) => prev + 1);
+    } else {
+      setStep((prev) => prev + 1);
+      setStacked(0);
+    }
+  };
+
+  const isLastScreen = step === screens.length - 1 && stacked === 0;
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-6">
-      <div className="max-w-4xl bg-white shadow-xl rounded-2xl p-8">
-        {renderStep(currentStepData)}
-
-        {step < contentData.steps.length - 1 && (
-          <div className="flex justify-center mt-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-100 p-4">
+      <div className="max-w-xl w-full bg-white rounded-2xl shadow-xl p-10">
+        {currentScreen.content}
+        {step === 0 && currentScreen.stacked && (
+          <div>
+            {currentScreen.stacked.slice(0, stacked).map((item) => item)}
+          </div>
+        )}
+        <div className="flex justify-end mt-10">
+          {!isLastScreen && (
             <button
-              onClick={nextStep}
-              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200"
+              onClick={handleNext}
+              className="px-8 py-3 rounded-xl font-bold shadow bg-blue-500 text-white text-xl hover:bg-blue-600"
             >
               Next
             </button>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

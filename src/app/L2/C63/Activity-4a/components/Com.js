@@ -26,12 +26,10 @@ export default function Com() {
 
             <div className="bg-gradient-to-r from-blue-50 to-indigo-100 p-8 rounded-2xl shadow-lg mb-8">
               <div className="space-y-6 text-2xl text-gray-700 leading-relaxed">
-                <p>A business card is a small card that has important information about a person or a business.</p>
+                <p>A business card is a card (the size of your palm) that has important information about a person or a business.</p>
                 <p>It is like a networking tool: a way to share your details with others.</p>
                 <p>When you give your card to someone, they know who you are, what you do, and how to contact you.</p>
-                <p>It helps people remember you and connect later.</p>
-                Think of it like a mini-poster all about you that fits in your pocket!
-                <p></p>
+                <p>It helps people remember you and connect with you later.</p>
               </div>
             </div>
 
@@ -42,7 +40,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-6xl mx-auto">
             <h1 className="text-4xl font-bold text-purple-800 mb-12">
-              Here are the important parts a Business Card should have:
+              Business Card should have:
             </h1>
 
             <div className="space-y-6">
@@ -68,25 +66,17 @@ export default function Com() {
                 <div className="flex items-center space-x-6">
                   <div className="text-left">
                     <h3 className="text-2xl font-bold text-purple-800 mb-2">Contact Information</h3>
-                    <p className="text-xl text-gray-700">(phone, email, or a website – you can make a pretend one if you like)</p>
+                    <p className="text-xl text-gray-700">(phone, email, or a website;  you can make a pretend one if you like)</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-yellow-50 to-orange-100 p-6 rounded-2xl shadow-lg">
-                <div className="flex items-center space-x-6">
-                  <div className="text-left">
-                    <h3 className="text-2xl font-bold text-yellow-800 mb-2">Logo or Picture</h3>
-                    <p className="text-xl text-gray-700">(a small design that shows what you do)</p>
-                  </div>
-                </div>
-              </div>
 
               <div className="bg-gradient-to-r from-red-50 to-rose-100 p-6 rounded-2xl shadow-lg">
                 <div className="flex items-center space-x-6">
                   <div className="text-left">
-                    <h3 className="text-2xl font-bold text-red-800 mb-2">Catchy Line / Slogan</h3>
-                    <p className="text-xl text-gray-700">(a fun phrase that makes people remember you, like &quot;Baking Happiness!&quot;)</p>
+                    <h3 className="text-2xl font-bold text-red-800 mb-2">Tagline or Slogan</h3>
+                    <p className="text-xl text-gray-700">(a catchy phrase that makes people remember your work, like “Baking Happiness!”)</p>
                   </div>
                 </div>
               </div>

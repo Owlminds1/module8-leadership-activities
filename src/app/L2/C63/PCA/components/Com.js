@@ -48,11 +48,27 @@ export default function Com() {
           <h1 className="text-5xl font-bold text-indigo-800 mb-6">
             Business Card Detective
           </h1>
-          <p className="text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-            Your mission is to be a Business Card Detective! Collect different business or visiting cards from family, friends, or shops.
+          <p className="text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-4">
+            Your mission is to be a Business Card Detective!
           </p>
-          <p className="text-xl text-gray-600 mt-4">
-            Look at each card carefully and note the details below:
+          <div className="bg-blue-50 rounded-xl p-6 mb-6 text-lg text-left max-w-3xl mx-auto">
+            <span className="font-bold text-blue-700">Instructions:</span>
+            <ul className="list-disc ml-6 mt-2 space-y-2">
+              <li>Gather different business or visiting cards from family, friends, or shops.</li>
+              <li>Observe each card to note:</li>
+              <ul className="list-disc ml-8">
+                <li>Business Name</li>
+                <li>Contact details (phone, email, website)</li>
+                <li>Social media links</li>
+                <li>QR code (Yes or No)</li>
+                <li>Material (Paper, Cardboard, Plastic, etc.)</li>
+                <li>Printed on a side or both sides</li>
+              </ul>
+              <li>Make sure to add your suggestions to improve the card design.</li>
+            </ul>
+          </div>
+          <p className="text-xl text-gray-600 mt-2">
+            Sample business card collection:
           </p>
         </div>
 

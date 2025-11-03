@@ -1,240 +1,193 @@
 "use client";
-import { useState } from "react";
 import jsPDF from "jspdf";
+import { useState } from "react";
 
 export default function Com() {
-  const [answers, setAnswers] = useState({
-    start: "",
-    feature: "",
-    special: "",
-    want: "",
-    excited: "",
-    confidence: "",
-    natural: "",
-    end: ""
+  const downloadPDF = () => {
+    const doc = new jsPDF();
+    doc.setFontSize(16);
+    doc.text("Elevator Pitch", 20, 20);
+    doc.setFontSize(12);
+    doc.text("1. Start with your name and idea:", 20, 35);
+    doc.text(inputs.nameIdea || "-", 20, 42);
+    doc.text("2. Explain what your idea does:", 20, 55);
+    doc.text(inputs.whatDoes || "-", 20, 62);
+    doc.text("3. State the problem:", 20, 75);
+    doc.text(inputs.problem || "-", 20, 82);
+    doc.text("4. Show your solution:", 20, 95);
+    doc.text(inputs.solution || "-", 20, 102);
+    doc.text("5. End with the benefit or goal and what you seek:", 20, 115);
+    doc.text(inputs.benefit || "-", 20, 122);
+    doc.save("elevator-pitch.pdf");
+  };
+  const [step, setStep] = useState(0);
+  const [inputs, setInputs] = useState({
+    nameIdea: "",
+    whatDoes: "",
+    problem: "",
+    solution: "",
+    benefit: "",
   });
 
-  const handleInputChange = (key, value) => {
-    setAnswers(prev => ({
-      ...prev,
-      [key]: value
-    }));
-  };
-
-  const generatePDF = () => {
-    const doc = new jsPDF();
-    
-    doc.setFontSize(20);
-    doc.text("My Elevator Pitch Planner", 20, 30);
-    
-    let yPosition = 50;
-    
-    const sections = [
-      {
-        title: "1. Be Polite and Confident",
-        question: "How will you start your pitch?",
-        answer: answers.start,
-        example: "Hello, my name is ______. I've created a new Miko feature called ______."
-      },
-      {
-        title: "2. Keep It Short and Simple",
-        question: "What is your new Miko feature?",
-        answer: answers.feature,
-        example: "It's a feature that helps kids learn bedtime stories in fun voices."
-      },
-      {
-        title: "2. Keep It Short and Simple (continued)",
-        question: "Why is it special or different from other features?",
-        answer: answers.special,
-        example: "It's special because Miko can tell funny stories and make kids laugh before bed."
-      },
-      {
-        title: "2. Keep It Short and Simple (continued)",
-        question: "What do you want others to do with your idea?",
-        answer: answers.want,
-        example: "I'd love for kids everywhere to try it and share their favorite stories with Miko!"
-      },
-      {
-        title: "3. Use Excited, Positive Energy",
-        question: "What makes you most excited about your idea?",
-        answer: answers.excited,
-        example: "It makes learning fun and helps kids relax!"
-      },
-      {
-        title: "4. Make Eye Contact & Mind Your Body Language",
-        question: "How will you show confidence while speaking?",
-        answer: answers.confidence,
-        example: "I'll smile and look straight at my audience."
-      },
-      {
-        title: "5. Don't Memorize Like a Robot",
-        question: "How will you make your pitch sound natural, like a story?",
-        answer: answers.natural,
-        example: "I'll pretend I'm telling my idea to a friend."
-      },
-      {
-        title: "6. End with Gratitude",
-        question: "How will you end your pitch politely?",
-        answer: answers.end,
-        example: "Thank you for listening! Would you like to hear one of Miko's stories?"
-      }
-    ];
-
-    sections.forEach((section, index) => {
-      if (yPosition > 250) {
-        doc.addPage();
-        yPosition = 30;
-      }
-      
-      if (section.answer && section.answer.trim() !== "") {
-        doc.setFontSize(12);
-        doc.setFont(undefined, 'normal');
-        doc.text(section.answer, 20, yPosition);
-        yPosition += 15;
-      }
-    });
-    
-    doc.save("my-elevator-pitch.pdf");
+  const handleChange = (field, value) => {
+    setInputs((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 p-6">
-      <div className="max-w-6xl bg-white shadow-2xl rounded-3xl p-12">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-indigo-800 mb-4">
-            My Elevator Pitch
-          </h1>
-
-        </div>
-
-        <div className="space-y-10">
-          <div className="bg-green-50 p-6 rounded-2xl shadow-lg">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50 p-6">
+      <div className="max-w-2xl w-full bg-white shadow-xl rounded-2xl p-8 flex flex-col items-center">
+        {/* Slide 1 */}
+        {step === 0 && (
+          <>
+            <h1 className="text-3xl font-bold text-blue-800 mb-8 text-center">
+              What is an elevator pitch?
+            </h1>
+            <button
+              className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 text-xl"
+              onClick={() => setStep(1)}
+            >
+              Next
+            </button>
+          </>
+        )}
+        {/* Slide 2 */}
+        {step === 1 && (
+          <>
+            <h2 className="text-2xl font-bold text-purple-700 mb-6 text-center">
+              An elevator pitch is a concise way to share your idea in the same amount of time it takes to use an elevator (about 30 seconds)!
+              <br />
+              <br />
+              It’s like giving someone a glimpse of your idea to make them want to know more.
+            </h2>
+            <button
+              className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 text-xl"
+              onClick={() => setStep(2)}
+            >
+              Next
+            </button>
+          </>
+        )}
+        {/* Slide 3 */}
+        {step === 2 && (
+          <>
+            <h2 className="text-2xl font-bold text-blue-700 mb-4 text-center italic">Example:</h2>
+            <div className="bg-blue-50 rounded-lg p-4 mb-6 text-xl text-gray-800">
+              Hi, I’m Joe and my business is Sock Star. We design fun, colorful socks with emojis, cartoons and grip. Everyone wears socks — so why not make them exciting? We sell them at school fairs and take bulk orders for sports teams. They’re affordable, comfortable, and make people stand out! I want to set up an online store!
+            </div>
+            <button
+              className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 text-xl"
+              onClick={() => setStep(3)}
+            >
+              Next
+            </button>
+          </>
+        )}
+        {/* Slide 4 */}
+        {step === 3 && (
+          <>
+            <h2 className="text-2xl font-bold text-purple-700 mb-4 text-center italic">Example:</h2>
+            <div className="bg-purple-50 rounded-lg p-4 mb-6 text-xl text-gray-800">
+              I’m Eva, and my idea is Balloon Magic. We decorate birthday parties and school events with colorful balloons — arches, photo walls, and even glowing balloon designs! We use biodegradable balloons to protect the environment. Everyone loves parties, and we make them extra special. I want to set up a Balloon art shop.
+            </div>
+            <button
+              className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 text-xl"
+              onClick={() => setStep(4)}
+            >
+              Next
+            </button>
+          </>
+        )}
+        {/* Slide 5: Create Elevator Pitch */}
+        {step === 4 && (
+          <div className="w-full">
+            <h2 className="text-2xl font-bold text-green-700 mb-6 text-center">
+              Create an elevator pitch for your business idea
+            </h2>
             <div className="mb-6">
-              <p className="text-lg text-gray-700 mb-4">Q: How will you start your pitch?</p>
+              <label className="block text-lg font-semibold mb-2">
+                1. Start with your name and idea
+                <span className="block text-gray-600 font-normal text-base italic">
+                  “Hi! I’m [Name], and my idea is [Business Name].”
+                </span>
+              </label>
               <input
                 type="text"
-                value={answers.start}
-                onChange={(e) => handleInputChange('start', e.target.value)}
-                className="w-full p-4 border-2 border-green-300 rounded-xl text-lg focus:border-green-500 focus:outline-none"
-                placeholder="Your answer here..."
+                className="w-full border border-gray-400 rounded-lg px-4 py-3 text-lg mb-2"
+                placeholder="Write your sentence..."
+                value={inputs.nameIdea}
+                onChange={(e) => handleChange("nameIdea", e.target.value)}
               />
-              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;Hello, my name is ______. I&apos;ve created a new Miko feature called ______.&quot;</p>
-
             </div>
-          </div>
-
-          <div className="bg-orange-50 p-6 rounded-2xl shadow-lg">
-
-            <div className="space-y-6">
-              <div>
-                <p className="text-lg text-gray-700 mb-4">Q: What is your new Miko feature?</p>
-                <input
-                  type="text"
-                  value={answers.feature}
-                  onChange={(e) => handleInputChange('feature', e.target.value)}
-                  className="w-full p-4 border-2 border-orange-300 rounded-xl text-lg focus:border-orange-500 focus:outline-none"
-                  placeholder="Your answer here..."
-                />
-                <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;It&apos;s a feature that helps kids learn bedtime stories in fun voices.&quot;</p>
-              </div>
-
-              <div>
-                <p className="text-lg text-gray-700 mb-4">Q: Why is it special or different from other features?</p>
-                <input
-                  type="text"
-                  value={answers.special}
-                  onChange={(e) => handleInputChange('special', e.target.value)}
-                  className="w-full p-4 border-2 border-orange-300 rounded-xl text-lg focus:border-orange-500 focus:outline-none"
-                  placeholder="Your answer here..."
-                />
-                <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;It&apos;s special because Miko can tell funny stories and make kids laugh before bed.&quot;</p>
-
-              </div>
-
-              <div>
-                <p className="text-lg text-gray-700 mb-4">Q: What do you want others to do with your idea?</p>
-                <input
-                  type="text"
-                  value={answers.want}
-                  onChange={(e) => handleInputChange('want', e.target.value)}
-                  className="w-full p-4 border-2 border-orange-300 rounded-xl text-lg focus:border-orange-500 focus:outline-none"
-                  placeholder="Your answer here..."
-                />
-                <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;I&apos;d love for kids everywhere to try it and share their favorite stories with Miko!&quot;</p>
-
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-yellow-50 p-6 rounded-2xl shadow-lg">
             <div className="mb-6">
-              <p className="text-lg text-gray-700 mb-4">Q: What makes you most excited about your idea?</p>
+              <label className="block text-lg font-semibold mb-2">
+                2. Explain what your idea does
+                <span className="block text-gray-600 font-normal text-base italic">
+                  “We make/sell/do [what your business offers].”
+                </span>
+              </label>
               <input
                 type="text"
-                value={answers.excited}
-                onChange={(e) => handleInputChange('excited', e.target.value)}
-                className="w-full p-4 border-2 border-yellow-300 rounded-xl text-lg focus:border-yellow-500 focus:outline-none"
-                placeholder="Your answer here..."
+                className="w-full border border-gray-400 rounded-lg px-4 py-3 text-lg mb-2"
+                placeholder="Write your sentence..."
+                value={inputs.whatDoes}
+                onChange={(e) => handleChange("whatDoes", e.target.value)}
               />
-              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;It makes learning fun and helps kids relax!&quot;</p>
-
             </div>
-          </div>
-
-          <div className="bg-blue-50 p-6 rounded-2xl shadow-lg">
             <div className="mb-6">
-              <p className="text-sm text-gray-500 mb-4 italic">(Teacher Note: remind the student — stand tall, smile, and look into the camera while practicing.)</p>
-              <p className="text-lg text-gray-700 mb-4">Q: How will you show confidence while speaking?</p>
+              <label className="block text-lg font-semibold mb-2">
+                3. State the problem
+                <span className="block text-gray-600 font-normal text-base italic">
+                  “Many people face [the problem].”
+                </span>
+              </label>
               <input
                 type="text"
-                value={answers.confidence}
-                onChange={(e) => handleInputChange('confidence', e.target.value)}
-                className="w-full p-4 border-2 border-blue-300 rounded-xl text-lg focus:border-blue-500 focus:outline-none"
-                placeholder="Your answer here..."
+                className="w-full border border-gray-400 rounded-lg px-4 py-3 text-lg mb-2"
+                placeholder="Write your sentence..."
+                value={inputs.problem}
+                onChange={(e) => handleChange("problem", e.target.value)}
               />
-              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;I&apos;ll smile and look straight at my audience.&quot;</p>
-
             </div>
-          </div>
-
-          <div className="bg-purple-50 p-6 rounded-2xl shadow-lg">
             <div className="mb-6">
-              <p className="text-lg text-gray-700 mb-4">Q: How will you make your pitch sound natural, like a story?</p>
+              <label className="block text-lg font-semibold mb-2">
+                4. Show your solution
+                <span className="block text-gray-600 font-normal text-base italic">
+                  “Our product helps by [how it solves the problem].”
+                </span>
+              </label>
               <input
                 type="text"
-                value={answers.natural}
-                onChange={(e) => handleInputChange('natural', e.target.value)}
-                className="w-full p-4 border-2 border-purple-300 rounded-xl text-lg focus:border-purple-500 focus:outline-none"
-                placeholder="Your answer here..."
+                className="w-full border border-gray-400 rounded-lg px-4 py-3 text-lg mb-2"
+                placeholder="Write your sentence..."
+                value={inputs.solution}
+                onChange={(e) => handleChange("solution", e.target.value)}
               />
-              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;I&apos;ll pretend I&apos;m telling my idea to a friend.&quot;</p>
-
             </div>
-          </div>
-
-          <div className="bg-red-50 p-6 rounded-2xl shadow-lg">
             <div className="mb-6">
-              <p className="text-lg text-gray-700 mb-4">Q: How will you end your pitch politely?</p>
+              <label className="block text-lg font-semibold mb-2">
+                5. End with the benefit or goal and what you seek
+                <span className="block text-gray-600 font-normal text-base italic">
+                  “Our goal is to [positive impact / reason it matters].”<br />
+                  “I want to [action that will follow soon].”
+                </span>
+              </label>
               <input
                 type="text"
-                value={answers.end}
-                onChange={(e) => handleInputChange('end', e.target.value)}
-                className="w-full p-4 border-2 border-red-300 rounded-xl text-lg focus:border-red-500 focus:outline-none"
-                placeholder="Your answer here..."
+                className="w-full border border-gray-400 rounded-lg px-4 py-3 text-lg mb-2"
+                placeholder="Write your sentence..."
+                value={inputs.benefit}
+                onChange={(e) => handleChange("benefit", e.target.value)}
               />
-              <p className="text-gray-600 mb-8 mt-4 italic">➡ Example: &quot;Thank you for listening! Would you like to hear one of Miko&apos;s stories?&quot;</p>
-
             </div>
+            <button
+              className="px-8 py-3 bg-green-600 text-white font-semibold rounded-xl shadow-lg hover:bg-green-700 text-xl mt-4"
+              onClick={downloadPDF}
+            >
+              Submit
+            </button>
           </div>
-
-          <button
-            onClick={generatePDF}
-            className="px-8 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white font-bold text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          >
-          Generate PDF
-          </button>
-        </div>
-
+        )}
+        
       </div>
     </div>
   );

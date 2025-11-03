@@ -19,20 +19,20 @@ export default function Com() {
 
 
   const customers = [
-    { id: "lina", name: "Lina", description: "Lina loves reading and enjoys fun bookmarks to keep her place", image: s1 },
-    { id: "mia", name: "Mia", description: "Mia loves toys and often loses small pieces, so she likes playful items like slime.", image: s2 },
-    { id: "arjun", name: "Arjun", description: "Arjun supplies groceries like flour, sugar, and lemons for baking or cooking.", image: s3 },
-    { id: "aditi", name: "Aditi", description: "Aditi is a parent investor who supports small businesses.", image: s4 },
-    { id: "party_planner", name: "Party Planner", description: "The Toy Shop Owner likes bundling toys with comics or slime for kids.", image: s5 },
-    { id: "toy_shop", name: "Toy Shop Owner", description: "Party Planner organizes events and needs cupcakes, lemonade, and fun activities.", image: s6 }
+    { id: "lina", name: "Lina", description: "Lina loves reading books.", image: s1 },
+    { id: "mia", name: "Mia", description: "Mia loves squishy toys that she can fiddle with.", image: s2 },
+    { id: "arjun", name: "Arjun", description: "Arjun supplies groceries like flour and sugar.", image: s3 },
+    { id: "aditi", name: "Aditi", description: "Adie, an investor who supports small businesses.", image: s4 },
+    { id: "toy_shop", name: "Mr. Smith", description: "Mr. Smith, the Toy Shop Owner who sells comics and variety of fidget toys.", image: s5 },
+    { id: "party_planner", name: "Ms. Kyle", description: "Ms. Kyle, the Party Planner, who organizes events and needs cupcakes, lemonade, as well as fun activities.", image: s6 }
   ];
   
 
   
   const businessOwners = [
-    { id: "sofia", name: "Sofia", description: "Sofia makes handmade bookmarks that are fun and colorful.", image: s7 },
-    { id: "kiran", name: "Kiran", description: "Kiran draws and sells comic books with fun stories.", image: s8 },
-    { id: "ella", name: "Ella", description: "Ella bakes tasty cupcakes for events or snacks.", image: s9 },
+    { id: "sofia", name: "Sofia", description: "Sofia makes handmade bookmarks that are beautiful and colorful.", image: s7 },
+    { id: "kiran", name: "Kiran", description: "Kiran draws and sells comic books with inventive stories.", image: s8 },
+    { id: "ella", name: "Ella", description: "Ella bakes tasty cupcakes for festive occasions.", image: s9 },
     { id: "nina", name: "Nina", description: "Nina sells glow-in-the-dark slime kits for kids to play with.", image: s10 },
     { id: "raj", name: "Raj", description: "Raj runs a lemonade stand and sells refreshing drinks.", image: s11 }
   ];
@@ -41,7 +41,8 @@ export default function Com() {
     sofia: ["lina", "party_planner", "toy_shop"],
     kiran: ["lina", "toy_shop", "aditi"],
     ella: ["arjun", "party_planner", "aditi"],
-    nina: ["mia", "toy_shop", "party_planner"]
+    nina: ["mia", "toy_shop", "party_planner"],
+    raj: ["arjun"]
   };
 
   const handleDragStart = (e, businessOwnerId) => {
@@ -79,7 +80,6 @@ export default function Com() {
     Object.keys(correctConnections).forEach(businessOwner => {
       const correctList = correctConnections[businessOwner];
       const userConnections = connections[businessOwner] || [];
-      
       correctList.forEach(customerId => {
         total++;
         if (userConnections.includes(customerId)) {
@@ -87,7 +87,7 @@ export default function Com() {
         }
       });
     });
-
+    console.log("correct", correct, "total", total, connections);
     return { correct, total };
   };
 
@@ -97,90 +97,97 @@ export default function Com() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 p-0">
       <div className="w-full mx-auto">
-        <div className="bg-white shadow-2xl rounded-3xl p-4">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <h2 className="text-xl font-bold text-purple-800 mb-2">
-                Customers & Business Partners
-              </h2>
-              <div className="grid grid-cols-1 gap-4">
-                {customers.map((customer) => (
-                  <div
-                    key={customer.id}
-                    className="bg-gradient-to-r from-blue-50 to-purple-50 p-2 rounded-2xl shadow-lg border-2 border-dashed border-blue-300 min-h-[100px] flex items-center space-x-4"
-                    onDragOver={handleDragOver}
-                    onDrop={(e) => handleDrop(e, customer.id)}
-                  >
-                    <Image
-                      src={customer.image}
-                      alt={customer.name}
-                      width={80}
-                      height={80}
-                      className="rounded-lg flex-shrink-0"
-                    />
-                    <div>
-                      <h3 className="text-lg font-bold text-blue-800">{customer.name}</h3>
-                      <p className="text-gray-700 text-sm">{customer.description}</p>
-                      <div className="mt-2">
-                        {Object.entries(connections).map(([businessOwnerId, customerIds]) => 
-                          customerIds.includes(customer.id) && (
-                            <span
-                              key={businessOwnerId}
-                              className="inline-block bg-green-200 text-green-800 px-2 py-1 rounded-full text-xs mr-2 mb-1"
-                            >
-                              {businessOwners.find(bo => bo.id === businessOwnerId)?.name}
-                              <button
-                                onClick={() => removeConnection(businessOwnerId, customer.id)}
-                                className="ml-1 text-red-600 hover:text-red-800"
-                              >
-                                ×
-                              </button>
-                            </span>
-                          )
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+        <div className="rounded-3xl p-4">
+          {isComplete ? (
+            <div className="flex flex-col items-center justify-center min-h-[400px] text-center py-16">
+              <h1 className="text-4xl font-extrabold text-green-700 mb-6">Congratulations!</h1>
+              <p className="text-xl text-gray-800 mb-4">You connected all the business owners and customers correctly.</p>
             </div>
-
-            <div className="space-y-6">
-              <h2 className="text-xl font-bold text-green-800 mb-2">
-                Business Owners (Drag to Connect)
-              </h2>
-              <div className="grid grid-cols-2 gap-4">
-                {businessOwners.map((businessOwner) => (
-                  <div
-                    key={businessOwner.id}
-                    className="bg-gradient-to-r from-green-50 to-blue-50 p-2 rounded-2xl shadow-lg border-2 border-green-300 cursor-move"
-                    draggable
-                    onDragStart={(e) => handleDragStart(e, businessOwner.id)}
-                  >
-                    <div className="flex items-center space-x-4">
-                      <Image
-                        src={businessOwner.image}
-                        alt={businessOwner.name}
-                        width={130}
-                        className="rounded-lg flex-shrink-0"
-                      />
-                      <div>
-                        <h3 className="text-lg font-bold text-green-800">{businessOwner.name}</h3>
-                        <p className="text-gray-700 text-md">{businessOwner.description}</p>
-                        <div className="mt-2">
-                          <span className="text-xs text-gray-500">
-                            Connections: {connections[businessOwner.id]?.length || 0}
-                          </span>
+          ) : (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* LHS: Business Owners */}
+              <div className="space-y-6 text-left">
+                <h2 className="text-xl font-bold text-green-800 mb-2 text-left">
+                  Business Owners (Drag to Connect)
+                </h2>
+                <div className="grid grid-cols-2 gap-4">
+                  {businessOwners.map((businessOwner) => (
+                    <div
+                      key={businessOwner.id}
+                      className="bg-gradient-to-r from-green-50 to-blue-50 p-2 rounded-2xl shadow-lg border-2 border-green-300 cursor-move text-left"
+                      draggable
+                      onDragStart={(e) => handleDragStart(e, businessOwner.id)}
+                    >
+                      <div className="flex items-center space-x-4">
+                        <Image
+                          src={businessOwner.image}
+                          alt={businessOwner.name}
+                          width={130}
+                          className="rounded-lg flex-shrink-0"
+                        />
+                        <div className="text-left">
+                          <h3 className="text-lg font-bold text-green-800 text-left">{businessOwner.name}</h3>
+                          <p className="text-gray-700 text-md text-left">{businessOwner.description}</p>
+                          <div className="mt-2 text-left">
+                            <span className="text-xs text-gray-500 text-left">
+                              Connections: {connections[businessOwner.id]?.length || 0}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* RHS: Customers & Business Partners */}
+              <div className="space-y-6 text-left">
+                <h2 className="text-xl font-bold text-purple-800 mb-2 text-left">
+                  Customers & Business Partners
+                </h2>
+                <div className="grid grid-cols-1 gap-4">
+                  {customers.map((customer) => (
+                    <div
+                      key={customer.id}
+                      className="bg-gradient-to-r from-blue-50 to-purple-50 p-2 rounded-2xl shadow-lg border-2 border-dashed border-blue-300 min-h-[100px] flex items-center space-x-4 text-left"
+                      onDragOver={handleDragOver}
+                      onDrop={(e) => handleDrop(e, customer.id)}
+                    >
+                      <Image
+                        src={customer.image}
+                        alt={customer.name}
+                        width={80}
+                        height={80}
+                        className="rounded-lg flex-shrink-0"
+                      />
+                      <div className="text-left">
+                        <h3 className="text-lg font-bold text-blue-800 text-left">{customer.name}</h3>
+                        <p className="text-gray-700 text-sm text-left">{customer.description}</p>
+                        <div className="mt-2 text-left">
+                          {Object.entries(connections).map(([businessOwnerId, customerIds]) => 
+                            customerIds.includes(customer.id) && (
+                              <span
+                                key={businessOwnerId}
+                                className="inline-block bg-green-200 text-green-800 px-2 py-1 rounded-full text-xs mr-2 mb-1 text-left"
+                              >
+                                {businessOwners.find(bo => bo.id === businessOwnerId)?.name}
+                                <button
+                                  onClick={() => removeConnection(businessOwnerId, customer.id)}
+                                  className="ml-1 text-red-600 hover:text-red-800"
+                                >
+                                  ×
+                                </button>
+                              </span>
+                            )
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-
+          )}
         </div>
       </div>
     </div>

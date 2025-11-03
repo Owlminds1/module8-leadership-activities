@@ -36,47 +36,50 @@ export default function Com() {
       correctAnswer: "Introduce yourself politely"
     },
     {
-      question: "Listening carefully is important when talking to someone about business.",
+      question: "Listening attentively is not important when commuting with someone.",
       type: "truefalse",
       options: ["True", "False"],
-      correctAnswer: "True"
+      correctAnswer: "False"
     },
     {
-      question: "If you meet someone who sells something you need, what should you do?",
-      type: "multiple",
-      options: ["Ignore them", "Talk to them and ask questions", "Take their product without permission"],
-      correctAnswer: "Talk to them and ask questions"
-    },
-    {
-      question: "Why do people network?",
+      question: "During a networking event, someone gives you their card. What’s the best next step after the event?",
       type: "multiple",
       options: [
-        "To find customers",
-        "To get advice",
-        "To discover new opportunities",
-        "All of the above"
+        "Throw it away",
+        "Send a quick thank-you or follow-up message",
+        "Wait for them to contact you"
       ],
-      correctAnswer: "All of the above"
+      correctAnswer: "Send a quick thank-you or follow-up message"
     },
     {
-      question: "Cross-selling is when:",
+      question: "Which of the following shows strategic networking?",
       type: "multiple",
       options: [
-        "You sell the same product twice",
-        "One product helps sell another product",
-        "You ignore customers"
+        "Only talking to people in your same field",
+        "Connecting with people from different industries to explore partnerships",
+        "Adding random people online"
       ],
-      correctAnswer: "One product helps sell another product"
+      correctAnswer: "Connecting with people from different industries to explore partnerships"
     },
     {
-      question: "What is one way to make a good impression when networking?",
+      question: "If a potential customer says they’re not interested right now, what should you do?",
       type: "multiple",
       options: [
-        "Be polite and ask questions",
-        "Brag about your product",
-        "Ignore others"
+        "Argue and convince them immediately",
+        "Respectfully thank them and stay in touch",
+        "Delete their contact"
       ],
-      correctAnswer: "Be polite and ask questions"
+      correctAnswer: "Respectfully thank them and stay in touch"
+    },
+    {
+      question: "What’s the best reason to attend industry meetups and conferences?",
+      type: "multiple",
+      options: [
+        "To hand out as many business cards as possible",
+        "To build meaningful, long-term relationships",
+        "To collect freebies"
+      ],
+      correctAnswer: "To build meaningful, long-term relationships"
     }
   ];
   

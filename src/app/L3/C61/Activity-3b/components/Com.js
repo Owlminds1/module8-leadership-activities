@@ -5,38 +5,38 @@ const screenData = [
   {
     id: 0,
     title: "Increase Sales Volume",
-    content: "If Sam sells more bottles, the fixed costs like electricity and rent are shared across more products.",
+    content: "If Sam sells more bottles, the fixed costs such as energy and rent are shared across more products.",
     example: "Example: Instead of selling 100 bottles, Sam sells 200 bottles. The profit per bottle increases because the fixed cost is spread over more items. This helps him earn more without changing the price of each bottle."
   },
   {
     id: 1,
-    title: "Bulk Material Purchase",
-    content: "Buying bottles, packaging, or delivery materials in bigger quantities reduces the cost per bottle.",
+    title: "Bulk Purchase",
+    content: "Buying bottles, packaging, or delivery materials in bigger quantities minimises the cost per bottle.",
     example: "Example: Instead of $2 per bottle, buying in bulk lowers it to $1.50 per bottle. This helps Sam save money and increase profit for each bottle sold."
   },
   {
     id: 2,
     title: "B2B Partnerships",
     content: "Selling in bulk to gyms, schools, or sports clubs saves time and reaches more customers.",
-    example: "Example: Selling 50 bottles at once to a school instead of 1 bottle at a time to individuals. This helps Sam get bigger orders and more consistent revenue."
+    example: "Example: Selling 50 bottles to a school in one go  instead of a bottle at a time to individuals. This helps Sam get bigger orders and more consistent revenue."
   },
   {
     id: 3,
     title: "Product Bundles",
-    content: "Sam can create packages like \"Buy 2 bottles, get a sports towel at a discount.\"",
+    content: "Sam can create packages such as “Buy 2 bottles to get a sports towel at a discount.”",
     example: "Example: 2 bottles + 1 towel for $12 instead of $15 individually. Bundles encourage customers to buy more and increase total sales."
   },
   {
     id: 4,
     title: "Subscription Boxes",
-    content: "Customers pay a monthly fee and receive a new product every month.",
-    example: "Example: $10 per month for 1 bottle and a sports accessory delivered every month. This helps Sam plan production better and earn regular income."
+    content: "Customers pay a monthly fee and get a new product every month.",
+    example: "Example: $10 per month for a bottle and a sports accessory delivered every month. This helps Sam plan production better and earn  a regular income."
   },
   {
     id: 5,
-    title: "Advertising & Online Presence",
-    content: "Sam can promote his products through social media, local ads, or his website.",
-    example: "Example: Posting on Instagram or Facebook about a new water bottle design. This helps him attract more customers and sell more without changing the products."
+    title: "Special Idea: Marketing Investment",
+    content: "Sam’s can do brand promotion: like running ads, sponsoring a local event, or collaborating with an influencer. This campaign could double (2×) Sam’s sales by attracting more customers both online and offline. Even though this requires some extra spending, the increase in sales could make it well worth it!",
+    example: ""
   }
 ];
 

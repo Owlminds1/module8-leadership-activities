@@ -5,182 +5,186 @@ import s1 from "../assets/s1.png";
 
 export default function Com() {
   const [currentScreen, setCurrentScreen] = useState(0);
-  const [sellingPrices, setSellingPrices] = useState({
-    apple: "",
-    banana: "",
-    mango: "",
-    orange: "",
-    grapes: ""
-  });
+  const [profitLossStep, setProfitLossStep] = useState(0); // 0: instruction, 1-3: situations
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [feedback, setFeedback] = useState("");
+  const [isLocked, setIsLocked] = useState(false);
 
   const nextScreen = () => {
-    if (currentScreen < 9) {
+    if (currentScreen < 6) {
       setCurrentScreen(currentScreen + 1);
+    } else if (currentScreen === 6) {
+      setCurrentScreen(7); // move to profit/loss instruction
+    } else if (currentScreen === 7 && profitLossStep === 0) {
+      setProfitLossStep(1);
     }
   };
 
-  const handlePriceChange = (fruit, value) => {
-    setSellingPrices(prev => ({
-      ...prev,
-      [fruit]: value
-    }));
+  const profitLossSituations = [
+    {
+      sentence: "A box of apples costs $20, and is sold for $30.",
+      answer: "Profit"
+    },
+    {
+      sentence: "A bunch of bananas is bought for $1 and sold at the same price.",
+      answer: "Break even"
+    },
+    {
+      sentence: "A box of mangoes is sold at a lower price than cost, as they may go bad if stored longer.",
+      answer: "Loss"
+    }
+  ];
+
+  const handleProfitLossButton = (option) => {
+    if (isLocked) return;
+    setSelectedOption(option);
+    if (option === profitLossSituations[profitLossStep - 1].answer) {
+      setFeedback("Correct!");
+      setIsLocked(true);
+      setTimeout(() => {
+        if (profitLossStep < 3) {
+          setProfitLossStep(profitLossStep + 1);
+          setSelectedOption(null);
+          setFeedback("");
+          setIsLocked(false);
+        } else {
+          setCurrentScreen(8); // move to summary or next activity
+        }
+      }, 700);
+    } else {
+      setFeedback("Try again.");
+    }
   };
 
-  const calculateProfit = (cost, sellingPrice) => {
-    const price = parseFloat(sellingPrice) || 0;
-    const profit = price - cost;
-    return profit;
+  const handleProfitLossSelect = (idx, value) => {
+    const updated = [...profitLossAnswers];
+    updated[idx] = value;
+    setProfitLossAnswers(updated);
+    setShowFeedback(true);
   };
 
   const renderScreen = () => {
+    // Interactive profit/loss screens
+    if (currentScreen === 7 && profitLossStep > 0 && profitLossStep <= 3) {
+      const situation = profitLossSituations[profitLossStep - 1];
+      return (
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-6 text-blue-800">{situation.sentence}</h1>
+          <div className="flex justify-center gap-4 mb-4">
+            {["Profit", "Loss", "Break even"].map(option => (
+              <button
+                key={option}
+                disabled={isLocked}
+                className={`px-6 py-2 rounded-xl font-bold text-white text-lg shadow ${selectedOption === option ? "bg-purple-600" : "bg-purple-400 hover:bg-purple-600"} ${isLocked ? "opacity-50 cursor-not-allowed" : ""}`}
+                onClick={() => handleProfitLossButton(option)}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+          {selectedOption && (
+            <div className="mt-2">
+              {feedback === "Correct!" ? (
+                <span className="text-green-700 font-bold">Correct!</span>
+              ) : (
+                <span className="text-red-700 font-bold">Try again.</span>
+              )}
+            </div>
+          )}
+        </div>
+      );
+    }
     switch (currentScreen) {
       case 0:
+        // ...existing code...
         return (
           <div className="text-center">
-            <h1 className="text-3xl font-bold mb-6 text-purple-800">Meet Maya, the proud owner of a fruit stand</h1>
+            <h1 className="text-3xl font-bold mb-6 text-purple-800">Meet Maya, the proud owner of a fruit stand.</h1>
             <div className="flex justify-center mb-6">
               <Image src={s1} alt="fruit stand" width={400} height={400} className="rounded-lg" />
             </div>
             <p className="text-xl text-gray-700 leading-relaxed">
-              She buys fruits from the wholesale market and sells them in her neighborhood. Maya needs your help to decide - how much should she sell the fruits for! Help her earn well to keep her business running.
+              She buys fruits from the wholesale market and sells them in her neighborhood. Let&apos;s help Maya decide how much she should sell the fruits for! Get her to earn well to keep her business running.
             </p>
           </div>
         );
-
       case 1:
+        // ...existing code...
         return (
-          <div>
-            <h2 className="text-2xl font-bold mb-6 text-blue-800">Look at the cost for each fruit on the table.</h2>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-gray-300 bg-white rounded-lg shadow-lg">
-                <thead>
-                  <tr className="bg-blue-100">
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Fruit Name</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Cost to Buy (per piece)</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Suggested Sell Price</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Profit or loss?</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-gray-300 px-4 py-3">Apple</td>
-                    <td className="border border-gray-300 px-4 py-3">$2</td>
-                    <td className="border border-gray-300 px-4 py-3">-</td>
-                    <td className="border border-gray-300 px-4 py-3">-</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border border-gray-300 px-4 py-3">Banana</td>
-                    <td className="border border-gray-300 px-4 py-3">$1</td>
-                    <td className="border border-gray-300 px-4 py-3">-</td>
-                    <td className="border border-gray-300 px-4 py-3">-</td>
-                  </tr>
-                  <tr>
-                    <td className="border border-gray-300 px-4 py-3">Mango</td>
-                    <td className="border border-gray-300 px-4 py-3">$3</td>
-                    <td className="border border-gray-300 px-4 py-3">-</td>
-                    <td className="border border-gray-300 px-4 py-3">-</td>
-                  </tr>
-                  <tr className="bg-gray-50">
-                    <td className="border border-gray-300 px-4 py-3">Orange</td>
-                    <td className="border border-gray-300 px-4 py-3">$2</td>
-                    <td className="border border-gray-300 px-4 py-3">-</td>
-                    <td className="border border-gray-300 px-4 py-3">-</td>
-                  </tr>
-                  <tr>
-                    <td className="border border-gray-300 px-4 py-3">Grapes</td>
-                    <td className="border border-gray-300 px-4 py-3">$2</td>
-                    <td className="border border-gray-300 px-4 py-3">-</td>
-                    <td className="border border-gray-300 px-4 py-3">-</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="mt-6 text-center">
-              <p className="text-lg text-gray-700 mb-2">You decide the selling price - should it be more, same, or less than the cost?</p>
-              <p className="text-lg text-gray-700">As you put the selling price in the table the profit or loss will be auto calculated.</p>
-            </div>
+          <div className="text-center">
+            <h1 className="text-3xl font-bold mb-6 text-green-800">How can we make profit?</h1>
           </div>
         );
-
       case 2:
+        // ...existing code...
         return (
           <div className="text-center">
-            <h1 className="text-3xl font-bold mb-6 text-green-800">Do you remember what profit we have learned in previous classes?</h1>
+            <h1 className="text-3xl font-bold mb-6 text-green-800">How can we make profit?</h1>
+            <div className="bg-green-100 p-8 rounded-lg max-w-2xl mx-auto mt-6">
+              <p className="text-xl font-bold text-green-800 mb-4">
+                When the selling price is higher than the cost price, we make a profit.
+              </p>
+            </div>
           </div>
         );
-
       case 3:
+        // ...existing code...
         return (
           <div className="text-center">
-            <h1 className="text-3xl font-bold mb-6 text-green-800">Do you remember what profit we have learned in previous classes?</h1>
-            <div className="bg-green-100 p-8 rounded-lg max-w-2xl mx-auto">
-              <p className="text-xl font-bold text-green-800">
-                Profit is review - cost, if the value is positive then it&apos;s a profit else it is a loss.
-              </p>
-            </div>
+            <h1 className="text-3xl font-bold mb-6 text-red-800">When does a business run in loss?</h1>
           </div>
         );
-
       case 4:
+        // ...existing code...
         return (
           <div className="text-center">
-            <h1 className="text-3xl font-bold mb-6 text-blue-800">If an apple costs Maya $2, and she sells it for $3, is that more or less than the cost?</h1>
+            <h1 className="text-3xl font-bold mb-6 text-red-800">When does a business run in loss?</h1>
+            <div className="bg-red-100 p-8 rounded-lg max-w-2xl mx-auto mt-6">
+              <p className="text-xl font-bold text-red-800 mb-4">
+                If the cost price is higher than the selling price, the business makes a loss.
+              </p>
+            </div>
           </div>
         );
-
       case 5:
+        // ...existing code...
         return (
           <div className="text-center">
-            <h1 className="text-3xl font-bold mb-6 text-blue-800">If an apple costs Maya $2, and she sells it for $3, is that more or less than the cost?</h1>
-            <div className="bg-blue-100 p-8 rounded-lg max-w-2xl mx-auto">
-              <p className="text-xl font-bold text-blue-800">
-                It&apos;s more. That means Maya makes a profit.
-              </p>
-            </div>
+            <h1 className="text-3xl font-bold mb-6 text-blue-800">When does a business get breakeven?</h1>
           </div>
         );
-
       case 6:
+        // ...existing code...
         return (
           <div className="text-center">
-            <h1 className="text-3xl font-bold mb-6 text-orange-800">If she sells the banana at the same price she bought it, which is $1, does Maya earn anything?</h1>
+            <h1 className="text-3xl font-bold mb-6 text-blue-800">When does a business get breakeven?</h1>
+            <div className="bg-blue-100 p-8 rounded-lg max-w-2xl mx-auto mt-6">
+              <p className="text-xl font-bold text-blue-800 mb-4">
+                When it makes neither profit, nor loss money; it is called breakeven.
+              </p>
+            </div>
           </div>
         );
-
       case 7:
+        // Instruction screen for profit/loss activity
         return (
           <div className="text-center">
-            <h1 className="text-3xl font-bold mb-6 text-orange-800">If she sells the banana at the same price she bought it, which is $1, does Maya earn anything?</h1>
-            <div className="bg-orange-100 p-8 rounded-lg max-w-2xl mx-auto">
-              <p className="text-xl font-bold text-orange-800">
-                No, she doesn&apos;t earn anything. That means no profit, no loss, it is called break even.
-              </p>
+            <h1 className="text-3xl font-bold mb-6 text-blue-800">Profit or Loss?</h1>
+            <div className="bg-blue-50 p-6 rounded-lg max-w-2xl mx-auto mb-4">
+              <p className="text-xl text-blue-800 font-semibold">Check each of these situations and decide if Maya is making profit or loss.</p>
             </div>
+          
           </div>
         );
-
       case 8:
+        // Show Good Job message
         return (
           <div className="text-center">
-            <h1 className="text-3xl font-bold mb-6 text-red-800">What if she sells mango for less than the cost, do you think that&apos;s good for Maya&apos;s business?</h1>
+            <h1 className="text-4xl font-bold mb-8 text-green-700">Good Job!</h1>
+            <p className="text-xl text-gray-700">You have completed the activity.</p>
           </div>
         );
-
-      case 9:
-        return (
-          <div className="text-center">
-            <h1 className="text-3xl font-bold mb-6 text-red-800">What if she sells mango for less than the cost, do you think that&apos;s good for Maya&apos;s business?</h1>
-            <div className="bg-red-100 p-8 rounded-lg max-w-2xl mx-auto">
-              <p className="text-xl font-bold text-red-800">
-                No, it&apos;s not good. She will lose money if she sells for less than the cost.
-              </p>
-            </div>
-          </div>
-        );
-
-
-      default:
-        return null;
+      // No default clause
     }
   };
 
@@ -189,8 +193,7 @@ export default function Com() {
       <div className="max-w-6xl mx-auto">
         <div className="bg-white shadow-2xl rounded-3xl p-8">
           {renderScreen()}
-          
-          {currentScreen < 9 && (
+          {(currentScreen <= 6 || (currentScreen === 7 && profitLossStep === 0)) && (
             <div className="flex justify-center mt-8">
               <button
                 onClick={nextScreen}

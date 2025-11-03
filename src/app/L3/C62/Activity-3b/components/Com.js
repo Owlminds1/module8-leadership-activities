@@ -9,6 +9,8 @@ const Com = () => {
     packaging: 0
   });
 
+  const [showCelebration, setShowCelebration] = useState(false);
+
   const items = [
     { name: 'T-Shirts', cost: 5, key: 'tshirts' },
     { name: 'Paint', cost: 2, key: 'paint' },
@@ -30,6 +32,17 @@ const Com = () => {
   };
 
   const grandTotal = calculateTotal();
+
+  if (showCelebration) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-green-100 to-blue-100 p-8">
+        <div className="max-w-2xl bg-white shadow-2xl rounded-2xl p-12 text-center">
+          <h1 className="text-5xl font-extrabold text-green-600 mb-6">Good job!</h1>
+          <p className="text-2xl font-semibold text-blue-700 mb-4">You estimate the cost of each item!</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
@@ -53,7 +66,6 @@ const Com = () => {
                 <tr key={item.key} className="hover:bg-gray-50">
                   <td className="px-6 py-4">
                     <div className="flex items-center space-x-3">
-                      
                       <span className="font-medium text-gray-900">{item.name}</span>
                     </div>
                   </td>
@@ -85,6 +97,14 @@ const Com = () => {
               </tr>
             </tbody>
           </table>
+        </div>
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setShowCelebration(true)}
+            className="px-8 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white font-semibold text-xl rounded-xl shadow-lg hover:from-green-600 hover:to-blue-600 transform hover:scale-105 transition-all duration-200"
+          >
+            Finish
+          </button>
         </div>
       </div>
     </div>

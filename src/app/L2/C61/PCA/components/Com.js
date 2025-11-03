@@ -53,16 +53,15 @@ export default function Com() {
             <h1 className="text-4xl font-bold text-blue-800 mb-6">Business Model Journal</h1>
             <div className="bg-blue-50 p-6 rounded-xl mb-6">
               <p className="text-lg mb-4">
-                Look around your home, school, or neighborhood and find 1 business for each business model. 
-                You can ask your parents, teachers, or elders to help you.
+                Find an example for each business model. You can ask your parents, teachers, or elders to help you.
               </p>
               <div className="bg-white p-4 rounded-lg">
                 <h3 className="font-bold text-lg mb-3">Your task:</h3>
                 <ul className="text-left space-y-2">
-                  <li>• Find a local or online business. (Example: a chocolate shop, a clothing store, or a food delivery app)</li>
-                  <li>• Identify its business model – B2B, B2C, or Aggregator/Marketplace.</li>
+                  <li>• Find a local or an online business. (Example: a chocolate shop, a clothing store, or a food delivery app)</li>
+                  <li>• Identify its business model. Is it B2B, B2C, or Aggregator/Marketplace?</li>
                   <li>• Write it in your Business Journal in the format provided in post class activity.</li>
-                  <li>• Think of 1–2 ideas to make their business better.</li>
+                  <li>• Think of a couple of ideas to make their business better.</li>
                 </ul>
               </div>
             </div>
@@ -77,7 +76,7 @@ export default function Com() {
                     <th className="border border-gray-300 px-4 py-3 text-left font-bold">What do they sell?</th>
                     <th className="border border-gray-300 px-4 py-3 text-left font-bold">Who do they sell to?</th>
                     <th className="border border-gray-300 px-4 py-3 text-left font-bold">Business Model (B2B / B2C / Aggregator)</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-bold">My Ideas to Make It Better</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-bold">My idea to improve it / I can make it better by...</th>
                   </tr>
                 </thead>
                 <tbody>

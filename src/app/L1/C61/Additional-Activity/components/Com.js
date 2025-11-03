@@ -38,15 +38,15 @@ export default function Com() {
     },
     {
       id: 2,
-      scenario: "Alex makes too many ice creams and have to throw them as a lot of ice remained unsold.",
-      correctAnswer: "No So Smart decision",
-      explanation: "He spent money to make them, but now it's all wasted."
+      scenario: "Alex makes too many fruit ice creams for the school fair. But it rained and he did not get enough buyers. Lot of stock remained unsold. and got spoilt by evening.",
+      correctAnswer: "Not so smart decision",
+      explanation: "He spent money to make them, but most of it was wasted because he could not sell enough."
     },
     {
       id: 3,
-      scenario: "Sophia increases pizza price too much, customers stop buying",
-      correctAnswer: "No So Smart decision",
-      explanation: "If it's too expensive, people do not buy from here and sales drop."
+      scenario: "Sophia increases the price of the pizza way too much, so customers stop buying.",
+      correctAnswer: "Not so smart decision",
+      explanation: "If the price is too high, people do not buy and sales drop."
     },
     {
       id: 4,
@@ -57,14 +57,14 @@ export default function Com() {
     {
       id: 5,
       scenario: "Olivia ignores new competition and does nothing to improve her shop",
-      correctAnswer: "No So Smart decision",
+      correctAnswer: "Not so smart decision",
       explanation: "Other shops get better, and her shop loses customers."
     },
     {
       id: 6,
-      scenario: "Ava gives a free small juice box, and the customer later buys a big one",
+      scenario: "Ava gives away 1 juice box for free on purchase of a pack of dozen juice boxes.",
       correctAnswer: "Smart decision",
-      explanation: "She gives a tiny gift now, and later earns more money from happy customers."
+      explanation: "She gives a small gift with a big purchase, making customers happy and encouraging more sales."
     }
   ];
 
@@ -87,10 +87,10 @@ export default function Com() {
               Smart decision
             </button>
             <button
-              onClick={() => handleAnswer("No So Smart decision")}
+              onClick={() => handleAnswer("Not so smart decision")}
               className="px-8 py-4 bg-red-600 text-white font-bold rounded-2xl shadow-xl hover:bg-red-700 transition-all duration-300 transform hover:scale-105 text-xl"
             >
-              No So Smart decision
+              Not so smart decision
             </button>
           </div>
         ) : (

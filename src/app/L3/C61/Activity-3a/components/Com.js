@@ -6,42 +6,42 @@ import S1 from "../assets/s1.png";
 const screenData = [
   {
     id: 0,
-    title: "Case Study: Sam&apos;s Sports Store",
-    content: "Here&apos;s a table showing how much it costs Sam to make, pack, and deliver each sports bottle, along with his fixed monthly costs and selling price.",
+    title: "Case Study: Sam's Sports Store",
+    content: "Here's a table showing how much it costs Sam to make, pack, and deliver each sports jersey, along with his fixed monthly costs and selling price.",
     showTable: true,
     tableData: [
-      { item: "Making the bottle", cost: "2", notes: "Materials, production" },
+      { item: "Manufacturing sports jersey", cost: "2", notes: "Materials, production" },
       { item: "Packaging", cost: "1", notes: "Box, wrapping" },
       { item: "Delivery", cost: "1", notes: "Shipping to customers" },
-      { item: "Fixed Expenses", cost: "1", notes: "Electricity & rent" },
+      { item: "Fixed Expense", cost: "1", notes: "Energy & rent" },
       { item: "Total Cost", cost: "5", notes: "" },
     ]
   },
   {
     id: 1,
-    question: "Which item is the biggest cost for Sam?",
-    answer: "The cost of making a bottle is the biggest total cost."
+    question: "Which item costs the most?",
+    answer: "The cost of manufacturing."
   },
   {
     id: 2,
-    question: "If Sam sells more bottles, how does that affect fixed costs?",
-    answer: "Fixed costs stay the same, but cost per bottle decreases because the same $100 is spread over more bottles.",
-    example: "Example: For 100 bottles: $1 per bottle is the contribution of fixed cost; For 200 bottles:$0.5 per bottle is the contribution of fixed cost;"
+    question: "How does selling more sports wear affect fixed costs?",
+    answer: "Fixed costs (like energy and rent) stay the same overall, but the cost per jersey goes down because the same expense is shared across more jerseys. ",
+    example: "Example: If you make 100 jerseys, the fixed cost per jersey is $1. If you make 200 jerseys, the fixed cost per jersey becomes $0.50, since the total fixed cost ($100) is spread across twice as many jerseys."
   },
   {
     id: 3,
-    question: "Which costs can Sam control easily and which are harder to change?",
-    answer: "Easily controllable costs: Making the bottle (materials), packaging, delivery by choosing less expensive options or buying in bulk.",
-    additionalAnswer: "Harder to change costs: Fixed expenses like electricity and rent, they remain mostly the same regardless of how many bottles he sells."
+    question: "Which kind of costs can Sam control and which costs are more challenging to modify?",
+    answer: "Easily controllable costs: Manufacturing, packaging, delivery by choosing less expensive options or buying in bulk.",
+    additionalAnswer: "More challenging to modify costs: Fixed expenses like energy and rent as they remain mostly the same regardless of how many jerseys are sold."
   },
   {
     id: 4,
-    title: "Sales data of Sam&apos;s shop",
+    title: "Sales data of Sam's shop",
     showImage: true
   },
   {
     id: 5,
-    question: "What are each Blue, red, and yellow bars for each denote?",
+    question: "What does each bar denote (blue, red, and yellow)?",
     answer: "Blue bars show Revenue. Red bars show Total Cost. Yellow bars show Profit (Revenue − Total Cost).",
     showImage: true
   },
@@ -56,6 +56,11 @@ const screenData = [
     question: "Which month did Sam lose money?",
     answer: "February (yellow bar goes below zero).",
     showImage: true
+  },
+  {
+    id: 8,
+    content: "Good job, you could read the sales data and draw conclusions like a smart entrepreneur!",
+    showImage: false
   }
 ];
 
@@ -85,7 +90,7 @@ export default function Com() {
           )}
 
           {currentData.content && (
-            <p className="text-xl mb-8 text-gray-700 text-center">
+            <p className="text-2xl mb-8 text-gray-700 text-center">
               {currentData.content}
             </p>
           )}
@@ -97,8 +102,8 @@ export default function Com() {
                   <thead>
                     <tr className="bg-gray-100">
                       <th className="border border-gray-300 px-6 py-4 text-left text-xl font-semibold">Item</th>
-                      <th className="border border-gray-300 px-6 py-4 text-left text-xl font-semibold">Cost per Bottle</th>
-                      <th className="border border-gray-300 px-6 py-4 text-left text-xl font-semibold">Notes</th>
+                      <th className="border border-gray-300 px-6 py-4 text-left text-xl font-semibold">Cost per unit</th>
+                      <th className="border border-gray-300 px-6 py-4 text-left text-xl font-semibold">What does it include?</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -154,7 +159,8 @@ export default function Com() {
             </div>
           )}
 
-          {!(currentScreen === screenData.length - 1 && showAnswer) && (
+          {/* Hide Next button on last screen */}
+          {currentScreen < screenData.length - 1 && (
             <div className="flex justify-center">
               <button
                 onClick={nextScreen}

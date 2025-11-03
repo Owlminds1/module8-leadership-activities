@@ -10,35 +10,35 @@ const contentData = {
     {
       id: 0,
       type: "report_intro",
-      title: "Area foot traffic report:",
-      description: "The graph shows foot traffic i.e. the number of people visiting two market locations:",
+      title: "Area footfall report:",
+      description: "The graph shows footfall i.e. the number of people visiting two market locations:",
       image: s1,
       options: ["Option A: SparkFest", "Option B: City Carnival"]
     },
     {
       id: 1,
       type: "question",
-      title: "Which location has more foot traffic?",
+      title: "Which location has more footfall?",
       image: s1,
     },
     {
       id: 2,
       type: "answer",
-      title: "Which location has more foot traffic?",
-      answer: "SparkFest consistently has more foot traffic every month compared to City Carnival.",
+      title: "Which location has more footfall?",
+      answer: "SparkFest consistently has more footfall every month compared to City Carnival.",
       image: s1
     },
     {
       id: 3,
       type: "question",
-      title: "What does higher foot traffic mean for a business?",
+      title: "What does higher footfall mean for a business?",
       image: s1
     },
     {
       id: 4,
       type: "answer",
-      title: "What does higher foot traffic mean for a business?",
-      answer: "Higher foot traffic means more potential customers, which usually leads to more sales and a higher profit.",
+      title: "What does higher footfall mean for a business?",
+      answer: "Higher footfall means more potential customers, which usually leads to more sales and a higher profit.",
       image: s1
     },
     {
@@ -100,6 +100,14 @@ const contentData = {
       type: "answer",
       title: "Which location is better for starting Maya's T-shirt shop according to this report?",
       answer: "SparkFest is better because more people are interested in buying T-shirts, giving Maya a higher chance of success.",
+      image: s2
+    },
+    {
+      id: 14,
+      type: "celebration",
+      title: "Bravo!",
+      message: "You analysed the reports of footfall and customer interest.",
+      description: "",
       image: s2
     }
   ]
@@ -188,6 +196,18 @@ const renderStep = (stepData) => {
             <p className="text-xl font-semibold text-green-800">{stepData.answer}</p>
           </div>
         </>
+      );
+    case "celebration":
+      return (
+        <div className="flex flex-col items-center justify-center py-12">
+          <h1 className="text-5xl font-extrabold text-pink-600 mb-6 ">{stepData.title}</h1>
+          <p className="text-2xl font-semibold text-green-700 mb-4">{stepData.message}</p>
+          <p className="text-lg text-gray-700 mb-8">{stepData.description}</p>
+          <div className="flex justify-center mb-4">
+            <Image src={stepData.image} alt="Celebration" width={300} height={300} />
+          </div>
+         
+        </div>
       );
     
     default:

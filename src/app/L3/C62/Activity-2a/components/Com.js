@@ -56,6 +56,14 @@ const contentData = {
       type: "progressive",
       sectionTitle: "What did you learn from this?",
       sectionContent: "Netflix succeeded because it adapted at the right time. They shifted from DVD rentals to online streaming and redefined their market strategy. Instead of targeting all entertainment viewers, Netflix focused on a more realistic Serviceable Available Market (SAM) for people with internet access, who were willing to pay for streaming subscriptions. This smart move helped them grow.",
+    },
+    {
+      id: 7,
+      type: "celebration",
+      title: "Superb!",
+      message: "You learnt how businesses evolve!",
+      description: "",
+      image: s1
     }
   ]
 };
@@ -162,6 +170,18 @@ const renderStep = (stepData) => {
         </>
       );
     
+    case "celebration":
+      return (
+        <div className="flex flex-col items-center justify-center py-12">
+          <h1 className="text-5xl font-extrabold text-green-600 mb-6">{stepData.title}</h1>
+          <p className="text-2xl font-semibold text-blue-700 mb-4">{stepData.message}</p>
+          <p className="text-lg text-gray-700 mb-8">{stepData.description}</p>
+          <div className="flex justify-center mb-4">
+            <Image src={stepData.image} alt="Celebration" width={300} height={300} />
+          </div>
+         
+        </div>
+      );
     default:
       return <p className="text-xl">{stepData.content}</p>;
   }

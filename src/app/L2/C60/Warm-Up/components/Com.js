@@ -19,38 +19,38 @@ import s14 from "../assets/s14.jpg";
 const comparisonData = [
   {
     id: 0,
-    left: { text: "1 package of milk", image: s1 },
-    right: { text: "1 pair of shoes", image: s2 }
+    left: { text: "package of milk", image: s1 },
+    right: { text: "pair of shoes", image: s2 }
   },
   {
     id: 1,
-    left: { text: "1 toy car", image: s3 },
-    right: { text: "1 smartwatch", image: s4 }
+    left: { text: "toy car", image: s3 },
+    right: { text: "smartwatch", image: s4 }
   },
   {
     id: 2,
-    left: { text: "1 chocolate bar", image: s5 },
-    right: { text: "1 pizza", image: s6 }
+    left: { text: "chocolate bar", image: s5 },
+    right: { text: "pizza", image: s6 }
   },
   {
     id: 3,
-    left: { text: "1 backpack", image: s7 },
-    right: { text: "1 bicycle", image: s8 }
+    left: { text: "backpack", image: s7 },
+    right: { text: "bicycle", image: s8 }
   },
   {
     id: 4,
-    left: { text: "1 storybook", image: s9 },
-    right: { text: "1 tablet", image: s10 }
+    left: { text: "storybook", image: s9 },
+    right: { text: "tablet", image: s10 }
   },
   {
     id: 5,
-    left: { text: "1 sandwich", image: s11 },
-    right: { text: "1 birthday cake", image: s12 }
+    left: { text: "sandwich", image: s11 },
+    right: { text: "birthday cake", image: s12 }
   },
   {
     id: 6,
-    left: { text: "1 pair of socks", image: s13 },
-    right: { text: "1 winter jacket", image: s14 }
+    left: { text: "pair of socks", image: s13 },
+    right: { text: "winter jacket", image: s14 }
   }
 ];
 

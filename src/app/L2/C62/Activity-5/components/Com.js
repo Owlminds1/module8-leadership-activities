@@ -2,16 +2,66 @@
 import { useState } from "react";
 
 const actions = [
-  { id: 1, text: "Slowly open a single store at a time", isCorrect: true },
-  { id: 2, text: "Open 10 new stores all at once", isCorrect: false },
-  { id: 3, text: "Buy materials in bulk to save money", isCorrect: true },
-  { id: 4, text: "Buy too many materials without checking demand", isCorrect: false },
-  { id: 5, text: "Ask customers what they like before opening new shops", isCorrect: true },
-  { id: 6, text: "Keep the product quality high in all shops", isCorrect: true },
-  { id: 7, text: "Spend all the money on advertising without planning", isCorrect: false },
-  { id: 8, text: "Track sales and adjust products accordingly", isCorrect: true },
-  { id: 9, text: "Train assistants before opening more shops", isCorrect: true },
-  { id: 10, text: "Start with one new product at a time", isCorrect: true }
+  {
+    id: 1,
+    text: "Open a single store at a time.",
+    isCorrect: true,
+    explanation: "This allows a person to test each new shop and avoid losing too much money if a shop doesn’t sell well."
+  },
+  {
+    id: 2,
+    text: "Open 10 new stores all at once.",
+    isCorrect: false,
+    explanation: "Too many shops at once is risky; some may not sell enough, and the business individual might waste money."
+  },
+  {
+    id: 3,
+    text: "Buy materials in bulk to save money.",
+    isCorrect: true,
+    explanation: "Buying in bulk minimizes the cost per item and ensures the business person has enough stock for high demand."
+  },
+  {
+    id: 4,
+    text: "Buy too many materials without checking demand.",
+    isCorrect: false,
+    explanation: "If the products don’t sell, materials are wasted and the business loses money."
+  },
+  {
+    id: 5,
+    text: "Ask customers what they like before opening new shops.",
+    isCorrect: true,
+    explanation: "This helps the business make products that people will actually want, increasing the chances of success."
+  },
+  {
+    id: 6,
+    text: "Keep the product quality high in all shops.",
+    isCorrect: true,
+    explanation: "High-quality products make customers happy, turning them into returning customers who buy regularly."
+  },
+  {
+    id: 7,
+    text: "Spend all the money on advertising without planning.",
+    isCorrect: false,
+    explanation: "Without planning, money may be wasted and shops may still not attract enough customers."
+  },
+  {
+    id: 8,
+    text: "Track sales and adjust products accordingly.",
+    isCorrect: true,
+    explanation: "Monitoring what sells will help the business person decide what to make more of and avoid wasting money."
+  },
+  {
+    id: 9,
+    text: "Train assistants before opening more shops.",
+    isCorrect: true,
+    explanation: "Well-trained assistants keep the shops running smoothly and maintain quality."
+  },
+  {
+    id: 10,
+    text: "Start with one new product at a time.",
+    isCorrect: true,
+    explanation: "Gradually testing a new product will help the business see if it’s a popular product before making a lot of the same."
+  }
 ];
 
 export default function Com() {
@@ -49,6 +99,8 @@ export default function Com() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-green-50 p-6">
       <div className="max-w-7xl bg-white shadow-xl rounded-2xl p-8">
+        <h1 className="text-3xl font-bold mb-10 text-center text-blue-700">Business Strategies of Smart Entrepreneur</h1>
+        <p className="text-xl text-center mb-8 text-gray-700 font-medium">Drag smart decisions into the box of <span className="text-green-700 font-bold">Right Things To Scale The Business</span></p>
         <div className="flex gap-8">
           {/* Left Side - Actions List */}
           <div className="flex-1">
@@ -61,7 +113,7 @@ export default function Com() {
                   onDragStart={(e) => handleDragStart(e, action)}
                   className="p-4 bg-blue-100 border-2 border-blue-300 rounded-lg cursor-move hover:bg-blue-200 transition-colors duration-200 text-lg font-medium"
                 >
-                  {action.text}
+                  <div className="font-semibold mb-2">{action.text}</div>
                 </div>
               ))}
             </div>
@@ -88,7 +140,8 @@ export default function Com() {
                       key={action.id}
                       className="p-4 bg-green-200 border-2 border-green-400 rounded-lg text-lg font-medium"
                     >
-                      {action.text}
+                      <div className="font-semibold mb-2">{action.text}</div>
+                      <div className="text-sm text-gray-700 mt-2">{action.explanation}</div>
                     </div>
                   ))}
                 </div>

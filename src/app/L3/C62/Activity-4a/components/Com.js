@@ -10,7 +10,7 @@ const contentData = {
       id: 0,
       type: "intro",
       title: "",
-      content: "Maya launched her own online store where she now sells:",
+      content: "After the success of the T-shirt stall at SparkFest, Maya launched her own online store where she now sells:",
       products: [
         "Custom Printed T-Shirts",
         "Hoodies", 
@@ -35,7 +35,7 @@ const contentData = {
       id: 2,
       type: "solution",
       title: "",
-      content: "So she calls her cousin Emma, for help. Emma tells her: \"Maya, you should start using a CRM to manage all the orders."
+      content: "So she called Emma, and she advised her to use a CRM to manage orders."
     },
     {
       id: 3,
@@ -153,6 +153,7 @@ const renderStep = (stepData) => {
           <h1 className="text-4xl font-bold mb-6 text-blue-600 text-center">{stepData.title}</h1>
           <div className="space-y-6">
             <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-400">
+              <h2 className="text-2xl font-semibold text-blue-600 mb-4">CRM can store information such as:</h2>
               <div className="space-y-3">
                 {stepData.questions.map((question, index) => (
                   <div key={index} className="flex items-start space-x-3">
@@ -166,7 +167,7 @@ const renderStep = (stepData) => {
             </div>
             
             <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-400">
-              <h2 className="text-2xl font-semibold text-green-800 mb-4">Since you know these details, you can:</h2>
+              <h2 className="text-2xl font-semibold text-green-800 mb-4">Knowing these details, you can:</h2>
               <div className="space-y-3">
                 {stepData.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start space-x-3">

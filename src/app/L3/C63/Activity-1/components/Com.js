@@ -15,12 +15,12 @@ export default function Com() {
   const characters = [
     {
       name: "Leena",
-      text: "runs a DIY Gadget Stand. She tells Aarav: \"I sell more when I bundle gadgets together. Maybe you can bundle your mini cars with small solar kits too!\"",
+      text: "runs a DIY Gadget Stand. She tells Aaron: \"I sell more when I bundle gadgets together. Maybe you can bundle your mini cars with small solar kits too!\"",
       image: s2
     },
     {
-      name: "Rohan", 
-      text: "loves science and gadgets. He's super excited and becomes Aarav's first customer, buying a solar-powered mini car and giving him feedback.",
+      name: "Rohan",
+      text: "loves science and gadgets. He's super excited and becomes Aaron's first customer, buying a solar-powered mini car and giving him feedback.",
       image: s3
     },
     {
@@ -30,7 +30,7 @@ export default function Com() {
     },
     {
       name: "Rahul",
-      text: "a student who loves robotics. He notices Aarav's cars and suggests: \"If we combine your solar cars with my programmable tracks, we can create a mini race game. More kids will come and play!\"",
+      text: "a student who loves robotics. He notices Aaron's cars and suggests: \"If we combine your solar cars with my programmable tracks, we can create a mini race game. More kids will come and play!\"",
       image: s5
     }
   ];
@@ -41,9 +41,9 @@ export default function Com() {
         return (
           <div className="text-center max-w-5xl mx-auto">
             <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
-              <p>Meet Aarav! He loves building solar-powered mini cars, tiny, eco-friendly cars that run using sunlight. He dreams of sharing his creations with more kids and showing how fun solar energy can be!</p>
-              <p>One sunny Saturday, Aarav decides to visit the Creative Market, a bustling place where young creators sell their unique products and share ideas.</p>
-              <p>At the market, Aarav sees colorful stands full of toys, gadgets, snacks, crafts, and innovative projects.</p>
+              <p>Aaron loves building solar-powered mini cars, and tiny, eco-friendly cars that run using sunlight. He dreams of sharing his creations with more kids and showing how useful solar energy can be!</p>
+              <p>Aaron decides to visit the Creative Market, a bustling place where young creators sell their unique products and share ideas.</p>
+              <p>At the market, Aaron sees colorful stands bustling with toys, gadgets, food, crafts, and innovative projects.</p>
             </div>
             <div className="mt-8">
               <Image src={s1} alt="Creative Market" width={500} height={300} className="mx-auto rounded-2xl shadow-lg" />
@@ -55,7 +55,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-purple-800 mb-8">
-              Aarav meets many people at the Creative Market:
+              Aaron meets many people at the Creative Market:
             </h2>
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl shadow-lg">
               <div className="flex items-center space-x-6">
@@ -75,7 +75,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-purple-800 mb-8">
-              Aarav meets many people at the Creative Market:
+              Aaron meets many people at the Creative Market:
             </h2>
             <div className="space-y-6">
               {characters.slice(0, 2).map((character, index) => (
@@ -99,7 +99,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-purple-800 mb-8">
-              Aarav meets many people at the Creative Market:
+              Aaron meets many people at the Creative Market:
             </h2>
             <div className="space-y-6">
               {characters.slice(0, 3).map((character, index) => (
@@ -123,7 +123,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-purple-800 mb-8">
-              Aarav meets many people at the Creative Market:
+              Aaron meets many people at the Creative Market:
             </h2>
             <div className="space-y-6">
               {characters.map((character, index) => (
@@ -147,7 +147,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <p className="text-2xl text-gray-700 leading-relaxed">
-              By the end of the day, Aarav is thrilled! He didn&apos;t just sell his cars, he:
+              By the end of the day, Aaron is thrilled! He didn&apos;t just sell his cars, he:
             </p>
             <div className="mt-8 bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-2xl shadow-lg text-left">
               <ul className="space-y-4 text-lg text-gray-700">
@@ -164,7 +164,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-blue-800 mb-8">
-              Who became Aarav&apos;s first customer at the Creative Market?
+              Who became Aaron&apos;s first customer at the Creative Market?
             </h2>
           </div>
         );
@@ -173,7 +173,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-blue-800 mb-8">
-              Who became Aarav&apos;s first customer at the Creative Market?
+              Who became Aaron&apos;s first customer at the Creative Market?
             </h2>
             <div className="bg-green-100 p-8 rounded-2xl shadow-lg">
               <p className="text-2xl text-green-800 font-semibold">
@@ -187,7 +187,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-purple-800 mb-8">
-              How did Tina, the refreshment seller, give Aarav an opportunity?
+              How did Tina, the refreshment seller, give Aaron an opportunity?
             </h2>
           </div>
         );
@@ -196,11 +196,11 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-purple-800 mb-8">
-              How did Tina, the refreshment seller, give Aarav an opportunity?
+              How did Tina, the refreshment seller, give Aaron an opportunity?
             </h2>
             <div className="bg-blue-100 p-8 rounded-2xl shadow-lg">
               <p className="text-2xl text-blue-800 font-semibold">
-                She offered space near her stand so kids could buy cars and smoothies together.
+                She offered space near her stand so kids can buy cars and smoothies.
               </p>
             </div>
           </div>
@@ -210,7 +210,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-indigo-800 mb-8">
-              What opportunity did Priya share with Aarav?
+              What opportunity did Priya share with Aaron?
             </h2>
           </div>
         );
@@ -219,7 +219,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-indigo-800 mb-8">
-              What opportunity did Priya share with Aarav?
+              What opportunity did Priya share with Aaron?
             </h2>
             <div className="bg-purple-100 p-8 rounded-2xl shadow-lg">
               <p className="text-2xl text-purple-800 font-semibold">
@@ -233,7 +233,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-green-800 mb-8">
-              How did Rahul help Aarav discover collaboration opportunities?
+              How did Rahul help Aaron discover collaboration opportunities?
             </h2>
           </div>
         );
@@ -242,11 +242,11 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-green-800 mb-8">
-              How did Rahul help Aarav discover collaboration opportunities?
+              How did Rahul help Aaron discover collaboration opportunities?
             </h2>
             <div className="bg-yellow-100 p-8 rounded-2xl shadow-lg">
               <p className="text-2xl text-yellow-800 font-semibold">
-                By suggesting combining solar cars with programmable tracks for a mini race game.
+                By suggesting how to combine solar cars with programmable tracks for a mini race game.
               </p>
             </div>
           </div>
@@ -256,7 +256,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-green-800 mb-8">
-              What lesson did Aarav learn from visiting the Creative Market?
+              What lesson did Aaron learn from visiting the Creative Market?
             </h2>
           </div>
         );
@@ -265,7 +265,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-green-800 mb-8">
-              What lesson did Aarav learn from visiting the Creative Market?
+              What lesson did Aaron learn from visiting the Creative Market?
             </h2>
             <div className="bg-yellow-100 p-8 rounded-2xl shadow-lg">
               <p className="text-2xl text-yellow-800 font-semibold">
@@ -279,7 +279,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <p className="text-2xl text-gray-700 leading-relaxed">
-              Just like Aarav at the Creative Market, in real life when people run a business or even a small project need to meet others. This is called networking.
+              Just like Aaron at the Creative Market, in real life people who run a business or even a small shop, need to meet others to advance their work. This is called networking.
             </p>
           </div>
         );
@@ -288,21 +288,22 @@ export default function Com() {
         return (
           <div className="text-center max-w-5xl mx-auto">
             <p className="text-2xl text-gray-700 mb-8 leading-relaxed">
-              Just like Aarav at the Creative Market, in real life when people run a business or even a small project need to meet others. This is called networking.
+              How does networking help?
             </p>
             <div className="bg-gradient-to-r from-indigo-50 to-purple-100 p-8 rounded-2xl shadow-lg text-left">
               <h3 className="text-2xl font-bold text-indigo-800 mb-6">Networking is important because:</h3>
               <ul className="space-y-4 text-lg text-gray-700">
-                <li>• We can find customers who want what we offer.</li>
+                <li>• We can find customers who want to buy what we offer.</li>
                 <li>• We can get advice from people who know more.</li>
-                <li>• We can discover new opportunities we didn&apos;t know before, like partnerships, collaborations, or communities.</li>
+                <li>• We can discover new opportunities we never thought of before, like partnerships or groups.</li>
               </ul>
               <div className="mt-6">
                 <h4 className="text-xl font-bold text-purple-800 mb-4">Examples:</h4>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• A baker meets a party organizer who wants cupcakes.</li>
-                  <li>• A toy seller learns from another shop how to display items better.</li>
+                  <li>• A baker might meet someone who wants to buy cupcakes for a party (customer).</li>
+                  <li>• We can get advice from people who can share their knowledge and expertise.</li>
                   <li>• A gadget maker teams up with a robotics student to create a new mini race game.</li>
+                  <li>• A comics seller might team up with a toy seller so kids buy diverse sets (opportunities).</li>
                 </ul>
               </div>
             </div>
@@ -318,7 +319,7 @@ export default function Com() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 p-6">
       <div className="max-w-7xl bg-white shadow-2xl rounded-3xl p-12">
         {renderScreen()}
-        
+
         {step < 17 && (
           <div className="flex justify-center mt-12">
             <button

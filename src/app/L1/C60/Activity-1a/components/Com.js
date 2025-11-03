@@ -3,109 +3,118 @@ import { useState } from "react";
 import Image from "next/image";
 import s1 from "../assets/s1.png";
 
-// Content data structure
+// Updated content data structure
 const contentData = {
   steps: [
     {
       id: 0,
       type: "intro",
-      title: "Meet Meer Chef Max",
-      description: "Max loves cooking and has the yummiest burger recipe. He wants to open his own fast-food corner. But Max has one little problem, he's not very good at calculating money. He needs your help to figure out the right price for his burger!",
+      title: "Meet Chef Max",
+      description:
+        "Chef Max loves cooking and has the yummiest recipe to make a burger. He wants to open his own fast-food corner. But Max is not good with money. He needs your help to figure out the right price for his burger!",
       image: s1
     },
     {
       id: 1,
       type: "question",
-      content: "Do you think selling something is only about making it? Or do we also need to think about money?"
+      content:
+        "Is selling something is only about making it? Do we also need to think about money?"
     },
     {
       id: 2,
       type: "progressive",
-      title: "Step 1: Cost of Making a Burger",
-      content: "Think of the parts: A burger is not just one thing. It has many parts like bread, patty, cheese, and ketchup."
+      title: "Cost of Making a Burger",
+      content:
+        "Think of the ingredients: A burger is not just one thing. What are the different items you require to put a burger together?"
     },
     {
       id: 3,
       type: "progressive",
-      title: "Step 1: Cost of Making a Burger",
-      content: "Think of the parts: A burger is not just one thing. It has many parts like bread, patty, cheese, and ketchup.",
+      title: "List cost of each ingredient:",
       additionalContent: {
-        title: "Cost of each part:",
         items: ["Bread = $1", "Patty = $1", "Cheese = $1", "Ketchup = $1"]
+      },
+      finalContent: {
+        description:
+          "Add up the cost of each ingredient to get the total cost of making a burger. This comes to $4."
       }
     },
     {
       id: 4,
       type: "progressive",
-      title: "Step 1: Cost of Making a Burger",
-      content: "Think of the parts: A burger is not just one thing. It has many parts like bread, patty, cheese, and ketchup.",
-      additionalContent: {
-        title: "Cost of each part:",
-        items: ["Bread = $1", "Patty = $1", "Cheese = $1", "Ketchup = $1"]
-      },
-      finalContent: {
-        title: "Add the costs together:",
-        description: "To know the total cost, we need to add up the cost of each ingredient which will be",
-        result: "$4"
-      }
+      title: "Are there any extra costs?",
+      content:
+        ""
     },
     {
       id: 5,
-      type: "section",
-      title: "Step 2: Extra Costs",
-      content: "Wait a minute! Is there any other cost besides the food? Yes! Max also needs to tell people about his burger shop by doing advertisements."
+      type: "progressive",
+      title: "Are there any extra costs?",
+      content:
+        "Yes! Max also needs to promote his burgers."
     },
     {
       id: 6,
       type: "progressive",
-      content: "What do you think advertisement means?",
-      isBold: true
+      title: "How would he do so?",
+      content: ""
     },
     {
       id: 7,
       type: "progressive",
-      content: "What do you think advertisement means?",
-      isBold: true,
-      answer: "Advertisement means telling people about something you are selling so they know about it and want to buy it. It's like showing or sharing a message to get people interested."
+      title: "How would he do so?",
+      content: "By putting up advertisements."
     },
     {
       id: 8,
       type: "progressive",
-      content: "Can you think of ways Max advertise his burger shop? What are some ways to do it?",
-      isBold: true
+      title: "How can advertisements help?",
+      content:
+        ""
     },
     {
       id: 9,
       type: "progressive",
-      content: "Can you think of ways Max advertise his burger shop? What are some ways to do it?",
-      isBold: true,
-      answer: {
-        title: "There are many ways like:",
-        items: ["Put up posters", "Tell people through TV or radio ads", "Share on social media apps like Instagram and WhatsApp"]
-      }
+      title: "How can advertisements help?",
+      content:
+        "Advertisements grab attention and showcase the product in ways to encourage purchase."
     },
     {
       id: 10,
-      type: "progressive",
-      content: "Can you think of ways Max advertise his burger shop? What are some ways to do it?",
-      isBold: true,
-      answer: {
-        title: "There are many ways like:",
-        items: ["Put up posters", "Tell people through TV or radio ads", "Share on social media apps like Instagram and WhatsApp"]
-      },
-      decision: "From all these ideas max has have decided to make posters and give them to people as advertisements."
+      type: "select-multi",
+      title:
+        "What are some of the ways Max can advertise his burger shop? (Select all that apply)",
+      options: [
+        "Put up Posters",
+        "Word of Mouth through friends and family",
+        "Distribute flyers or brochures",
+        "Create ads on TV or radio",
+        "Share on social media apps like YouTube"
+      ]
     },
     {
       id: 11,
+      type: "progressive",
+      title: "Max decided to create flyers",
+      content: "Making a flyer and giving it to people also incurs cost, about $1 per burger."
+    },
+    {
+      id: 12,
       type: "calculation",
-      content: "Making a poster and giving it to people costs $1 per burger.",
-      calculation: "So the cost of making and advertising one burger is: $4 (ingredients) + $1 (advertisement) = $5"
+      title: "What’s the total cost of each burger now? $4 (ingredients) + $1 (advertisement)",
+      content: ""
+    },
+    {
+      id: 13,
+      type: "calculation",
+      title: "What’s the total cost of each burger now? $4 (ingredients) + $1 (advertisement)",
+      content: "$5"
     }
   ]
 };
 
 // Helper functions to render different step types
-const renderStep = (stepData) => {
+const renderStep = (stepData, step, setStep, multiSelectState, setMultiSelectState, singleSelectState, setSingleSelectState) => {
   switch (stepData.type) {
     case "intro":
       return (
@@ -117,19 +126,8 @@ const renderStep = (stepData) => {
           </div>
         </>
       );
-    
     case "question":
       return <p>{stepData.content}</p>;
-    
-    case "section":
-      return (
-        <p>
-          <span className="font-bold">{stepData.title}</span>
-          <br />
-          {stepData.content}
-        </p>
-      );
-    
     case "progressive":
       return (
         <div>
@@ -140,66 +138,75 @@ const renderStep = (stepData) => {
               {stepData.content}
             </p>
           )}
-          {!stepData.title && (
-            <p>
-              {stepData.isBold ? (
-                <span className="font-bold">{stepData.content}</span>
-              ) : (
-                stepData.content
-              )}
-            </p>
+          {!stepData.title && stepData.content && (
+            <p>{stepData.content}</p>
           )}
-          
           {stepData.additionalContent && (
-            <p className="mt-4">
-              <span className="font-bold">{stepData.additionalContent.title}</span>
-              <br />
+            <div className="mt-4">
               {stepData.additionalContent.items.map((item, index) => (
-                <span key={index}>
-                  {item}
-                  {index < stepData.additionalContent.items.length - 1 && <br />}
-                </span>
+                <div key={index}>{item}</div>
               ))}
-            </p>
+            </div>
           )}
-          
           {stepData.finalContent && (
-            <p className="mt-4">
-              <span className="font-bold">{stepData.finalContent.title}</span> {stepData.finalContent.description} <span className="font-bold">{stepData.finalContent.result}</span>.
-            </p>
-          )}
-          
-          {stepData.answer && typeof stepData.answer === "string" && (
-            <p className="mt-4">{stepData.answer}</p>
-          )}
-          
-          {stepData.answer && typeof stepData.answer === "object" && (
-            <p className="mt-4">
-              <span className="font-bold">{stepData.answer.title}</span>
-              <br />
-              {stepData.answer.items.map((item, index) => (
-                <span key={index}>
-                  • {item}
-                  {index < stepData.answer.items.length - 1 && <br />}
-                </span>
-              ))}
-            </p>
-          )}
-          
-          {stepData.decision && (
-            <p className="mt-6">{stepData.decision}</p>
+            <div className="mt-4">
+              {stepData.finalContent.description}
+            </div>
           )}
         </div>
       );
-    
     case "calculation":
       return (
-        <p>
-          {stepData.content} <br />
-          <span className="font-bold">{stepData.calculation}</span>
-        </p>
+        <div>
+          {stepData.title && <div className="font-bold mb-2">{stepData.title}</div>}
+          {stepData.content && <div>{stepData.content}</div>}
+          <div className="mt-2 font-bold">{stepData.calculation}</div>
+        </div>
       );
-    
+    case "select-multi":
+      return (
+        <div>
+          <div className="font-bold mb-2">{stepData.title}</div>
+          <div className="flex flex-col items-start gap-2 mb-4">
+            {stepData.options.map((option, idx) => (
+              <label key={idx} className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={multiSelectState.includes(option)}
+                  onChange={() => {
+                    if (multiSelectState.includes(option)) {
+                      setMultiSelectState(multiSelectState.filter((o) => o !== option));
+                    } else {
+                      setMultiSelectState([...multiSelectState, option]);
+                    }
+                  }}
+                />
+                {option}
+              </label>
+            ))}
+          </div>
+        </div>
+      );
+    case "select-single":
+      return (
+        <div>
+          <div className="font-bold mb-2">{stepData.title}</div>
+          <div className="mb-2">{stepData.content}</div>
+          <div className="flex flex-col items-start gap-2 mb-4">
+            {stepData.options.map((option, idx) => (
+              <label key={idx} className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="price-select"
+                  checked={singleSelectState === option}
+                  onChange={() => setSingleSelectState(option)}
+                />
+                {option}
+              </label>
+            ))}
+          </div>
+        </div>
+      );
     default:
       return <p>{stepData.content}</p>;
   }
@@ -207,23 +214,29 @@ const renderStep = (stepData) => {
 
 export default function Com() {
   const [step, setStep] = useState(0);
-
-  const nextStep = () => setStep((prev) => prev + 1);
+  const [multiSelectState, setMultiSelectState] = useState([]);
+  const [singleSelectState, setSingleSelectState] = useState("");
 
   const currentStepData = contentData.steps[step];
+
+  // Only show next button for non-final step
+  const isLastStep = step === contentData.steps.length - 1;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-yellow-50 p-6 text-center">
       <div className="max-w-xl bg-white shadow-lg rounded-2xl p-6 text-xl">
-        {renderStep(currentStepData)}
+        {renderStep(currentStepData, step, setStep, multiSelectState, setMultiSelectState, singleSelectState, setSingleSelectState)}
 
-        {step !== 11 && (
+        {!isLastStep && (
           <button
-            onClick={nextStep}
+            onClick={() => setStep((prev) => prev + 1)}
             className="mt-6 px-6 py-2 bg-yellow-500 text-white font-semibold rounded-xl shadow hover:bg-yellow-600"
           >
             Next
           </button>
+        )}
+        {isLastStep && (
+          <div className="mt-6 text-green-700 font-bold text-2xl"></div>
         )}
       </div>
     </div>

@@ -7,46 +7,135 @@ const contentData = {
   screens: [
     {
       id: 0,
-      title: "Arjun's Sweet Shop Journey",
-      content: "Arjun loves baking and wanted to start his own sweet shop, but was stuck: he didn't know the best way to sell them. Should he give them to shops, open his own store, sell them online, or create a platform for other bakers too?",
+      title: "Nick's Bakery Dream",
+      content: (
+        <>
+          Nick loves baking and wants to start his own bakery shop. But he doesn&apos;t know the best way to sell them.<br /><br />
+          Should he give them to shops?<br />
+          Should he open his own store?<br />
+          Should he sell online through vendors like Ferns and Petals?<br />
+          Should he create a platform to sell online along with other bakers?
+        </>
+      ),
       image: S1
     },
     {
       id: 1,
-      title: "B2B (Business to Business)",
-      content: "Arjun at first, he didn’t open a shop of his own. Instead, he sold his cupcakes to other shops. Those shops then sold the cupcakes to their customers.",
-      image: S1,
-      explanation: "This is called B2B,  Business to Business, because Arjun’s business is selling to another business, not directly to customers.",
-      example: "Just like when a farmer sells mangoes to a grocery store, and the grocery store sells them to us."
+      title: "Business Models",
+      content: (
+        <>
+          <span className="font-bold">B2B (Business to Business)</span><br />
+          He doesn’t open a shop of his own to begin with. Instead, he sells his cupcakes to other shops. Those shops package it, add their own labels and then sell the cupcakes to their customers.<br /><br />
+          This is called <span className="font-bold">B2B</span>, Business to Business, because a business sells to another business, but not directly to customers.<br /><br />
+          Can you think of any other examples of B2B?
+        </>
+      ),
+      image: S1
     },
     {
       id: 2,
-      title: "B2C (Business to Consumer)",
-      content: "After some time, Arjun wanted to sell directly to people who love cupcakes. So he can make more profit. So, he opened a small cupcake shop and started selling straight to customers.",
-      image: S1,
-      explanation: "This is called B2C, Business to Consumer, because the seller is a business, and the buyer is a person or consumer.",
-      example: "Just like when your parents order a pizza directly from Domino’s or Pizza Hut. You’re buying straight from the shop, not through another store.."
+      title: "Business Models",
+      content: (
+        <>
+          <span className="font-bold">B2B (Business to Business)</span><br />
+          He doesn’t open a shop of his own to begin with. Instead, he sells his cupcakes to other shops. Those shops package it, add their own labels and then sell the cupcakes to their customers.<br /><br />
+          This is called <span className="font-bold">B2B</span>, Business to Business, because a business sells to another business, but not directly to customers.<br /><br />
+          Can you think of any other examples of B2B?
+          <div className="bg-green-100 p-3 rounded mt-3">
+            A farmer sells produce such as mangoes to a grocery store, and the grocery store sells the produce to us.
+          </div>
+        </>
+      ),
+      image: S1
     },
     {
       id: 3,
-      title: "B2C Online",
-      content: "Then Arjun thought, ‘What if I sell online? People from all over can order my cupcakes!’ He started selling through his own website directly to customers.",
-      image: S1,
-      explanation: "This is still B2C, because Arjun is selling directly to consumers, but now it’s online.",
-      example: "Like when you order LEGO sets from the LEGO online store or your favorite character toys from Disney’s online shop. You get them directly from the company."
+      title: "B2C (Business to Consumer)",
+      content: (
+        <>
+          After some time, Nick wants to sell directly to the buyers who eat his cupcakes. He thinks this can let him make more profit. So he opens a shop to directly sell to the customers.<br /><br />
+          This is called <span className="font-bold">B2C</span>, Business to Consumer, because the seller is a business, and the buyer is a consumer.<br /><br />
+          Can you think of any other example of B2C?
+        </>
+      ),
+      image: S1
     },
     {
       id: 4,
-      title: "Aggregator / Marketplace",
-      content: "Arjun got an even bigger idea. He thought: ‘If I let other bakers sell cakes, muffins, and cookies on my website too, customers will have more choices, and I’ll earn more money!’",
-      image: S1,
-      explanation: "This is called an Aggregator, because Arjun’s website now connects many sellers with buyers. His business is a platform that helps other businesses reach customers.",
-      example: "Like Swiggy or Zomato, you don’t just order from one restaurant. You can choose pizza from Domino’s, Pizza Hut or any other pizza shop, ice cream from a local shop, or cupcakes from another bakery, all in the same app. Arjun’s cupcake website works the same way, but for desserts!"
-    },
+      title: "B2C (Business to Consumer)",
+      content: (
+        <>
+          After some time, Nick wants to sell directly to the buyers who eat his cupcakes. He thinks this can let him make more profit. So he opens a shop to directly sell to the customers.<br /><br />
+          This is called <span className="font-bold">B2C</span>, Business to Consumer, because the seller is a business, and the buyer is a consumer.<br /><br />
+          Can you think of any other example of B2C?
+          <div className="bg-green-100 p-3 rounded mt-3">
+            When you buy pizza from a store such as Domino’s or Pizza Hut.
+          </div>
+        </>
+      ),
+      image: S1
+    },    
     {
       id: 5,
-      title: "",
-      content: "So, if you were Arjun, which way would you like to sell your cupcakes, B2B to shops, B2C in your own shop, B2C online, or as an Aggregator? Why?",
+      title: "B2C Online",
+      content: (
+        <>
+          Then Nick thinks, ‘What if I sell online? People from far away places can order my cupcakes!’ He creates his website and starts directly selling to customers.<br /><br />
+          This is still B2C because Nick is selling directly to consumers, only now it’s online.<br /><br />
+          Can you think of an example of B2C online?
+        </>
+      ),
+      image: S1
+    },
+    {
+      id: 6,
+      title: "B2B Online",
+      content: (
+        <>
+          Nick wonders, ‘How about selling on a quick commerce website? I can partner with such platforms. They can take orders and deliver my cupcakes directly to their consumer’s doorstep. I do not have to invest in creating my website!’<br /><br />
+          Can you think of an example of B2B online?
+          <div className="bg-green-100 p-3 rounded mt-3">
+            An ice cream company can sell their milkshakes on platforms such as DoorDash/Grab/Zomato/UberEats. People can place an order on these platforms to get it delivered right at their doorstep!
+          </div>
+        </>
+      ),
+      image: S1
+    },
+    {
+      id: 7,
+      title: "Aggregator",
+      content: (
+        <>
+          Nick thinks of an even bigger idea. He wonders, “How about I stop making cakes by myself. My business should connect bakers to buyers. This way, customers will have more choices and I can charge bakers a small fee for using my platform.”<br /><br />
+          This is called an <span className="font-bold">Aggregator</span> because Nick’s business now connects sellers to buyers.<br /><br />
+          Can you think of an example of an Aggregator?
+        </>
+      ),
+      image: S1
+    },
+    {
+      id: 8,
+      title: "Aggregator",
+      content: (
+        <>
+          Nick thinks of an even bigger idea. He wonders, “How about I stop making cakes by myself. My business should connect bakers to buyers. This way, customers will have more choices and I can charge bakers a small fee for using my platform.”<br /><br />
+          This is called an <span className="font-bold">Aggregator</span> because Nick’s business now connects sellers to buyers.<br /><br />
+          Can you think of an example of an Aggregator?
+          <div className="bg-green-100 p-3 rounded mt-3">
+            Companies such as Uber and Grab connect cab drivers to people who use cab services.
+          </div>
+        </>
+      ),
+      image: S1
+    },    
+    {
+      id: 9,
+      title: "Which Model Would You Choose?",
+      content: (
+        <>
+          If you were Nick, which business model would you select? Why?
+        </>
+      ),
       image: S1
     }
   ]
@@ -72,25 +161,7 @@ export default function Com() {
         
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="flex-1">
-            <p className="text-lg mb-4 leading-relaxed">
-              {currentData.content}
-            </p>
-            
-            {currentData.explanation && (
-              <div className="bg-blue-100 p-4 rounded-lg mb-4">
-                <p className="font-semibold text-blue-800 mb-2">
-                  {currentData.explanation}
-                </p>
-              </div>
-            )}
-            
-            {currentData.example && (
-              <div className="bg-green-100 p-4 rounded-lg mb-4">
-                <p className="font-semibold text-green-800 mb-2">Example:</p>
-                <p className="text-green-700">{currentData.example}</p>
-              </div>
-            )}
-            
+            <div className="text-lg mb-4 leading-relaxed">{currentData.content}</div>
           </div>
           
           {currentData.id === 0 && (

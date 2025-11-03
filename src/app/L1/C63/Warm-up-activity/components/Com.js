@@ -6,6 +6,7 @@ import s1 from "../assets/s1.png";
 import s2 from "../assets/s2.png";
 import s3 from "../assets/s3.png";
 import s4 from "../assets/s4.png";
+import s5 from "../assets/s5.png";
 
 export default function Com() {
   const [step, setStep] = useState(0);
@@ -32,6 +33,10 @@ export default function Com() {
     {
       image: s4,
       title: "Balloon"
+    },
+    {
+      image: s5,
+      title: "Rubber band"
     }
   ];
 
@@ -59,8 +64,8 @@ export default function Com() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
       <div className="max-w-4xl bg-white shadow-2xl rounded-3xl p-12">
+        <h2 className="text-2xl font-bold text-blue-700 mb-8 text-center">How can you turn this into a business idea?</h2>
         {renderScreen()}
-        
         {step < screens.length - 1 && (
           <div className="flex justify-center mt-12">
             <button

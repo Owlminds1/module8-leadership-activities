@@ -12,12 +12,18 @@ export default function Com() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center p-6">
       <div className="w-full max-w-5xl bg-white rounded-3xl shadow-2xl p-8">
         <div className="space-y-8">
-          {step < 5 ? (
+          {/* New Step 0 */}
+          {step === 0 && (
+            <div className="space-y-6">
+              <h1 className="text-2xl font-bold text-gray-800">Mia starts selling healthy lunchboxes at school. Soon, others like the idea and set up their stalls as well.</h1>
+            </div>
+          )}
+          {/* Shift all other steps by +1 */}
+          {step > 0 && step < 6 ? (
             <>
-              {step >= 0 && (
+              {step >= 1 && (
                 <div className="space-y-6">
-                  <h1 className="text-4xl font-bold text-gray-800">Mia has started selling her healthy lunchboxes at school.</h1>
-                  <p className="text-xl text-gray-600">But wait, she&apos;s not the only one! Other stalls are selling lunchboxes too.</p>
+                  <p className="text-xl text-gray-600">Let’s check the cost of their lunchbox:</p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
                     <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
                       <div className="mb-4 flex justify-center">
@@ -56,51 +62,51 @@ export default function Com() {
                 </div>
               )}
 
-              {step >= 1 && (
+              {step >= 2 && (
                 <div className="">
                   <div className="bg-gradient-to-r from-indigo-50 to-blue-50 border-2 border-indigo-200 rounded-2xl p-4 shadow-lg">
-                    <div className="text-xl font-bold text-gray-800">Look at the prices, which shop do you think most students will choose? Why?</div>
-                  </div>
-                </div>
-              )}
-
-              {step >= 2 && (
-                <div >
-                  <div className="bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-2xl p-4 shadow-lg">
-                    <div className="text-xl font-bold text-gray-800">But does least expensive always mean better for business?</div>
+                    <div className="text-xl font-bold text-gray-800">Who is likely to get most buyers? Why?</div>
                   </div>
                 </div>
               )}
 
               {step >= 3 && (
-                <div>
-                  <div className="bg-gradient-to-r from-slate-50 to-gray-50 border-2 border-slate-200 rounded-2xl p-4 shadow-lg">
-                    <div className="text-xl font-bold text-gray-800">Which shop makes the most profit per box?</div>
+                <div >
+                  <div className="bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-2xl p-4 shadow-lg">
+                    <div className="text-xl font-bold text-gray-800">Does least expensive mean best for business?</div>
                   </div>
                 </div>
               )}
 
               {step >= 4 && (
                 <div>
+                  <div className="bg-gradient-to-r from-slate-50 to-gray-50 border-2 border-slate-200 rounded-2xl p-4 shadow-lg">
+                    <div className="text-xl font-bold text-gray-800">Which shop make the most profit for each box?</div>
+                  </div>
+                </div>
+              )}
+
+              {step >= 5 && (
+                <div>
                   <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl p-6 shadow-lg">
-                    <div className="text-xl text-gray-700">Sam&apos;s Snack Spot = $3 profit per box, highest individual profit.</div>
+                    <div className="text-xl text-gray-700">Sam’s Snack Spot made the highest profit of $3 profit per box.</div>
                   </div>
                 </div>
               )}
             </>
           ) : (
             <>
-              {step === 5 && (
+              {step === 6 && (
                 <div className="pt-6">
-                  <div className="text-3xl font-bold text-gray-800 mb-6">Sales of all three businesses in last month</div>
+                  <div className="text-3xl font-bold text-gray-800 mb-6">Sales of all three stalls in the previous month</div>
                   <div className="overflow-x-auto bg-white rounded-2xl shadow-xl border-2 border-gray-200">
                     <table className="min-w-full text-left">
                       <thead className="bg-gradient-to-r from-gray-100 to-gray-200">
                         <tr>
-                          <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Business name</th>
-                          <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Lunchboxes sold</th>
+                          <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Name</th>
+                          <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Lunchboxes Sold</th>
                           <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Profit per Lunchbox</th>
-                          <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Profit</th>
+                          <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Total Profit</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -128,18 +134,18 @@ export default function Com() {
                 </div>
               )}
 
-              {step === 6 && (
+              {step === 7 && (
                 <>
                   <div className="pt-6">
-                    <div className="text-3xl font-bold text-gray-800 mb-6">Sales of all three businesses in last month</div>
+                    <div className="text-3xl font-bold text-gray-800 mb-6">Sales of all three stalls in the previous month</div>
                     <div className="overflow-x-auto bg-white rounded-2xl shadow-xl border-2 border-gray-200">
                       <table className="min-w-full text-left">
                         <thead className="bg-gradient-to-r from-gray-100 to-gray-200">
                           <tr>
-                            <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Business name</th>
-                            <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Lunchboxes sold</th>
+                            <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Name</th>
+                            <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Lunchboxes Sold</th>
                             <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Profit per Lunchbox</th>
-                            <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Profit</th>
+                            <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Total Profit</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -167,24 +173,24 @@ export default function Com() {
                   </div>
                   <div className="pt-6">
                     <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border-2 border-amber-200 rounded-2xl p-6 shadow-lg">
-                      <div className="text-2xl font-bold text-gray-800">So made the most profit?</div>
+                      <div className="text-2xl font-bold text-gray-800">Which stall made the most profit?</div>
                     </div>
                   </div>
                 </>
               )}
 
-              {step === 7 && (
+              {step === 8 && (
                 <>
                   <div className="pt-6">
-                    <div className="text-3xl font-bold text-gray-800 mb-6">Sales of all three businesses in last month</div>
+                    <div className="text-3xl font-bold text-gray-800 mb-6">Sales of all three stalls in the previous month</div>
                     <div className="overflow-x-auto bg-white rounded-2xl shadow-xl border-2 border-gray-200">
                       <table className="min-w-full text-left">
                         <thead className="bg-gradient-to-r from-gray-100 to-gray-200">
                           <tr>
-                            <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Business name</th>
-                            <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Lunchboxes sold</th>
+                            <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Name</th>
+                            <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Lunchboxes Sold</th>
                             <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Profit per Lunchbox</th>
-                            <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Profit</th>
+                            <th className="px-6 py-4 text-xl font-bold text-gray-800 border-b-2 border-gray-300">Total Profit</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -212,7 +218,7 @@ export default function Com() {
                   </div>
                   <div className="pt-6">
                     <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border-2 border-amber-200 rounded-2xl p-6 shadow-lg">
-                      <div className="text-2xl font-bold text-gray-800">So made the most profit?</div>
+                      <div className="text-2xl font-bold text-gray-800">Which stall made the most profit?</div>
                     </div>
                   </div>
                   <div className="pt-4">
@@ -223,44 +229,51 @@ export default function Com() {
                 </>
               )}
 
-              {step === 8 && (
+              {step === 9 && (
                 <div className="pt-6">
-                  <div className="bg-gradient-to-r from-violet-50 to-purple-50 border-2 border-violet-200 rounded-2xl p-8 shadow-lg">
-                    <div className="text-2xl font-bold text-gray-800">If you were Mia, what price would you set for your lunchbox?</div>
+                  <div className="bg-gradient-to-r from-teal-50 to-cyan-50 border-2 border-teal-200 rounded-2xl p-8 shadow-lg">
+                    <div className="text-2xl font-bold text-gray-800">Even though Ben’s Box doesn’t have the least expensive OR the most expensive lunchbox, it ends up making the most money. Why?</div>
                   </div>
                 </div>
               )}
 
-              {step === 9 && (
+
+              {step === 10 && (
                 <>
                   <div className="pt-6">
-                    <div className="bg-gradient-to-r from-violet-50 to-purple-50 border-2 border-violet-200 rounded-2xl p-8 shadow-lg">
-                      <div className="text-2xl font-bold text-gray-800">If you were Mia, what price would you set for your lunchbox?</div>
+                    <div className="bg-gradient-to-r from-teal-50 to-cyan-50 border-2 border-teal-200 rounded-2xl p-8 shadow-lg">
+                      <div className="text-2xl font-bold text-gray-800">Even though Ben&apos;s Box doesn&apos;t have the least expensive OR the most expensive lunchbox, it ends up making the most money. Why?</div>
                     </div>
                   </div>
                   <div className="pt-6">
-                    <div className="bg-gradient-to-r from-sky-50 to-blue-50 border-2 border-sky-200 rounded-2xl p-8 shadow-lg">
-                      <div className="text-2xl font-bold text-gray-800">Would you prefer lots of customers and smaller profits per box, OR fewer customers but higher profits per box?</div>
+                    <div className="bg-gradient-to-r from-teal-50 to-cyan-50 border-2 border-teal-200 rounded-2xl p-8 shadow-lg">
+                      <div className="text-2xl font-bold text-gray-800">It ends up making the most money because its price is balanced.</div>
                     </div>
                   </div>
                 </>
               )}
 
-              {step === 10 && (
+              {step === 11 && (
                 <>
                   <div className="pt-6">
-                    <div className="bg-gradient-to-r from-violet-50 to-purple-50 border-2 border-violet-200 rounded-2xl p-8 shadow-lg">
-                      <div className="text-2xl font-bold text-gray-800">If you were Mia, what price would you set for your lunchbox?</div>
+                    <div className="bg-gradient-to-r from-yellow-50 to-amber-50 border-2 border-yellow-200 rounded-2xl p-8 shadow-lg">
+                      <div className="text-3xl font-bold text-gray-800 mb-2">Price Dilemma</div>
+                      <div className="text-xl text-gray-800 mb-2">Balance price.</div>
+                      <div className="text-lg text-gray-800 mb-2">Help Mia decide</div>
+                      <div className="text-lg text-gray-800 mb-2">Should she set her price low to attract more customers? OR</div>
+                      <div className="text-lg text-gray-800">Should she set her price high to earn more profit per lunchbox.</div>
                     </div>
                   </div>
-                  <div className="pt-6">
-                    <div className="bg-gradient-to-r from-sky-50 to-blue-50 border-2 border-sky-200 rounded-2xl p-8 shadow-lg">
-                      <div className="text-2xl font-bold text-gray-800">Would you prefer lots of customers and smaller profits per box, OR fewer customers but higher profits per box?</div>
-                    </div>
-                  </div>
+                </>
+              )}
+
+
+              {step === 12 && (
+                <>
+
                   <div className="pt-6">
                     <div className="bg-gradient-to-r from-rose-50 to-pink-50 border-2 border-rose-200 rounded-2xl p-8 shadow-lg">
-                      <div className="text-2xl font-bold text-gray-800">Do you think some shops set higher prices on purpose to look more &apos;special&apos; or &apos;exclusive&apos;? Why might that work?</div>
+                      <div className="text-2xl font-bold text-gray-800">Do you think some shops set higher prices on purpose to appear ‘special’ or ‘exclusive’? How does it work?</div>
                     </div>
                   </div>
                 </>
@@ -269,10 +282,10 @@ export default function Com() {
           )}
         </div>
 
-        {step < 10 && (
+        {step < 12 && (
           <div className="mt-8 flex justify-end">
             <button
-              onClick={() => setStep(s => Math.min(s + 1, 10))}
+              onClick={() => setStep(s => Math.min(s + 1, 12))}
               className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xl font-bold rounded-2xl hover:from-indigo-700 hover:to-purple-700 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             >
               Next

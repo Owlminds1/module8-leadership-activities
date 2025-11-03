@@ -15,7 +15,7 @@ const contentData = {
       id: 0,
       type: "gallery",
       title: "",
-      description: "Look at these product ideas and pick 1 item",
+      description: "Select any one item and answer questions on planning a business with it.",
       images: [
         { src: s1, alt: "Product idea 1", label: "Bookmark" },
         { src: s2, alt: "Product idea 2", label: "Mini Notebook" },
@@ -40,13 +40,13 @@ const contentData = {
     {
       id: 3,
       type: "question",
-      content: "How can you tell people about your product?",
+      content: "How will you tell people about your product?",
       isBold: true
     },
     {
       id: 4,
       type: "question",
-      content: "Can you give your product a memorable name?",
+      content: "Can you give your product a catchy name?",
       isBold: true
     }
   ]
@@ -59,7 +59,7 @@ const renderStep = (stepData) => {
       return (
         <>
           <h1 className="text-4xl font-bold mb-6 text-blue-600">{stepData.title}</h1>
-          <p className="text-xl mb-8 text-gray-600">{stepData.description}</p>
+          <p className="text-2xl mb-8 text-gray-600">{stepData.description}</p>
           
           {/* Row 1 - 3 images */}
           <div className="grid grid-cols-3 gap-6 mb-8">

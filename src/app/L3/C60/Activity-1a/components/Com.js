@@ -9,25 +9,29 @@ const contentData = {
       id: 0,
       type: "intro",
       title: "Meet Rohan!",
-      description: "Meet Rohan! He&apos;s super creative and designs beautiful, customized mugs. Everyone loves his work, and now he wants to open a small shop to sell them. But there&apos;s a challenge, Rohan is amazing at designing, but not so good at calculating money. He needs someone to help him figure out the right price so he can sell fairly and still make some profit.",
+      description: "Meet Rohan! He's super creative and designs beautiful, customized mugs. Everyone loves his work, and now he wants to open a small shop to sell them. But there's a challenge, Rohan is amazing at designing, but not so good at calculating money. He needs someone to help him figure out the right price so he can sell fairly and still make some profit.",
       image: s1
     },
     {
       id: 1,
       type: "question",
-      content: "Do you think selling something is only about making it? Or do we also need to think about money?"
+      content: "Is selling something only about making it? Do we also need to think about the cost?"
     },
     {
       id: 2,
       type: "progressive",
-      title: "Step 1: Cost of Making a Mug",
-      content: "Let&apos;s first figure out how much it costs Rohan to make one mug.",
+      title: "Step 1: Calculate the cost of making a customised mug.",
+      content: "It has three actions with three different costs.",
       additionalContent: {
         title: "",
-        items: ["Plain mug (base item): $3", "Painting design: $2", "Packaging (box + wrapping): $1.50"]
+        items: [
+          "Get a Plain mug (base item): $3",
+          "Paint design: $2",
+          "Package (box + wrapping): $1.50"
+        ]
       },
       finalContent: {
-        title: "Total cost so far = $6.50",
+        title: "Add up the cost of each action to get the total cost of the customised mug as $6.50",
         description: "",
         result: ""
       }
@@ -35,74 +39,73 @@ const contentData = {
     {
       id: 3,
       type: "section",
-      title: "Step 2: Extra Costs",
-      content: "Wait a minute! Do you think there is any other cost besides making a customized mug?"
+      title: "Extra Costs",
+      content: "Are there any extra costs?"
     },
     {
       id: 4,
       type: "progressive",
-      content: "Yes! There are.",
+      content: "Yes! He also needs to pay for:",
       additionalContent: {
         title: "",
-        items: ["Electricity : about $0.50 per mug", "Stall rent: He would need some place where he can set up a stall to sell mugs, so he rents a small stall at $30 per month, So approximately per customized mug it will cost $1"]
+        items: [
+          "Electricity",
+          "Rent"
+        ]
       },
       finalContent: {
-        title: "",
-        description: "So now the cost to make and sell one mug is $6.50 + $1.50 = $8",
+        title: "Rohan estimates that he will have to spend $0.50 on electricity and $1 for rent.",
+        description: "So now the cost increases to $8 [6.50 + 1.50]",
         result: ""
       }
     },
     {
       id: 5,
       type: "progressive",
-      title: "Step 3: Buying Materials in Bulk",
-      content: "Now here&apos;s an interesting business trick, buying in bulk. If Rohan buys just 1 plain mug, it costs $3 each. But if he buys 50 mugs together, the supplier gives a discount and the mugs would cost $2 each.",
+      title: "Step 3: Take smart business decisions",
+      content: "Buying Materials in Bulk",
       additionalContent: {
         title: "",
-        items: ["So bulk saves money!"]
+        items: [
+          "If Rohan buys just 1 plain mug, it costs $3 each. But if he buys 50 mugs together, the supplier gives a discount and the mugs would cost $2 each.",
+          "So buying in bulk lets Rohan save money!"
+        ]
       }
     },
     {
       id: 6,
-      type: "question",
-      content: "What if Rohan doesn’t sell all the mugs? What will happen? "
+      type: "section",
+      title: "But here are some risks:",
+      content: "What if Rohan doesn’t sell all the mugs?"
     },
     {
       id: 7,
       type: "progressive",
-      content: "What if Rohan doesn’t sell all the mugs? What will happen? ",
-      additionalContent: {
-        title: "",
-        items: ["If Rohan buys too many mugs but doesn&apos;t sell them, the extra mugs just sit around. That means his money is stuck in unsold items, and he loses money instead of earning it."]
-      }
+      content: "If Rohan buys too many mugs but doesn’t sell, he will lose money."
     },
     {
       id: 8,
-      type: "question",
-      content: "Where will he store them?"
+      type: "section",
+      title: "Will he require more storage space?",
+      content: ""
     },
     {
       id: 9,
-      type: "progressive",
-      content: "Where will he store them?",
-      additionalContent: {
-        title: "",
-        items: ["Fifty mugs take up a lot of space! Rohan might need a shelf, cupboard, or even pay for storage. That will add up as an extra cost and increase the price of mugs."]
-      }
+      type: "section",
+      title: "Will he require more storage space?",
+      content: "Fifty mugs take up a lot of space! Rohan might need a shelf for storage. That will add up as an additional cost thereby increasing the price of mugs."
     },
     {
       id: 10,
-      type: "question",
-      content: "Does he need more money upfront?"
+      type: "section",
+      title: "Does he need more money upfront?",
+      content: ""
     },
     {
       id: 11,
-      type: "progressive",
-      content: "Does he need more money upfront?",
-      additionalContent: {
-        title: "",
-        items: ["Yes, bulk buying is less expensive in the long run, but Rohan needs upfront cash at the beginning to pay for all the mugs at once. If he doesn&apos;t have that money saved, it could be a problem."]
-      }
+      type: "section",
+      title: "Does he need more money upfront?",
+      content: "Yes, bulk buying is less expensive in the long run, but Rohan needs upfront cash at the beginning to pay for all the mugs."
     }
   ]
 };
@@ -211,22 +214,30 @@ const renderStep = (stepData) => {
 export default function Com() {
   const [step, setStep] = useState(0);
 
-  const nextStep = () => setStep((prev) => prev + 1);
+  const isComplete = step >= contentData.steps.length;
+  const currentStepData = isComplete ? null : contentData.steps[step];
 
-  const currentStepData = contentData.steps[step];
+  const nextStep = () => {
+    if (!isComplete) setStep((prev) => prev + 1);
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-yellow-50 p-6 text-center">
       <div className="max-w-xl bg-white shadow-lg rounded-2xl p-6 text-xl">
-        {renderStep(currentStepData)}
-
-        {step !== 11 && (
-          <button
-            onClick={nextStep}
-            className="mt-6 px-6 py-2 bg-yellow-500 text-white font-semibold rounded-xl shadow hover:bg-yellow-600"
-          >
-            Next
-          </button>
+        {isComplete ? (
+          <div className="text-3xl text-green-700 font-bold py-16">Great job! You finished all steps.</div>
+        ) : (
+          <>
+            {renderStep(currentStepData)}
+            {step < contentData.steps.length - 1 && (
+              <button
+                onClick={nextStep}
+                className="mt-6 px-6 py-2 bg-yellow-500 text-white font-semibold rounded-xl shadow hover:bg-yellow-600"
+              >
+                Next
+              </button>
+            )}
+          </>
         )}
       </div>
     </div>

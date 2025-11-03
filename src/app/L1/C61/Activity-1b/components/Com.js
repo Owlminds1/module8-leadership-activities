@@ -9,6 +9,41 @@ export default function Com() {
     orange: "",
     grapes: ""
   });
+  const [outcome, setOutcome] = useState("");
+  const [showOutcome, setShowOutcome] = useState(false);
+  const fruitData = [
+    { name: "apple", cost: 2 },
+    { name: "banana", cost: 1 },
+    { name: "mango", cost: 3 },
+    { name: "orange", cost: 2 },
+    { name: "grapes", cost: 2 }
+  ];
+
+  const handleCheckOutcome = () => {
+    let totalProfit = 0;
+    let allFilled = true;
+    fruitData.forEach(fruit => {
+      const price = parseFloat(sellingPrices[fruit.name]);
+      if (isNaN(price) || sellingPrices[fruit.name] === "") {
+        allFilled = false;
+      } else {
+        totalProfit += price - fruit.cost;
+      }
+    });
+    if (!allFilled) {
+      setOutcome("Please fill in all selling prices to check your outcome.");
+      setShowOutcome(true);
+      return;
+    }
+    if (totalProfit > 0) {
+      setOutcome(`You made a profit of $${totalProfit.toFixed(2)}`);
+    } else if (totalProfit < 0) {
+      setOutcome(`You ran a loss of $${Math.abs(totalProfit).toFixed(2)}`);
+    } else {
+      setOutcome("You achieved break even.");
+    }
+    setShowOutcome(true);
+  };
 
   const handlePriceChange = (fruit, value) => {
     setSellingPrices(prev => ({
@@ -29,6 +64,13 @@ export default function Com() {
         <div className="bg-white shadow-2xl rounded-3xl p-8">
           <div>
             <h2 className="text-2xl font-bold mb-6 text-purple-800">Now set the selling prices for each fruit:</h2>
+            <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 mb-6 max-w-2xl mx-auto">
+              <ul className="list-disc list-inside text-lg text-purple-900">
+                <li>Observe the cost for each fruit on the table.</li>
+                <li>Decide the selling price: should it be more, the same, or less than the cost?</li>
+                <li>Note the profit or loss based on the price.</li>
+              </ul>
+            </div>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse border border-gray-300 bg-white rounded-lg shadow-lg">
                 <thead>
@@ -123,6 +165,19 @@ export default function Com() {
                 </tbody>
               </table>
             </div>
+            <div className="flex justify-center mt-8">
+              <button
+                onClick={handleCheckOutcome}
+                className="px-8 py-3 bg-gradient-to-r from-green-500 to-purple-500 text-white font-bold rounded-2xl shadow-xl hover:from-green-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 text-lg"
+              >
+                Check Outcome
+              </button>
+            </div>
+            {showOutcome && (
+              <div className="mt-6 text-center">
+                <span className="text-2xl font-bold text-purple-700">{outcome}</span>
+              </div>
+            )}
           </div>
         </div>
       </div>

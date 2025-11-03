@@ -21,21 +21,25 @@
                 "link": "/L1/C60/Activity-3",
                 "name": "Start-up Money"
             },
-            "Activity 4a": {
-                "link": "/L1/C60/Activity-4a",
+            "Activity 4": {
+                "link": "/L1/C60/Activity-4",
+                "name": "Customer Loyalty"
+            },
+            "Activity 5a": {
+                "link": "/L1/C60/Activity-5a",
                 "name": "One-Time Pay vs Subscription I"
             },
-            "Activity 4b": {
-                "link": "/L1/C60/Activity-4b",
+            "Activity 5b": {
+                "link": "/L1/C60/Activity-5b",
                 "name": "One-Time Pay vs Subscription II"
-            },
-            "Activity 5": {
-                "link": "/L1/C60/Activity-5",
-                "name": "Customer Loyalty"
             },
             "Additional Activity": {
                 "link": "/L1/C60/Additional-Activity",
                 "name": "Mini Business"
+            },
+            "Post Class Activity": {
+                "link": "/L1/C60/PCA",
+                "name": "Subscription Hunt"
             }
         },
         "C61": {
@@ -73,6 +77,10 @@
             }
         },
         "C62":{
+            "Warm Up": {
+                "link": "/L1/C62/Warm-Up",
+                "name": "Paper Plane Challenge"
+            },
             "Activity 1": {
                 "link": "/L1/C62/Activity-1",
                 "name": "The Peanut Butter Sandwich Business"
@@ -103,25 +111,33 @@
                 "link": "/L1/C63/Warm-up-activity",
                 "name": "Mystery Bag of Ideas"
             },
-            "Activity 1c": {
-                "link": "/L1/C63/Activity-1c",
-                "name": "Miko Benefits"
+            "Activity 1": {
+                "link": "/L1/C63/Activity-1",
+                "name": "The Big Idea"
             },
-            "Activity 2a": {
-                "link": "/L1/C63/Activity-2a",
-                "name": "Mini Business Plan"
+            "Activity 2": {
+                "link": "/L1/C63/Activity-2",
+                "name": "Data driven decision"
             },
             "Activity 3a": {
                 "link": "/L1/C63/Activity-3a",
-                "name": "Growth Forecast"
-            },
-            "Activity 4": {
-                "link": "/L1/C63/Activity-4",
-                "name": "Elevator Pitch"
+                "name": "Business Innovation Proposal I"
             },
             "Activity 5a": {
                 "link": "/L1/C63/Activity-5a",
+                "name": "Elevator Pitch"
+            },
+            "Activity 5b": {
+                "link": "/L1/C63/Activity-5b",
                 "name": "Present Elevator Pitch"
+            },
+            "Additional Activity": {
+                "link": "/L1/C63/Additional-Activity",
+                "name": "60 Seconds to Shine!"
+            },
+            "Post Class Activity": {
+                "link": "/L1/C63/PCA",
+                "name": "The Young Innovator Quest"
             }
         }
     },
@@ -169,6 +185,10 @@
             }
         },
         "C61": {
+            "Warm Up": {
+                "link": "/L2/C61/Warm-Up",
+                "name": "Who’s the Buyer? Who’s the Seller?"
+            },
             "Activity 1": {
                 "link": "/L2/C61/Activity-1",
                 "name": "Sweet Shop Adventure"
@@ -203,21 +223,17 @@
             }
         },
         "C62":{
+            "Warm Up": {
+                "link": "/L2/C62/Warm-Up",
+                "name": "Origami Fun!"
+            },
             "Activity 1": {
                 "link": "/L2/C62/Activity-1",
                 "name": "The Craft Business Adventure"
             },
-            "Activity 2a": {
-                "link": "/L2/C62/Activity-2a",
-                "name": "Business Math I"
-            },
-            "Activity 2b": {
-                "link": "/L2/C62/Activity-2b",
-                "name": "Business Math II"
-            },
-            "Activity 2c": {
-                "link": "/L2/C62/Activity-2c",
-                "name": "Business Math III"
+            "Activity 2": {
+                "link": "/L2/C62/Activity-2",
+                "name": "Business Math"
             },
             "Activity 3": {
                 "link": "/L2/C62/Activity-3",
@@ -234,6 +250,10 @@
             "Additional Activity": {
                 "link": "/L2/C62/Additional-Activity",
                 "name": "Pick & Sell!"
+            },
+            "Post Class Activity": {
+                "link": "/L2/C62/PCA",
+                "name": "My Mini Business Idea!"
             }
         },
         "C63":{
@@ -241,13 +261,9 @@
                 "link": "/L2/C63/Activity-1",
                 "name": "The Magic Market"
             },
-            "Activity 2a": {
-                "link": "/L2/C63/Activity-2a",
-                "name": "Networking Detective I"
-            },
-            "Activity 2b": {
-                "link": "/L2/C63/Activity-2b",
-                "name": "Networking Detective II"
+            "Activity 2": {
+                "link": "/L2/C63/Activity-2",
+                "name": "Networking Detective"
             },
             "Activity 3": {
                 "link": "/L2/C63/Activity-3",
@@ -307,6 +323,10 @@
             }
         },
         "C61": {
+            "Warm Up": {
+                "link": "/L3/C61/Warm-Up",
+                "name": "Who’s the Buyer? Who’s the Seller?"
+            },
             "Activity 1": {
                 "link": "/L3/C61/Activity-1",
                 "name": "Sport Shop Adventure"
@@ -357,8 +377,8 @@
                 "link": "/L3/C62/Activity-2a",
                 "name": "The Comeback of Netflix I"
             },
-            "Activity 2b": {
-                "link": "/L3/C62/Activity-2b",
+            "Activity 2c": {
+                "link": "/L3/C62/Activity-2c",
                 "name": "The Comeback of Netflix Notes"
             },
             "Activity 3a": {
@@ -395,13 +415,9 @@
                 "link": "/L3/C63/Activity-1",
                 "name": "The Creative Market"
             },
-            "Activity 2a": {
-                "link": "/L3/C63/Activity-2a",
-                "name": "The Creative Market Connections I"
-            },
-            "Activity 2b": {
-                "link": "/L3/C63/Activity-2b",
-                "name": "The Creative Market Connections II"
+            "Activity 2": {
+                "link": "/L3/C63/Activity-2",
+                "name": "The Creative Market Connections"
             },
             "Activity 3": {
                 "link": "/L3/C63/Activity-3",
@@ -414,6 +430,10 @@
             "Additional Activity": {
                 "link": "/L3/C63/Additional-Activity",
                 "name": "Networking Quiz Show"
+            },
+            "Post Class Activity": {
+                "link": "/L3/C63/PCA",
+                "name": "Business Card Investigator"
             }
         }
     }

@@ -4,17 +4,19 @@ import { useState } from "react";
 
 const businesses = [
   "Local bakery shop",
-  "Domino&apos;s Pizza",
+  "Domino's Pizza",
   "Toy store",
-  "Ice cream truck",
+  "Ice-cream truck",
   "Lego online store",
   "Netflix",
   "Amazon marketplace",
-  "Food app like: Swiggy / Zomato",
-  "Cap app like: Uber / Ola",
-  "Stationery factory",
+  "Food app like: UberEats / DoorDash",
+  "Uber (apps for cab services)",
+  "Warehouse (Stationery)",
   "Farmers selling to a grocery store",
-  "Toy manufacturer selling to big stores"
+  "Toy manufacturer selling to big stores",
+  "Hamleys", 
+  "Walmart"
 ];
 
 const businessModels = [
@@ -25,10 +27,10 @@ const businessModels = [
 ];
 
 const correctAnswers = {
-  "b2c": ["Local bakery shop", "Toy store", "Ice cream truck", "Domino&apos;s Pizza"],
-  "b2c-online": ["Lego online store", "Netflix", "Domino&apos;s Pizza"],
-  "aggregator": ["Amazon marketplace", "Food app like: Swiggy / Zomato", "Cap app like: Uber / Ola"],
-  "b2b": ["Stationery factory", "Farmers selling to a grocery store", "Toy manufacturer selling to big stores"]
+  "b2c": ["Local bakery shop", "Toy store", "Ice-cream truck", "Domino's Pizza", "Hamleys", "Walmart"],
+  "b2c-online": ["Lego online store", "Netflix", "Domino's Pizza", "Hamleys", "Walmart"],
+  "aggregator": ["Amazon marketplace", "Food app like: UberEats / DoorDash", "Uber (apps for cab services)"],
+  "b2b": ["Warehouse (Stationery)", "Farmers selling to a grocery store", "Toy manufacturer selling to big stores"]
 };
 
 export default function Com() {

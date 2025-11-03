@@ -10,26 +10,26 @@ const contentData = {
       id: 0,
       type: "intro",
       title: "",
-      description: "Meet Leo, a boy who loves making craft products! We will learn how he started his own small business!\n\nLeo is a smart and creative boy who loves making friendship bands, bag tags, and keychains. One day, he made a few items to show his neighbor, Mrs. Parker. She loved them so much that she said: \"Leo, these crafts are amazing! You can sell them!\" Leo thought, \"Wow! Maybe I can start a small craft business!\" But he didn't know how. So Mrs. Parker smiled and said, \"It's easy if you follow some simple rules. Let me show you!\"",
+      description: "Leo is super creative and loves making craft products! He makes friendship bands, bag tags, and keychains. One day, he made a few items and took them to his grandma. She loved them so much that she said: “Leo, these crafts are amazing! You can sell them!” \n\nLeo thought, “Wow! Maybe I can start a small craft business!” \nBut he didn’t know how. Grandma smiled and said, “Let’s work together to set it up!",
       image: s1
     },
     {
       id: 1,
       type: "section",
       title: "Step 1: Decide What You Want To Sell",
-      content: "Every business begins with an idea. You must decide what product or service you want to offer. It should be something you enjoy doing or making. For example, Leo chooses to sell friendship bands, bag tags, and keychains because he enjoys making crafts."
+      content: "Every business begins with an idea. You must decide what product or service you want to offer. It should be something you excel at and enjoy doing. For example, Leo chooses to sell peanut butter sandwiches because he makes it better than others and enjoys making them."
     },
     {
       id: 2,
       type: "section",
       title: "Step 2: Who Will Buy It?",
-      content: "A business must have customers. These are people who will buy your product."
+      content: "A business must have customers. These are people who will buy your product. Before starting, you should think: Who will pay money to take this?"
     },
     {
       id: 3,
       type: "progressive",
       sectionTitle: "Step 2: Who Will Buy It?",
-      sectionContent: "A business must have customers. These are people who will buy your product.",
+      sectionContent: "A business must have customers. These are people who will buy your product. Before starting, you should think: Who will pay money to take this?",
       content: "Who do you think will buy crafts from Leo?",
       isBold: true
     },
@@ -37,12 +37,12 @@ const contentData = {
       id: 4,
       type: "progressive",
       sectionTitle: "Step 2: Who Will Buy It?",
-      sectionContent: "A business must have customers. These are people who will buy your product.",
+      sectionContent: "A business must have customers. These are people who will buy your product. Before starting, you should think: Who will pay money to take this?",
       content: "Who do you think will buy crafts from Leo?",
       isBold: true,
       answer: {
         title: "Leo's potential customers:",
-        items: ["Friends at school", "Family members", "Neighbors' kids"]
+        items: ["Friends at school", "Family members", "Neighbors"]
       }
     },
     {
@@ -89,7 +89,12 @@ const contentData = {
       id: 10,
       type: "section",
       title: "Step 5: Where Will You Sell It?",
-      content: "A good business has a selling location i.e. a place where people can buy. For example, Leo thinks he can sell at: A school fair, A small stall from home, A local craft market"
+      content: "A good business has a selling location i.e. a place where people can buy. Leo thinks he can sell at:",
+      contentBullets: [
+        "A school fair",
+        "Park",
+        "Christmas market"
+      ]
     },
     {
       id: 11,
@@ -113,6 +118,11 @@ const contentData = {
       content: "How can Leo tell people about his crafts?",
       isBold: true,
       answer: "Leo can make posters, show his crafts to friends, and tell neighbors."
+    },
+    {
+      id: 12,
+      type: "completion",
+      content: "Bravo! You can ace business planning!"
     }
   ]
 };
@@ -130,15 +140,23 @@ const renderStep = (stepData) => {
           </div>
         </>
       );
-    
     case "section":
       return (
         <div>
           <h2 className="text-3xl font-bold mb-4 text-blue-600">{stepData.title}</h2>
           <p className="text-xl leading-relaxed">{stepData.content}</p>
+          {stepData.contentBullets && Array.isArray(stepData.contentBullets) && (
+            <ul className="list-disc list-inside space-y-2 ml-6 mt-4">
+              {stepData.contentBullets.map((item, idx) => (
+                <li key={idx} className="text-xl leading-relaxed flex items-start">
+                  <span className="text-blue-600 font-bold mr-2">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       );
-    
     case "progressive":
       return (
         <div>
@@ -148,7 +166,6 @@ const renderStep = (stepData) => {
               <p className="text-xl leading-relaxed">{stepData.sectionContent}</p>
             </div>
           )}
-          
           <p className="text-xl leading-relaxed mb-6">
             {stepData.isBold ? (
               <span className="font-bold text-green-600">{stepData.content}</span>
@@ -156,13 +173,11 @@ const renderStep = (stepData) => {
               stepData.content
             )}
           </p>
-          
           {stepData.answer && typeof stepData.answer === "string" && (
             <div className="mt-4 p-6 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
               <p className="text-xl">{stepData.answer}</p>
             </div>
           )}
-          
           {stepData.answer && typeof stepData.answer === "object" && (
             <div className="mt-4 p-6 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
               {stepData.answer.title && (
@@ -180,7 +195,14 @@ const renderStep = (stepData) => {
           )}
         </div>
       );
-    
+    case "completion":
+      return (
+        <div className="flex flex-col items-center justify-center min-h-[300px]">
+          <div className="bg-green-100 border-2 border-green-400 rounded-2xl p-10 shadow-xl">
+            <h2 className="text-3xl font-bold text-green-700 mb-4">{stepData.content}</h2>
+          </div>
+        </div>
+      );
     default:
       return <p className="text-xl">{stepData.content}</p>;
   }

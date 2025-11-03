@@ -1,77 +1,56 @@
 "use client";
 
-const businessExamples = [
+const companyJournal = [
   {
-    name: "Local Bakery",
-    model: "B2C",
-    customers: "Families & individuals",
-    revenue: "Selling cakes, pastries, snacks",
-    pros: [
-      "Direct feedback from customers",
-      "Higher profit per item"
-    ],
-    cons: [
-      "Needs daily marketing",
-      "Food wastage if not sold"
-    ],
-    improvements: [
-      "Add online delivery",
-      "Create a monthly snack subscription"
-    ]
+    name: "Nike",
+    present: {
+      model: "B2C, DTC (Direct to Consumer)",
+      customers: "Global consumers, athletes",
+      revenue: "Product sales, online sales, brand collaborations",
+      pros: ["Global brand recognition", "High profit margins", "Direct customer relationships"],
+      cons: ["Intense competition", "High marketing costs"]
+    },
+    past: {
+      model: "Wholesale, B2B",
+      customers: "Retailers, sports stores",
+      revenue: "Bulk sales to retailers",
+      pros: ["Wide distribution", "Lower marketing costs"],
+      cons: ["Less control over customer experience", "Lower profit margins"]
+    }
   },
   {
-    name: "Flipkart",
-    model: "Aggregator",
-    customers: "Online shoppers",
-    revenue: "Commission from sellers + advertising",
-    pros: [
-      "Large customer base",
-      "Multiple revenue streams"
-    ],
-    cons: [
-      "High competition",
-      "Less control over seller quality"
-    ],
-    improvements: [
-      "Better seller verification",
-      "Enhanced customer support"
-    ]
+    name: "",
+    present: {
+      model: "",
+      customers: "",
+      revenue: "",
+      pros: [""],
+      cons: [""]
+    },
+    past: {
+      model: "",
+      customers: "",
+      revenue: "",
+      pros: [""],
+      cons: [""]
+    }
   },
   {
-    name: "School Uniform Supplier",
-    model: "B2B",
-    customers: "Schools and educational institutions",
-    revenue: "Bulk sales to schools",
-    pros: [
-      "Large order volumes",
-      "Stable customer relationships"
-    ],
-    cons: [
-      "Limited customer base",
-      "Seasonal demand"
-    ],
-    improvements: [
-      "Partner with sports clubs for bulk sales",
-      "Expand to corporate uniforms"
-    ]
-  },
-  {
-    name: "Nike.com",
-    model: "B2C Online",
-    customers: "Individual consumers",
-    revenue: "Direct online sales",
-    pros: [
-      "Global reach",
-      "Direct customer relationship"
-    ],
-    cons: [
-      "High marketing costs",
-      "Competition from marketplaces"
-    ],
-    improvements: [
-      "Personalized recommendations",
-      "Virtual try-on features"
-    ]
+    name: "",
+    present: {
+      model: "",
+      customers: "",
+      revenue: "",
+      pros: [""],
+      cons: [""]
+    },
+    past: {
+      model: "",
+      customers: "",
+      revenue: "",
+      pros: [""],
+      cons: [""]
+    }
   }
 ];
 
@@ -83,138 +62,98 @@ export default function Com() {
         <div className="bg-white shadow-2xl rounded-3xl p-8">
           <div className="flex items-center justify-center gap-6 mb-8">
             <h1 className="text-4xl font-bold text-blue-800 text-center">
-            Business Model Journal
+              Business Model Transformation Journal
             </h1>
           </div>
 
           <div className="mb-8">
-            <div className="bg-blue-100 p-6 rounded-xl">
+            <div className="p-6 rounded-xl">
               <p className="text-xl text-blue-800 leading-relaxed">
-                Look around your home, school, or neighborhood and find 1 business for each business model. You can ask your parents, teachers, or elders to help you.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Step 1: Business Hunt</h2>
-              <p className="text-lg text-gray-700 mb-4">
-                Find 4 businesses for each business, identify whether it is B2B, B2C, B2C Online, or Aggregator/Marketplace.
-              </p>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Examples:</h3>
-                <ul className="space-y-2">
-                  <li className="text-gray-700">Local bakery → B2C</li>
-                  <li className="text-gray-700">Flipkart → Aggregator</li>
-                  <li className="text-gray-700">School uniform supplier → B2B</li>
-                  <li className="text-gray-700">Nike.com → B2C Online</li>
-                </ul>
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Step 2: Business Journal Entry</h2>
-              <p className="text-lg text-gray-700 mb-4">
+                <strong>Research five companies and document the history of their transformation and growth.</strong><br /><br />
+                Some companies you may consider:<br />
+                Nike, Starbucks, Sketchers, Apple, Amazon<br /><br />
+                Find out about their founding principles, aspects of their product innovation, and evolution of their business models.<br /><br />
+                <strong>Business Journal Entry</strong><br />
                 For each business, record in your journal:
               </p>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <ul className="space-y-2">
-                  <li className="text-gray-700 flex items-center">
-                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</span>
-                    Name of the Business
-                  </li>
-                  <li className="text-gray-700 flex items-center">
-                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</span>
-                    Business Model Type
-                  </li>
-                  <li className="text-gray-700 flex items-center">
-                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">3</span>
-                    Main Customers (Who do they sell to?)
-                  </li>
-                  <li className="text-gray-700 flex items-center">
-                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">4</span>
-                    Revenue Source (How do they make money?)
-                  </li>
-                  <li className="text-gray-700 flex items-center">
-                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">5</span>
-                    1-2 Pros of their business model
-                  </li>
-                  <li className="text-gray-700 flex items-center">
-                    <span className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">6</span>
-                    1-2 Cons of their business model
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Step 3: Improvement Ideas</h2>
-            <p className="text-lg text-gray-700 mb-4">
-              Suggest 2–3 creative improvements for each business.
-            </p>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">Examples:</h3>
-              <ul className="space-y-2">
-                <li className="text-gray-700">Bakery: Offer subscription boxes for snacks.</li>
-                <li className="text-gray-700">School supplier: Partner with sports clubs for bulk sales.</li>
+              <ul className="list-disc ml-8 mt-2 text-blue-700 text-lg">
+                <li>Present Day:
+                  <ul className="list-disc ml-8">
+                    <li>Name of the Business</li>
+                    <li>Current Business Model Type</li>
+                    <li>Main Customers (Who do they sell to?)</li>
+                    <li>Revenue Source (How do they make money?)</li>
+                    <li>A couple of pros of their business model</li>
+                    <li>A couple of cons of their business model</li>
+                  </ul>
+                </li>
+                <li>Past:
+                  <ul className="list-disc ml-8">
+                    <li>Name of the Business</li>
+                    <li>Business Model Type</li>
+                    <li>Main Customers (Who do they sell to?)</li>
+                    <li>Revenue Source (How do they make money?)</li>
+                    <li>A couple of pros of their business model</li>
+                    <li>A couple of cons of their business model</li>
+                  </ul>
+                </li>
               </ul>
+              <span className="text-blue-700">For reference, look at the below table</span>
             </div>
           </div>
 
           <div className="mb-8">
-            <p className="text-lg text-gray-700 mb-6">
-              Sample:
-            </p>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Sample Table: Company Transformation</h2>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
                 <thead>
                   <tr className="bg-blue-600 text-white">
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Business Name</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Business Model</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Main Customers</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Revenue Source</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Pros (2 points)</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Cons (2 points)</th>
-                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Improvement Ideas (2-3 points)</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Company</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Present Model</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Present Customers</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Present Revenue</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Present Pros</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Present Cons</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Past Model</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Past Customers</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Past Revenue</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Past Pros</th>
+                    <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Past Cons</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {businessExamples.map((business, index) => (
-                    <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                      <td className="border border-gray-300 px-4 py-3 font-medium text-gray-800">{business.name}</td>
-                      <td className="border border-gray-300 px-4 py-3">
-                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                          business.model === 'B2B' ? 'bg-blue-100 text-blue-800' :
-                          business.model === 'B2C' ? 'bg-green-100 text-green-800' :
-                          business.model === 'B2C Online' ? 'bg-purple-100 text-purple-800' :
-                          'bg-orange-100 text-orange-800'
-                        }`}>
-                          {business.model}
-                        </span>
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-gray-700">{business.customers}</td>
-                      <td className="border border-gray-300 px-4 py-3 text-gray-700">{business.revenue}</td>
+                  {companyJournal.map((company, idx) => (
+                    <tr key={idx} className={idx % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                      <td className="border border-gray-300 px-4 py-3 font-medium text-gray-800">{company.name}</td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">{company.present.model}</td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">{company.present.customers}</td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">{company.present.revenue}</td>
                       <td className="border border-gray-300 px-4 py-3 text-gray-700">
-                        <ul className="list-disc list-inside space-y-1">
-                          {business.pros.map((pro, proIndex) => (
-                            <li key={proIndex} className="text-sm">{pro}</li>
-                          ))}
-                        </ul>
+                        {(company.present.pros.length === 1 && company.present.pros[0] === "")
+                          ? ""
+                          : <ul className="list-disc list-inside space-y-1">{company.present.pros.map((pro, i) => (<li key={i} className="text-sm">{pro}</li>))}</ul>
+                        }
                       </td>
                       <td className="border border-gray-300 px-4 py-3 text-gray-700">
-                        <ul className="list-disc list-inside space-y-1">
-                          {business.cons.map((con, conIndex) => (
-                            <li key={conIndex} className="text-sm">{con}</li>
-                          ))}
-                        </ul>
+                        {(company.present.cons.length === 1 && company.present.cons[0] === "")
+                          ? ""
+                          : <ul className="list-disc list-inside space-y-1">{company.present.cons.map((con, i) => (<li key={i} className="text-sm">{con}</li>))}</ul>
+                        }
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">{company.past.model}</td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">{company.past.customers}</td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">{company.past.revenue}</td>
+                      <td className="border border-gray-300 px-4 py-3 text-gray-700">
+                        {(company.past.pros.length === 1 && company.past.pros[0] === "")
+                          ? ""
+                          : <ul className="list-disc list-inside space-y-1">{company.past.pros.map((pro, i) => (<li key={i} className="text-sm">{pro}</li>))}</ul>
+                        }
                       </td>
                       <td className="border border-gray-300 px-4 py-3 text-gray-700">
-                        <ul className="list-disc list-inside space-y-1">
-                          {business.improvements.map((improvement, impIndex) => (
-                            <li key={impIndex} className="text-sm">{improvement}</li>
-                          ))}
-                        </ul>
+                        {(company.past.cons.length === 1 && company.past.cons[0] === "")
+                          ? ""
+                          : <ul className="list-disc list-inside space-y-1">{company.past.cons.map((con, i) => (<li key={i} className="text-sm">{con}</li>))}</ul>
+                        }
                       </td>
                     </tr>
                   ))}

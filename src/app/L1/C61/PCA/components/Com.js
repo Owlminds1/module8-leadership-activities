@@ -11,23 +11,26 @@ export default function Com() {
               Whenever you go shopping (grocery store, fun shop, or even a bakery), become a Price Detective! Your job is to compare the price of a single item with the price of a bigger packet or bigger size.
             </p>
             
+
             <div className="text-left max-w-4xl mx-auto mb-8">
               <h2 className="text-2xl font-bold mb-6 text-blue-800">Example:</h2>
               <ul className="text-lg text-gray-700 space-y-3">
-                <li>• 1 small bread vs. 1 big bread</li>
-                <li>• 1 chocolate bar vs. a whole box of chocolates</li>
-                <li>• 1 juice bottle vs. a pack of 6 juice bottles</li>
-                <li>• 1 small chips packet vs. a family-size chips packet</li>
-                <li>• 1 cupcake vs. a box of 6 cupcakes</li>
+                <li>• 1 small bread vs. 1 Big bread</li>
+                <li>• 1 chocolate bar vs. A whole box of chocolates</li>
+                <li>• 1 juice bottle vs. A pack of 6 juice bottles</li>
+                <li>• 1 small chips packet vs. A family-size chips packet</li>
+                <li>• 1 cupcake vs. A box of 6 cupcakes</li>
               </ul>
             </div>
 
             <div className="text-left max-w-4xl mx-auto mb-8">
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                Ask the elder person you went with: &quot;Which one is the better deal?&quot;
+                Ask the elder person you went with: <span className="font-bold">“Which one is the better deal?”</span>
               </p>
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                Then, when you come home, write your detective notes in your notebook and use the following format:
+                Then, when you come home, write your detective notes in your notebook.<br />
+                Use the format provided in post class activity to gather the information.<br />
+                <span className="font-bold">Share the picture of completed table with the teacher.</span>
               </p>
             </div>
 
@@ -56,6 +59,28 @@ export default function Com() {
                     <td className="border border-gray-300 px-4 py-3">Pack of 6 = $90</td>
                     <td className="border border-gray-300 px-4 py-3">Same price per bottle</td>
                     <td className="border border-gray-300 px-4 py-3">Only better if you need many bottles</td>
+                  </tr>
+                  {/* Empty rows for students to fill */}
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
+                    <td className="border border-gray-300 px-4 py-3">&nbsp;</td>
                   </tr>
                 </tbody>
               </table>

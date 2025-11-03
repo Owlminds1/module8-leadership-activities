@@ -9,6 +9,12 @@ import s5 from "../assets/s5.png";
 import s6 from "../assets/s6.png";
 import s7 from "../assets/s7.png";
 import s8 from "../assets/s8.png";
+import s9 from "../assets/s9.png";
+import s10 from "../assets/s10.png";
+import s11 from "../assets/s11.png";
+import s12 from "../assets/s12.png";
+import s13 from "../assets/s13.png";
+import s14 from "../assets/s14.png";
 
 const comparisonData = [
   {
@@ -30,6 +36,21 @@ const comparisonData = [
     id: 3,
     left: { text: "A movie ticket for a regular weekday", image: s7 },
     right: { text: "A movie ticket on a holiday weekend", image: s8 }
+  },
+  {
+    id: 4,
+    left: { text: "Cap from local shop", image: s9 },
+    right: { text: "Formula 1 team driver cap", image: s10 }
+  },
+  {
+    id: 5,
+    left: { text: "Popular collectible Doll", image: s11 },
+    right: { text: "Normal doll key chain", image: s12 }
+  },
+  {
+    id: 6,
+    left: { text: "Dress at festive sale", image: s13 },
+    right: { text: "Dress without sale", image: s14 }
   }
 ];
 

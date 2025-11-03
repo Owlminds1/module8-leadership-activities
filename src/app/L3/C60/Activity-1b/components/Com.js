@@ -22,7 +22,8 @@ export default function Com() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-yellow-50 p-6">
       <div className="max-w-2xl bg-white shadow-lg rounded-2xl p-8 text-center">
         <h1 className="text-3xl font-bold mb-8 text-gray-800">
-          Now comes the big question: At what price should Rohan sell each mug?
+          We know that Rohan incurred a cost of $8 per mug. How should he price each mug? Why?
+          <br />
           If the total cost per mug is about $8, here are the options:
         </h1>
 
@@ -32,8 +33,8 @@ export default function Com() {
               key={index}
               onClick={() => handleOptionClick(option)}
               className={`w-full p-4 text-xl font-semibold rounded-xl border-2 transition-all duration-200 ${selectedOption === option
-                  ? 'border-yellow-500 bg-yellow-100 text-yellow-800'
-                  : 'border-gray-300 bg-white text-gray-700 hover:border-yellow-400 hover:bg-yellow-50'
+                ? 'border-yellow-500 bg-yellow-100 text-yellow-800'
+                : 'border-gray-300 bg-white text-gray-700 hover:border-yellow-400 hover:bg-yellow-50'
                 }`}
             >
               {option.price}

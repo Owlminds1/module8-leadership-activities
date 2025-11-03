@@ -1,41 +1,49 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
+import s1 from "../assets/s1.png";
+import s2 from "../assets/s2.png";
+import s3 from "../assets/s3.png";
+import s4 from "../assets/s4.png";
+import s5 from "../assets/s5.png";
+import s6 from "../assets/s6.png";
+import s7 from "../assets/s7.png";
 
 const items = [
   {
     id: 1,
-    name: "Hotstar Disney",
-    icon: ""
+    name: "Jio Hotstar",
+    image: s1
   },
   {
     id: 2,
     name: "Domino’s Buy 1 Get 1 Free Offer",
-    icon: ""
+    image: s2
   },
   {
     id: 3,
     name: "Nike Air Jordans",
-    icon: ""
+    image: s3
   },
   {
     id: 4,
     name: "Youtube",
-    icon: ""
+    image: s4
   },
   {
     id: 5,
     name: "Amazon Prime",
-    icon: ""
+    image: s5
   },
   {
     id: 6,
-    name: "Burger King “2 for $5 Whopper Deal",
-    icon: ""
+    name: "Burger King 2 for $5 Whopper Deal",
+    image: s6
   },
   {
     id: 7,
     name: "LEGO Collector’s Sets",
-    icon: ""
+    image: s7
   }
 ];
 
@@ -57,73 +65,65 @@ const answerKey = {
 };
 
 export default function Com() {
-  const [selectedValues, setSelectedValues] = useState({});
-  const [showAnswers, setShowAnswers] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selected, setSelected] = useState("");
+  const [feedback, setFeedback] = useState("");
+  const [completed, setCompleted] = useState(false);
 
-  const handleDropdownChange = (itemId, value) => {
-    setSelectedValues(prev => ({
-      ...prev,
-      [itemId]: value
-    }));
-  };
+  const currentItem = items[currentIndex];
+  const correctAnswer = answerKey[currentItem.id];
 
-  const checkAnswers = () => {
-    setShowAnswers(true);
-  };
-
-  const getItemColor = (itemId) => {
-    if (!showAnswers) return "bg-white border-gray-200";
-    
-    const selectedValue = selectedValues[itemId];
-    const correctAnswer = answerKey[itemId];
-    
-    if (selectedValue === correctAnswer) {
-      return "bg-green-100 border-green-500";
+  const handleSelect = (option) => {
+    setSelected(option);
+    if (option === correctAnswer) {
+      setFeedback("Correct!");
+      setTimeout(() => {
+        if (currentIndex < items.length - 1) {
+          setCurrentIndex(currentIndex + 1);
+          setSelected("");
+          setFeedback("");
+        } else {
+          setCompleted(true);
+        }
+      }, 700);
     } else {
-      return "bg-red-100 border-red-500";
+      setFeedback("Try again");
     }
   };
 
+  const getButtonColor = (option) => {
+    if (!selected) return "bg-white text-gray-700 border-gray-300";
+    if (selected === option && feedback === "Correct!") return "bg-green-500 text-white border-green-500";
+    if (selected === option && feedback === "Try again") return "bg-red-500 text-white border-red-500";
+    return "bg-white text-gray-700 border-gray-300";
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-6xl mx-auto">
-        
-        
-        <div className="space-y-6">
-          {items.map((item) => (
-            <div key={item.id} className={`rounded-lg shadow-md p-6 border-2 ${getItemColor(item.id)}`}>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-4">
-                  <span className="text-3xl">{item.icon}</span>
-                  <span className="text-xl font-medium text-gray-700">{item.name}</span>
-                </div>
-                
-                <select
-                  value={selectedValues[item.id] || ""}
-                  onChange={(e) => handleDropdownChange(item.id, e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 min-w-[250px]"
+    <div className="min-h-screen bg-gray-50 p-8 flex items-center justify-center">
+      <div className="max-w-xl w-full mx-auto">
+        {!completed ? (
+          <div className="rounded-lg shadow-md p-6 bg-white flex flex-col items-center gap-6">
+            <span className="text-xl font-semibold text-gray-800 text-center">{currentItem.name}</span>
+            <Image src={currentItem.image} alt={currentItem.name} width={350} height={350} className="rounded-xl mb-4" />
+            <div className="flex flex-wrap gap-4 justify-center w-full">
+              {subscriptionOptions.map((option) => (
+                <button
+                  key={option}
+                  onClick={() => handleSelect(option)}
+                  disabled={!!feedback && feedback === "Correct!"}
+                  className={`px-4 py-2 rounded-lg border font-semibold transition-colors duration-150 min-w-[160px] text-center ${getButtonColor(option)}`}
                 >
-                  <option value="">Select an option</option>
-                  {subscriptionOptions.map((option, index) => (
-                    <option key={index} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </div>
+                  {option}
+                </button>
+              ))}
             </div>
-          ))}
-        </div>
-
-        <div className="flex justify-center mt-5">
-          <button
-            onClick={checkAnswers}
-            className="px-6 py-3 rounded-lg font-semibold text-white transition-colors bg-blue-600 hover:bg-blue-700"
-          >
-            Check Answers
-          </button>
-        </div>
-
+            {selected && (
+              <div className={`mt-6 text-lg font-bold ${feedback === "Correct!" ? "text-green-600" : "text-red-600"}`}>{feedback}</div>
+            )}
+          </div>
+        ) : (
+          <div className="text-3xl text-green-700 font-bold py-16 text-center">Great job!</div>
+        )}
       </div>
     </div>
   );

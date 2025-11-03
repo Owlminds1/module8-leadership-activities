@@ -40,10 +40,9 @@ export default function Com() {
       case 0:
         return (
           <div className="text-center max-w-5xl mx-auto">
-            <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
-              <p>Nina is a young girl who loves making Glow-in-the-Dark Slime Kits. They are gooey, squishy, and glow in the dark! But Nina has one small problem: she wants more people to enjoy her glowing slime.</p>
-              <p>One sunny Saturday, Nina visits the Magic Market, a special place where everyone comes together to share their creations.</p>
-              <p>At the market, Nina sees colorful stands with toys, lemonade, crafts, and books.</p>
+            <div className="space-y-4 text-xl text-gray-700 leading-relaxed">
+              <p>Nina loves making Glow-in-the-Dark Slime Kits. They are gooey, squishy, and glow in the dark! Nina wants more people to enjoy her glowing slime.</p>
+              <p>Nina visits the Magic Market, a special place where everyone comes together to sell such fun items. At the market, Nina sees colorful stands with toys, lemonade, crafts, and books.</p>
             </div>
             <div className="mt-8">
               <Image src={s1} alt="Magic Market" width={500} height={300} className="mx-auto rounded-2xl shadow-lg" />
@@ -248,7 +247,7 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <p className="text-2xl text-gray-700 leading-relaxed">
-              Just like Nina at the Magic Market, in real life when people run a business or even a small shop, they need to meet others. This is called networking.
+              Just like Nina at the Magic Market, in real life people who run a business or even a small shop, need to meet others to advance their work. This is called networking.
             </p>
           </div>
         );
@@ -257,21 +256,21 @@ export default function Com() {
         return (
           <div className="text-center max-w-5xl mx-auto">
             <p className="text-2xl text-gray-700 mb-8 leading-relaxed">
-              Just like Nina at the Magic Market, in real life when people run a business or even a small shop, they need to meet others. This is called networking.
+              Just like Nina at the Magic Market, in real life people who run a business or even a small shop, need to meet others to advance their work. This is called networking.
             </p>
             <div className="bg-gradient-to-r from-indigo-50 to-purple-100 p-8 rounded-2xl shadow-lg text-left">
               <h3 className="text-2xl font-bold text-indigo-800 mb-6">Networking helps because:</h3>
               <ul className="space-y-4 text-lg text-gray-700">
                 <li>• We can find customers who want to buy what we offer.</li>
-                <li>• We can get advice from people who know more than us.</li>
+                <li>• We can get advice from people who can share their knowledge and expertise.</li>
                 <li>• We can discover new opportunities we never thought of before, like partnerships or groups.</li>
               </ul>
               <div className="mt-6">
                 <h4 className="text-xl font-bold text-purple-800 mb-4">Example:</h4>
                 <ul className="space-y-2 text-gray-700">
                   <li>• A baker might meet someone who wants to buy cupcakes for a party (customer).</li>
-                  <li>• A shopkeeper might learn from another shop how to display items better (advice).</li>
-                  <li>• A comics seller might team up with a toy seller so kids buy both (opportunities).</li>
+                  <li>• A shopkeeper might learn from another seller about how to display items better (advice).</li>
+                  <li>• A comics seller might team up with a toy seller so kids buy diverse sets (opportunities).</li>
                 </ul>
               </div>
             </div>
@@ -282,7 +281,8 @@ export default function Com() {
         return (
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-orange-800 mb-8">
-              If you were at the Magic Market with something you made, maybe drawings, toys, or food, what kind of people would you like to meet?
+              If you were at the Magic Market with something you made,  maybe drawings, toys, or food, what kind of people would you like to meet? 
+              <br />
               A customer, a friend who gives advice, or someone to collaborate with?
             </h2>
           </div>

@@ -2,102 +2,104 @@
 import { useState } from "react";
 
 const boardLabels = [
-  {label:'B2C',hint:'Shop / Customer'},
-  {label:'B2B',hint:'Factory → Shop'},
-  {label:'Aggregator',hint:'Many sellers, one app'},
-  {label:'B2C Online',hint:'Website / App'},
-  {label:'B2C',hint:'Local store'},
-  {label:'Aggregator',hint:'Connects sellers'},
-  {label:'B2B',hint:'Sells in bulk'},
-  {label:'B2C Online',hint:'Subscription'},
-  {label:'B2C',hint:'Neighborhood seller'}
+  {label:'B2B',hint:'Business to Business'},
+  {label:'B2C',hint:'Business to Consumer'},
+  {label:'B2C Online',hint:'Online Consumer'},
+  {label:'Aggregator',hint:'Connects sellers & buyers'}
+];
+
+const scenarios = [
+  { sentence: "A pencil factory selling thousands of pencils to schools", answer: "B2B" },
+  { sentence: "A YouTube Premium account where kids watch ad-free videos", answer: "B2C Online" },
+  { sentence: "A girl selling lemonade at a stand outside her home", answer: "B2C" },
+  { sentence: "Netflix streaming movies to people who pay monthly", answer: "B2C Online" },
+  { sentence: "A factory making sports shoes and selling to shoe stores", answer: "B2B" },
+  { sentence: "A farmer’s app connecting farmers directly with restaurants", answer: "Aggregator" },
+  { sentence: "Disney+ Hotstar showing cartoons and movies for a monthly fee", answer: "B2C Online" },
+  { sentence: "Apps to book flights and hotels", answer: "Aggregator" },
+  { sentence: "A uniform supplier provides uniforms to different schools", answer: "B2B" },
+  { sentence: "A clothing store’s website where parents buy T-shirts for their kids", answer: "B2C Online" },
+  { sentence: "Sports dress store that prints customised t-shirts for teams", answer: "B2B" }
 ];
 
 export default function Com() {
-  const [markedCells, setMarkedCells] = useState(new Set());
-  const [status, setStatus] = useState('Good luck!');
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [selected, setSelected] = useState(null);
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [score, setScore] = useState(0);
+  const [finished, setFinished] = useState(false);
 
-  const toggleCell = (index) => {
-    const newMarkedCells = new Set(markedCells);
-    if (newMarkedCells.has(index)) {
-      newMarkedCells.delete(index);
-    } else {
-      newMarkedCells.add(index);
+  const handleSelect = (label) => {
+    setSelected(label);
+    setShowFeedback(true);
+    if (label === scenarios[currentIdx].answer) {
+      setScore(score + 1);
     }
-    setMarkedCells(newMarkedCells);
-    setStatus('Keep going');
   };
 
-  const checkBingo = () => {
-    const lines = [
-      [0,1,2],[3,4,5],[6,7,8],
-      [0,3,6],[1,4,7],[2,5,8],
-      [0,4,8],[2,4,6]
-    ];
-    
-    let won = false;
-    for (const line of lines) {
-      if (line.every(i => markedCells.has(i))) {
-        won = true;
-        break;
-      }
-    }
-    
-    if (won) {
-      setStatus('Bingo Business! You got three in a row!');
+  const handleNext = () => {
+    if (currentIdx < scenarios.length - 1) {
+      setCurrentIdx(currentIdx + 1);
+      setSelected(null);
+      setShowFeedback(false);
     } else {
-      setStatus('No bingo yet — keep trying!');
+      setFinished(true);
     }
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-orange-50 flex items-center justify-center p-6">
-      <div className="w-full max-w-4xl bg-white rounded-2xl shadow-lg p-5">
-        <div className="flex gap-4 items-center mb-4">
-          <div>
-            <h1 className="text-xl font-bold m-0">Business Model Bingo</h1>
-            <p className="text-lg text-gray-600 mt-1">Click a square to mark it.</p>
-          </div>
-        </div>
-
-        <div className="mt-4">
-          <div className="grid grid-cols-3 gap-3 max-w-2xl mx-auto">
-            {boardLabels.map((item, index) => (
-              <div
-                key={index}
-                onClick={() => toggleCell(index)}
-                className={`bg-gradient-to-b from-white to-orange-50 rounded-xl p-4 min-h-20 flex flex-col items-center justify-center text-center font-semibold cursor-pointer border-2 transition-all duration-150 hover:-translate-y-1 hover:shadow-lg ${
-                  markedCells.has(index) 
-                    ? 'bg-gradient-to-b from-yellow-400 to-white border-dashed border-orange-500 shadow-inner' 
-                    : 'border-transparent'
-                }`}
-              >
-                <div className="text-base">{item.label}</div>
-                <div className="text-xs text-gray-600 mt-1">{item.hint}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-6 flex justify-center">
-            <div className="bg-white rounded-lg p-3 border border-orange-200">
-
-              <div className="flex gap-2 flex-wrap mt-2">
-
-                <button
-                  onClick={checkBingo}
-                  className="bg-orange-500 text-white px-3 py-2 rounded-lg border-0 cursor-pointer font-bold text-sm"
-                >
-                  Check Bingo
-                </button>
-
-              </div>
-
-              <div className={`mt-2 font-bold ${status.includes('Bingo') ? 'text-green-500' : ''}`}>
-                {status}
-              </div>
+      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-lg p-8">
+        <h1 className="text-3xl font-bold mb-6 text-orange-700 text-center">Business Model Match</h1>
+        {!finished ? (
+          <>
+            <div className="mb-8 text-xl text-gray-800 text-center font-semibold">
+              {scenarios[currentIdx].sentence}
             </div>
+            <div className="grid grid-cols-2 gap-6 mb-8">
+              {boardLabels.map((item, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => !showFeedback && handleSelect(item.label)}
+                  className={`rounded-xl p-6 min-h-20 flex flex-col items-center justify-center text-center font-bold text-xl border-2 transition-all duration-150 cursor-pointer ${
+                    selected === item.label
+                      ? (item.label === scenarios[currentIdx].answer ? 'bg-green-200 border-green-600' : 'bg-red-200 border-red-600')
+                      : 'bg-gradient-to-b from-white to-orange-50 border-orange-200 hover:-translate-y-1 hover:shadow-lg'
+                  }`}
+                  disabled={showFeedback}
+                >
+                  <div>{item.label}</div>
+                  <div className="text-base text-gray-600 mt-2">{item.hint}</div>
+                </button>
+              ))}
+            </div>
+            {showFeedback && (
+              <div className="text-center mb-6">
+                {selected === scenarios[currentIdx].answer ? (
+                  <span className="text-green-700 font-bold text-xl">Correct!</span>
+                ) : (
+                  <span className="text-red-700 font-bold text-xl">Incorrect. The correct answer is <span className="underline">{scenarios[currentIdx].answer}</span>.</span>
+                )}
+              </div>
+            )}
+            <div className="flex justify-center">
+              {showFeedback && (
+                <button
+                  onClick={handleNext}
+                  className="px-8 py-3 bg-orange-500 text-white font-bold rounded-xl shadow-lg text-lg"
+                >
+                  {currentIdx < scenarios.length - 1 ? 'Next' : 'See Results'}
+                </button>
+              )}
+            </div>
+          </>
+        ) : (
+          <div className="text-center">
+            <h2 className="text-2xl font-bold mb-4 text-green-700">Quiz Complete!</h2>
+            <p className="text-xl mb-2">You got <span className="font-bold text-orange-700">{score}</span> out of <span className="font-bold text-orange-700">{scenarios.length}</span> correct.</p>
+            <p className="text-lg text-gray-700">Great job learning about business models!</p>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

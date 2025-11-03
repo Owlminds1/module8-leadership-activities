@@ -10,37 +10,51 @@ const Com = () => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [ratingFilter, setRatingFilter] = useState("");
+  const [nameFilter, setNameFilter] = useState("");
+  const [productFilter, setProductFilter] = useState("");
 
   const applyFilters = () => {
     let filtered = customers;
-    
+
+    // Name filter
+    if (nameFilter.trim()) {
+      filtered = filtered.filter(c =>
+        c.name.toLowerCase().includes(nameFilter.trim().toLowerCase())
+      );
+    }
+
+    // Product filter
+    if (productFilter.trim()) {
+      filtered = filtered.filter(c =>
+        c.order && c.order.toLowerCase().includes(productFilter.trim().toLowerCase())
+      );
+    }
+
     // Apply date filter if both dates are selected
     if (startDate && endDate) {
       const start = new Date(startDate);
       const end = new Date(endDate);
-      
+
       if (start > end) {
         alert("Start date must be before end date");
         return;
       }
-      
+
       filtered = filtered.filter(c => {
         const orderDate = new Date(c.orderDate);
         const orderDateOnly = new Date(orderDate.getFullYear(), orderDate.getMonth(), orderDate.getDate());
         const startDateOnly = new Date(start.getFullYear(), start.getMonth(), start.getDate());
         const endDateOnly = new Date(end.getFullYear(), end.getMonth(), end.getDate());
-        
+
         return orderDateOnly >= startDateOnly && orderDateOnly <= endDateOnly;
       });
     }
-    
+
     // Apply rating filter if selected
     if (ratingFilter) {
       filtered = filtered.filter(c => c.rating == ratingFilter);
     }
-    
-    console.log("Applied filters - Date:", startDate, "to", endDate, "Rating:", ratingFilter);
-    console.log("Filtered results:", filtered);
+
     setFilteredCustomers(filtered);
   };
 
@@ -57,6 +71,8 @@ const Com = () => {
     setStartDate("");
     setEndDate("");
     setRatingFilter("");
+    setNameFilter("");
+    setProductFilter("");
     setFilteredCustomers(customers);
   };
 
@@ -79,7 +95,7 @@ const Com = () => {
               onChange={(e) => setStartDate(e.target.value)}
               className="px-3 py-2 border-2 border-gray-300 rounded-md text-sm bg-white focus:outline-none focus:border-blue-500 transition-colors"
             />
-            
+
             <label htmlFor="endDate" className="font-bold text-slate-700">
               End Date:
             </label>
@@ -90,7 +106,31 @@ const Com = () => {
               onChange={(e) => setEndDate(e.target.value)}
               className="px-3 py-2 border-2 border-gray-300 rounded-md text-sm bg-white focus:outline-none focus:border-blue-500 transition-colors"
             />
-            
+
+            <label htmlFor="nameFilter" className="font-bold text-slate-700">
+              Name:
+            </label>
+            <input
+              type="text"
+              id="nameFilter"
+              value={nameFilter}
+              onChange={(e) => setNameFilter(e.target.value)}
+              placeholder="Search by name"
+              className="px-3 py-2 border-2 border-gray-300 rounded-md text-sm bg-white focus:outline-none focus:border-blue-500 transition-colors min-w-[120px]"
+            />
+
+            <label htmlFor="productFilter" className="font-bold text-slate-700">
+              Product:
+            </label>
+            <input
+              type="text"
+              id="productFilter"
+              value={productFilter}
+              onChange={(e) => setProductFilter(e.target.value)}
+              placeholder="Search by product"
+              className="px-3 py-2 border-2 border-gray-300 rounded-md text-sm bg-white focus:outline-none focus:border-blue-500 transition-colors min-w-[120px]"
+            />
+
             <label htmlFor="ratingFilter" className="font-bold text-slate-700">
               Rating Filter:
             </label>

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const businessModelData = [
   {
@@ -7,12 +7,12 @@ const businessModelData = [
     title: "B2B (Business to Business)",
     advantages: [
       "Big orders from other businesses: stable revenue",
-      "Less need for advertising to many individual customers",
+      "No need to advertise to many individual customers",
       "Can focus on quality production",
     ],
     disadvantages: [
-      "Depends on other businesses to sell products",
-      "Less direct contact with end customers",
+      "Based on other businesses to sell products",
+      "No direct contact with end customers",
       "Profit per item may be lower",
     ]
   },
@@ -21,17 +21,17 @@ const businessModelData = [
     title: "B2C (Business to Consumer)",
     advantages: [
       "Direct profit from customers",
-      "Build strong customer relationships",
-      "Can experiment with items like testing a new ice cream flavour people like or not.",
+      "Strong customer relationships",
+      "Can experiment such as testing new ice-cream flavours people like.",
     ],
     disadvantages: [
-      "Need to do a lot of advertisements to attract customers.",
+      "Require a lot of advertisements to attract customers.",
       "May require more staff for service",
     ]
   },
   {
     id: 2,
-    title: "B2C Online (Direct to Consumer Online Store)",
+    title: "B2C Online",
     advantages: [
       "Sell to people everywhere, not just nearby",
       "Open 24/7",
@@ -39,34 +39,67 @@ const businessModelData = [
     disadvantages: [
       "Need a website/app and tech skills",
       "Shipping and delivery challenges",
-      "Need to do a lot of advertisements to attract customers.",
+      "Require advertisements to attract customers.",
     ]
   },
   {
     id: 3,
-    title: "Aggregator Model (Marketplace Platform)",
+    title: "Aggregator",
     advantages: [
-      "Offers many choices for customers in one place",
-      "Earns a little extra money for the products getting sold of other  sellers",
-      "Can grow quickly without producing all products themselves",
+      "Offers many choices for customers in a single place",
+      "Earns additional money for the products getting sold through other  sellers",
+      "Can grow easily without storing or making products",
     ],
     disadvantages: [
-      "Depends on other sellers for quality and delivery",
-      "Need to do a lot of advertisements to attract customers.",
+      "Based on other sellers for quality and delivery",
+      "Requires advertisements to attract customers.",
     ]
   }
 ];
 
 export default function Com() {
   const [currentScreen, setCurrentScreen] = useState(0);
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [showFeedback, setShowFeedback] = useState(false);
 
-  const nextScreen = () => {
-    if (currentScreen < businessModelData.length - 1) {
-      setCurrentScreen(currentScreen + 1);
+  const currentData = businessModelData[currentScreen];
+
+  const handleItemSelect = (item) => {
+    if (selectedItems.includes(item)) {
+      setSelectedItems(selectedItems.filter(a => a !== item));
+    } else {
+      setSelectedItems([...selectedItems, item]);
     }
   };
 
-  const currentData = businessModelData[currentScreen];
+  const handleSubmit = () => {
+    setShowFeedback(true);
+  };
+
+  const handleNext = () => {
+    setCurrentScreen(currentScreen + 1);
+    setSelectedItems([]);
+    setShowFeedback(false);
+  };
+
+  // Merge advantages and disadvantages into a single list, shuffled once per screen
+  const [mergedItems, setMergedItems] = useState([]);
+
+  // Shuffle function
+  function shuffle(array) {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  // Shuffle mergedItems only when currentScreen changes
+  useEffect(() => {
+    const merged = [...currentData.advantages, ...currentData.disadvantages];
+    setMergedItems(shuffle(merged));
+  }, [currentScreen, currentData.advantages, currentData.disadvantages]);
 
   return (
     <div className="min-h-screen bg-blue-50 p-6">
@@ -75,52 +108,63 @@ export default function Com() {
           <h1 className="text-4xl font-bold mb-8 text-center text-blue-800">
             {currentData.title}
           </h1>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="bg-green-100 p-6 rounded-lg">
-                <h2 className="text-2xl font-semibold text-green-800 mb-4 flex items-center">
-                  <span className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-lg font-bold mr-3">+</span>
-                  Advantages
-                </h2>
-                <ul className="space-y-3">
-                  {currentData.advantages.map((advantage, index) => (
-                    <li key={index} className="text-green-700 flex items-start text-lg">
-                      <span className="w-3 h-3 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      {advantage}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <div className="bg-red-100 p-6 rounded-lg">
-                <h2 className="text-2xl font-semibold text-red-800 mb-4 flex items-center">
-                  <span className="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center text-lg font-bold mr-3">-</span>
-                  Disadvantages
-                </h2>
-                <ul className="space-y-3">
-                  {currentData.disadvantages.map((disadvantage, index) => (
-                    <li key={index} className="text-red-700 flex items-start text-lg">
-                      <span className="w-3 h-3 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      {disadvantage}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-green-800 mb-4">Select the advantages of this model:</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {mergedItems.map((item, idx) => (
+                <label key={idx} className={`flex items-center bg-green-50 rounded-lg p-4 cursor-pointer border ${selectedItems.includes(item) ? 'border-green-500' : 'border-transparent'} transition-all`}>
+                  <input
+                    type="checkbox"
+                    checked={selectedItems.includes(item)}
+                    onChange={() => handleItemSelect(item)}
+                    className="mr-3 w-5 h-5 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+                  />
+                  <span className="text-green-800 text-lg">{item}</span>
+                </label>
+              ))}
             </div>
           </div>
-
-          {currentScreen < businessModelData.length - 1 && (
+          {showFeedback && (
+            <div className="mb-8">
+              <div className="bg-green-100 p-4 rounded-lg">
+                <h3 className="text-xl font-bold text-green-700 mb-2">Advantages of {currentData.title}:</h3>
+                <ul className="list-disc ml-6">
+                  {currentData.advantages.map((adv, idx) => (
+                    <li key={idx} className="text-green-700 text-lg">{adv}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-red-100 p-4 rounded-lg mt-4">
+                <h3 className="text-xl font-bold text-red-700 mb-2">Disadvantages of {currentData.title}:</h3>
+                <ul className="list-disc ml-6">
+                  {currentData.disadvantages.map((dis, idx) => (
+                    <li key={idx} className="text-red-700 text-lg">{dis}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
+          {!showFeedback ? (
             <div className="flex justify-center mt-8">
               <button
-                onClick={nextScreen}
-                className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 transition-colors duration-200 transform hover:scale-105 text-lg"
+                onClick={handleSubmit}
+                className="px-8 py-3 bg-green-600 text-white font-semibold rounded-xl shadow-lg hover:bg-green-700 transition-colors duration-200 transform hover:scale-105 text-lg"
+                disabled={selectedItems.length === 0}
               >
-                Next
+                Submit
               </button>
             </div>
+          ) : (
+            currentScreen < businessModelData.length - 1 && (
+              <div className="flex justify-center mt-8">
+                <button
+                  onClick={handleNext}
+                  className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 transition-colors duration-200 transform hover:scale-105 text-lg"
+                >
+                  Next
+                </button>
+              </div>
+            )
           )}
         </div>
       </div>

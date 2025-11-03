@@ -36,7 +36,7 @@ export default function Com() {
       correctAnswer: "Introduce yourself politely"
     },
     {
-      question: "Listening carefully is not important when commuting with someone.",
+      question: "Listening attentively is not important when communicating with someone.",
       type: "truefalse",
       options: ["True", "False"],
       correctAnswer: "False"
@@ -78,7 +78,7 @@ export default function Com() {
       return (
         <div className="text-center max-w-5xl mx-auto">
           <h1 className="text-4xl font-bold text-green-800 mb-8">
-             Quiz Complete!
+            Quiz Complete!
           </h1>
           <p className="text-2xl text-gray-700 mb-8">
             Great job! You&apos;ve finished all the networking questions.
@@ -102,13 +102,12 @@ export default function Com() {
             {currentQuestion.options.map((option, index) => (
               <div
                 key={index}
-                className={`w-full p-6 text-xl font-semibold rounded-2xl ${
-                  option === currentQuestion.correctAnswer
-                    ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg'
-                    : option === selectedAnswer && !isCorrect
+                className={`w-full p-6 text-xl font-semibold rounded-2xl ${option === currentQuestion.correctAnswer
+                  ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg'
+                  : option === selectedAnswer && !isCorrect
                     ? 'bg-gradient-to-r from-red-500 to-rose-600 text-white shadow-lg'
                     : 'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800'
-                }`}
+                  }`}
               >
                 {option}
                 {option === currentQuestion.correctAnswer && (
@@ -121,21 +120,18 @@ export default function Com() {
             ))}
           </div>
 
-          <div className={`p-8 rounded-2xl shadow-lg ${
-            isCorrect 
-              ? 'bg-gradient-to-r from-green-50 to-emerald-100' 
-              : 'bg-gradient-to-r from-red-50 to-rose-100'
-          }`}>
-            <h2 className={`text-3xl font-bold mb-4 ${
-              isCorrect ? 'text-green-800' : 'text-red-800'
+          <div className={`p-8 rounded-2xl shadow-lg ${isCorrect
+            ? 'bg-gradient-to-r from-green-50 to-emerald-100'
+            : 'bg-gradient-to-r from-red-50 to-rose-100'
             }`}>
+            <h2 className={`text-3xl font-bold mb-4 ${isCorrect ? 'text-green-800' : 'text-red-800'
+              }`}>
               {isCorrect ? 'Correct!' : 'Incorrect!'}
             </h2>
-            <p className={`text-xl ${
-              isCorrect ? 'text-green-700' : 'text-red-700'
-            }`}>
-              {isCorrect 
-                ? 'Great job! You got it right.' 
+            <p className={`text-xl ${isCorrect ? 'text-green-700' : 'text-red-700'
+              }`}>
+              {isCorrect
+                ? 'Great job! You got it right.'
                 : `The correct answer is: ${currentQuestion.correctAnswer}`
               }
             </p>
@@ -156,11 +152,10 @@ export default function Com() {
             <button
               key={index}
               onClick={() => handleAnswerSelect(step, option)}
-              className={`w-full p-6 text-xl font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 ${
-                selectedAnswer === option
-                  ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg'
-                  : 'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 hover:from-blue-100 hover:to-indigo-200'
-              }`}
+              className={`w-full p-6 text-xl font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 ${selectedAnswer === option
+                ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg'
+                : 'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 hover:from-blue-100 hover:to-indigo-200'
+                }`}
             >
               {option}
             </button>
@@ -174,7 +169,7 @@ export default function Com() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-6">
       <div className="max-w-7xl bg-white shadow-2xl rounded-3xl p-12">
         {renderScreen()}
-        
+
         {step < questions.length && (
           <div className="flex justify-center mt-12">
             <button

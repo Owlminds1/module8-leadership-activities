@@ -46,19 +46,6 @@ const contentData = {
       image: s1
     },
     {
-      id: 6,
-      type: "question",
-      content: "Which item had some leftover stock?",
-      image: s1
-    },
-    {
-      id: 7,
-      type: "answer",
-      content: "Which item had some leftover stock?",
-      answer: "Bag Tags and Keychains had some leftover stock because not all of them got sold.",
-      image: s1
-    },
-    {
       id: 8,
       type: "question",
       content: "Which item might cause a loss for Leo? Why?",
@@ -81,11 +68,17 @@ const contentData = {
       id: 11,
       type: "answer",
       content: "Why do you think Bag Tags didn't sell as well as the other products?",
-      answer: "Maybe they weren't as beautiful or useful. Maybe customers didn't find them as appealing as the other items.",
+      answer: "Maybe they weren’t as beautiful or useful. Maybe customers didn’t find them as appealing as the other items.May be they sell only at the start of the school",
       image: s1
     },
     {
       id: 12,
+      type: "question",
+      content: "If Leo wants to make more profit next time, which product should he focus on?",
+      image: s1
+    },
+    {
+      id: 13,
       type: "answer",
       content: "If Leo wants to make more profit next time, which product should he focus on?",
       answer: "He should focus on the Friendship Bands, since they are the most popular item and sold out completely.",
@@ -131,7 +124,7 @@ export default function Com() {
   const nextStep = () => setStep((prev) => prev + 1);
 
   const currentStepData = contentData.steps[step];
-  const isLastStep = step === 12; // Last step is now id: 12
+  const isLastStep = step === contentData.steps.length - 1;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-green-50 p-6">
