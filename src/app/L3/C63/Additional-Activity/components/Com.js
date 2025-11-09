@@ -24,22 +24,16 @@ export default function Com() {
 
   const questions = [
     {
-      question: "Networking can help you find people who are interested in what you offer.",
-      type: "truefalse",
-      options: ["True", "False"],
-      correctAnswer: "True"
-    },
-    {
-      question: "What’s a good first step when meeting someone new in business?",
+      question: "What’s a polite way to start a conversation at a networking event?",
       type: "multiple",
-      options: ["Shout your product name", "Introduce yourself politely", "Ignore them"],
-      correctAnswer: "Introduce yourself politely"
+      options: ["Stay silent until someone talks to you", "Ask about the other person’s work or interests", "Start talking only about yourself"],
+      correctAnswer: "Ask about the other person’s work or interests"
     },
     {
-      question: "Listening attentively is not important when commuting with someone.",
-      type: "truefalse",
-      options: ["True", "False"],
-      correctAnswer: "False"
+      question: "Why is listening an important part of networking? ",
+      type: "multiple",
+      options: ["It helps you understand others and build trust", "It wastes time you could spend talking ", "It shows you don’t have anything to say"],
+      correctAnswer: "It helps you understand others and build trust"
     },
     {
       question: "During a networking event, someone gives you their card. What’s the best next step after the event?",
@@ -70,6 +64,12 @@ export default function Com() {
         "Delete their contact"
       ],
       correctAnswer: "Respectfully thank them and stay in touch"
+    },
+    {
+      question: "How can you keep a new connection strong after meeting them?",
+      type: "multiple",
+      options: ["Ignore them until your next event","Send updates or share useful information from time to time", "Ask them for favors immediately"],
+      correctAnswer: "Send updates or share useful information from time to time"
     },
     {
       question: "What’s the best reason to attend industry meetups and conferences?",
